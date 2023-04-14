@@ -16,7 +16,10 @@ public:
     ~entrycode();
 
 private slots:
-    void on_lineEdit_editingFinished();
+
+    void on_pushButton_clicked();
+
+    void on_lineEdit_returnPressed();
 
 private:
     Ui::entrycode *ui;

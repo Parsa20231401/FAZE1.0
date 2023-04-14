@@ -2,6 +2,10 @@
 #include "ui_mainwindow.h"
 #include "QMessageBox"
 #include "entrycode.h"
+#include "QSqlDatabase"
+#include "QSqlQuery"
+#include "QSqlDriver"
+#include "QSqlQueryModel"
 
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow) {
@@ -29,6 +33,12 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     ui->comboBox->addItem("turkey +90");
     ui->comboBox->addItem("iraq +964");
     ui->comboBox->addItem("iran +98");
+
+
+    QSqlDatabase database;
+    database = QSqlDatabase::addDatabase("QSQLITE");
+    database.setDatabaseName("d:\\usersinfo.db");
+    database.open();
 
 }
 
@@ -61,12 +71,34 @@ void MainWindow::on_pushButton_4_clicked() {
 
 void MainWindow::on_pushButton_5_clicked() {
 
+
+
+    QSqlQuery q;
+    QString a1, a2, a3, a4, a5;
+
+    a1 = ui->lineEdit_3->text();
+    a2 = ui->lineEdit_4->text();
+    a3 = ui->lineEdit_6->text();
+    a4 = ui->lineEdit_7->text();
+    a5 = ui->comboBox->currentText();
+
+    q.exec("SELECT username FROM usersdata WHERE username='"+a1+"'");
+
+    if(q.first()){
+
+        QMessageBox::warning(this,"error","this username already exist");
+    }
+    else{
+
+        q.exec("INSERT INTO usersdata(username, password, email, phone, countrycode)VALUES('"+a1+"','"+a2+"','"+a3+"','"+a4+"','"+a5+"') ");
+
     entrycode *p = new entrycode(this);
 
     switch (r) {
             case 0:
                 if (ui->lineEdit_5->text() == "433841") {
                     p->show();
+                    hide();
                 } else {
                     QMessageBox::information(this, "wrong", "please enter correct captcha", "ok");
                 }
@@ -74,6 +106,7 @@ void MainWindow::on_pushButton_5_clicked() {
             case 1:
                 if (ui->lineEdit_5->text() == "2W4M") {
                     p->show();
+                    hide();
                 } else {
                     QMessageBox::information(this, "wrong", "please enter correct captcha", "ok");
                 }
@@ -81,6 +114,7 @@ void MainWindow::on_pushButton_5_clicked() {
             case 2:
                 if (ui->lineEdit_5->text() == "Captcha") {
                     p->show();
+                    hide();
                 } else {
                     QMessageBox::information(this, "wrong", "please enter correct captcha", "ok");
                 }
@@ -88,11 +122,13 @@ void MainWindow::on_pushButton_5_clicked() {
             case 3:
                 if (ui->lineEdit_5->text() == "4SZXT") {
                     p->show();
+                    hide();
                 } else {
                     QMessageBox::information(this, "wrong", "please enter correct captcha", "ok");
                 }
                 break;
         }
+    }
 }
 
 
@@ -171,6 +207,8 @@ void MainWindow::on_lineEdit_4_textEdited(const QString &arg1)
     }
      if(ui->label_27->text()=="wrong"||ui->label_28->text()=="wrong")
          ui->pushButton_5->setEnabled(false);
+     if(ui->label_27->text()=="correct" && ui->label_28->text()=="correct")
+         ui->pushButton_5->setEnabled(true);
 }
 
 
@@ -182,11 +220,45 @@ void MainWindow::on_pushButton_3_clicked()
 }
 
 
-void MainWindow::on_pushButton_7_clicked()
+//void MainWindow::on_pushButton_7_clicked()
+//{
+//    int n;
+//    n = rand()%9000+1000;
+//    QString thelen = QString::number(n);
+//    ui->label_29->setText(thelen);
+//}
+
+
+
+void MainWindow::on_pushButton_clicked()
 {
-    int n;
-    n = rand()%9000+1000;
-    QString thelen = QString::number(n);
-    ui->label_29->setText(thelen);
+    QSqlQuery q,p;
+    QString a1, a2;
+
+    a1 = ui->lineEdit->text();
+    a2 = ui->lineEdit_2->text();
+
+    q.exec("SELECT username FROM usersdata WHERE username='"+a1+"'");
+
+    if(q.first()){
+
+        p.exec("SELECT password FROM usersdata WHERE password='"+a2+"'");
+        if(p.first()){
+
+            QMessageBox::information(this,"correct","Go to faze2");
+            hide();
+        }
+        else {
+            QMessageBox::information(this,"wrong","try again");
+        }
+    }
+    else {
+        QMessageBox::information(this,"wrong","try again");
+    }
+
+
+
+
+
 }
 

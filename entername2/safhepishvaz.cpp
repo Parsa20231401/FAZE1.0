@@ -2,6 +2,7 @@
 #include "ui_safhepishvaz.h"
 #include "mainwindow.h"
 
+
 safhePishvaz::safhePishvaz(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::safhePishvaz)
