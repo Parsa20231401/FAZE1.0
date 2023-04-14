@@ -22,18 +22,6 @@ entrycode::~entrycode()
     delete ui;
 }
 
-//void entrycode::on_lineEdit_editingFinished()
-//{
-//    QString code = ui->lineEdit->text();
-
-//    if (code == thelen){
-//        QMessageBox::information(this,"That's correct","go to next faze");
-//    }
-//    else{
-//        QMessageBox::information(this,"WRONG code","try again");
-//    }
-//}
-
 
 void entrycode::on_pushButton_clicked()
 {
