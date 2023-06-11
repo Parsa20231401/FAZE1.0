@@ -70,8 +70,6 @@ public:
     QLabel *label_27;
     QLabel *label_28;
     QPushButton *pushButton_3;
-    QPushButton *pushButton_7;
-    QLabel *label_29;
     QGroupBox *groupBox_4;
     QLineEdit *lineEdit_5;
     QPushButton *pushButton_5;
@@ -84,13 +82,14 @@ public:
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
         MainWindow->resize(1583, 936);
         MainWindow->setStyleSheet(QString::fromUtf8("background-color: rgb(170, 0, 255);\n"
+"background-color: rgb(105, 112, 255);\n"
 "\n"
 ""));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         groupBox = new QGroupBox(centralwidget);
         groupBox->setObjectName(QString::fromUtf8("groupBox"));
-        groupBox->setGeometry(QRect(230, 50, 551, 401));
+        groupBox->setGeometry(QRect(230, 50, 571, 401));
         groupBox->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 0, 0);\n"
 "background-color: rgb(255, 255, 255);"));
         label = new QLabel(groupBox);
@@ -119,7 +118,7 @@ public:
         label_6->setGeometry(QRect(20, 200, 51, 16));
         label_8 = new QLabel(groupBox);
         label_8->setObjectName(QString::fromUtf8("label_8"));
-        label_8->setGeometry(QRect(240, 70, 307, 16));
+        label_8->setGeometry(QRect(240, 80, 307, 16));
         label_8->setStyleSheet(QString::fromUtf8("color: rgb(255, 0, 0);"));
         pushButton = new QPushButton(groupBox);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
@@ -144,37 +143,37 @@ public:
         label_19->setFrameShape(QFrame::Box);
         label_20 = new QLabel(groupBox);
         label_20->setObjectName(QString::fromUtf8("label_20"));
-        label_20->setGeometry(QRect(100, 170, 141, 20));
+        label_20->setGeometry(QRect(100, 160, 141, 20));
         label_20->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 127);"));
         label_20->setFrameShape(QFrame::Box);
         label_7 = new QLabel(groupBox);
         label_7->setObjectName(QString::fromUtf8("label_7"));
-        label_7->setGeometry(QRect(240, 50, 188, 16));
+        label_7->setGeometry(QRect(240, 60, 188, 16));
         label_7->setStyleSheet(QString::fromUtf8("color: rgb(255, 0, 0);"));
         label_25 = new QLabel(groupBox);
         label_25->setObjectName(QString::fromUtf8("label_25"));
-        label_25->setGeometry(QRect(240, 120, 251, 21));
+        label_25->setGeometry(QRect(250, 130, 251, 16));
         label_25->setStyleSheet(QString::fromUtf8("color: rgb(255, 0, 0);"));
         label_26 = new QLabel(groupBox);
         label_26->setObjectName(QString::fromUtf8("label_26"));
-        label_26->setGeometry(QRect(240, 140, 311, 41));
+        label_26->setGeometry(QRect(250, 150, 311, 21));
         label_26->setStyleSheet(QString::fromUtf8("color: rgb(255, 0, 0);"));
         groupBox_3 = new QGroupBox(centralwidget);
         groupBox_3->setObjectName(QString::fromUtf8("groupBox_3"));
-        groupBox_3->setGeometry(QRect(830, 60, 721, 411));
+        groupBox_3->setGeometry(QRect(830, 60, 721, 381));
         groupBox_3->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
         label_14 = new QLabel(groupBox_3);
         label_14->setObjectName(QString::fromUtf8("label_14"));
         label_14->setGeometry(QRect(160, 0, 55, 16));
         label_15 = new QLabel(groupBox_3);
         label_15->setObjectName(QString::fromUtf8("label_15"));
-        label_15->setGeometry(QRect(61, 43, 62, 16));
+        label_15->setGeometry(QRect(40, 40, 62, 16));
         lineEdit_3 = new QLineEdit(groupBox_3);
         lineEdit_3->setObjectName(QString::fromUtf8("lineEdit_3"));
         lineEdit_3->setGeometry(QRect(133, 42, 137, 22));
         label_16 = new QLabel(groupBox_3);
         label_16->setObjectName(QString::fromUtf8("label_16"));
-        label_16->setGeometry(QRect(50, 110, 60, 16));
+        label_16->setGeometry(QRect(40, 110, 60, 16));
         lineEdit_4 = new QLineEdit(groupBox_3);
         lineEdit_4->setObjectName(QString::fromUtf8("lineEdit_4"));
         lineEdit_4->setGeometry(QRect(131, 104, 137, 22));
@@ -240,12 +239,6 @@ public:
         pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
         pushButton_3->setGeometry(QRect(580, 210, 41, 28));
         pushButton_3->setStyleSheet(QString::fromUtf8("image: url(:/new/prefix1/cheshm2.jpg);"));
-        pushButton_7 = new QPushButton(groupBox_3);
-        pushButton_7->setObjectName(QString::fromUtf8("pushButton_7"));
-        pushButton_7->setGeometry(QRect(100, 340, 93, 28));
-        label_29 = new QLabel(groupBox_3);
-        label_29->setObjectName(QString::fromUtf8("label_29"));
-        label_29->setGeometry(QRect(80, 270, 111, 51));
         groupBox_4 = new QGroupBox(centralwidget);
         groupBox_4->setObjectName(QString::fromUtf8("groupBox_4"));
         groupBox_4->setGeometry(QRect(420, 490, 371, 271));
@@ -310,8 +303,6 @@ public:
         label_27->setText(QString());
         label_28->setText(QString());
         pushButton_3->setText(QString());
-        pushButton_7->setText(QApplication::translate("MainWindow", "create code", nullptr));
-        label_29->setText(QString());
         groupBox_4->setTitle(QApplication::translate("MainWindow", "enter the capcha", nullptr));
         lineEdit_5->setPlaceholderText(QApplication::translate("MainWindow", "write here", nullptr));
         pushButton_5->setText(QApplication::translate("MainWindow", "go", nullptr));
