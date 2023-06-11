@@ -1,6 +1,0 @@
-<RCC>
-    <qresource prefix="/new/prefixxx">
-        <file>black tel logo.png</file>
-    </qresource>
-    <qresource prefix="/new/prefix1"/>
-</RCC>

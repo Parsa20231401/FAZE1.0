@@ -1,0 +1,16 @@
+release/chat.o
+release/chat2.o
+release/chatpage.o
+release/chatpage2.o
+release/chatpage3.o
+release/entrycode.o
+release/main.o
+release/mainwindow.o
+release/qrc_capchaha.o
+release/qrc_cheshmha.o
+release/moc_chat2.o
+release/moc_chatpage.o
+release/moc_chatpage2.o
+release/moc_chatpage3.o
+release/moc_entrycode.o
+release/moc_mainwindow.o
