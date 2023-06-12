@@ -1,10 +1,10 @@
-release/entrycode.o
+release/entrycodee.o
 release/main.o
 release/mainwindow.o
 release/safhepishvaz.o
 release/qrc_capchaha.o
 release/qrc_cheshmha.o
 release/qrc_logo.o
-release/moc_entrycode.o
+release/moc_entrycodee.o
 release/moc_mainwindow.o
 release/moc_safhepishvaz.o
