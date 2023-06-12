@@ -1,5 +1,5 @@
-#ifndef CHATPAGE2_H
-#define CHATPAGE2_H
+#ifndef CLIENT_H
+#define CLIENT_H
 
 #include <QMainWindow>
 #include <QFile>
@@ -41,4 +41,4 @@ private:
     QTcpSocket* socket;
 };
 
-#endif // CHATPAGE2_H
+#endif // CLIENT_H

@@ -2,9 +2,8 @@
 #include "ui_mainwindow.h"
 #include "QMessageBox"
 #include "entrycode.h"
-#include "chat2.h"
 #include "stdio.h"
-#include "chatpage.h"
+#include "server.h"
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow) {
     ui->setupUi(this);

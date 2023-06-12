@@ -9,31 +9,23 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    chat.cpp \
-    chat2.cpp \
-    chatpage.cpp \
-    chatpage2.cpp \
-    chatpage3.cpp \
+    client.cpp \
     entrycode.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    server.cpp
 
 HEADERS += \
-    chat.h \
-    chat2.h \
-    chatpage.h \
-    chatpage2.h \
-    chatpage3.h \
+    client.h \
     entrycode.h \
-    mainwindow.h
+    mainwindow.h \
+    server.h
 
 FORMS += \
-    chat2.ui \
-    chatpage.ui \
-    chatpage2.ui \
-    chatpage3.ui \
+    client.ui \
     entrycode.ui \
-    mainwindow.ui
+    mainwindow.ui \
+    server.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

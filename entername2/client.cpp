@@ -1,4 +1,4 @@
-#include "chatpage2.h"
+#include "client.h"
 #include "ui_chatpage2.h"
 
 chatpage2::chatpage2(QWidget *parent) :

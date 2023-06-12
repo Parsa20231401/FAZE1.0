@@ -1,5 +1,5 @@
-#ifndef CHATPAGE_H
-#define CHATPAGE_H
+#ifndef SERVER_H
+#define SERVER_H
 
 #include <QMainWindow>
 #include <QSet>
@@ -48,4 +48,4 @@ private:
     QSet<QTcpSocket*> connection_set;
 };
 
-#endif // CHATPAGE_H
+#endif // SERVER_H
