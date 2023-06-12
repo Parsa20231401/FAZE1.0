@@ -1,17 +1,17 @@
 #include "client.h"
-#include "ui_chatpage2.h"
+#include "ui_client.h"
 
-chatpage2::chatpage2(QWidget *parent) :
+client::client(QWidget *parent) :
     QMainWindow(parent),
-    ui(new Ui::chatpage2)
+    ui(new Ui::client)
 {
     ui->setupUi(this);
     socket = new QTcpSocket(this); //********* socket sakhte shod
 
-        connect(this, &chatpage2::newMessage, this, &chatpage2::displayMessage);
-        connect(socket, &QTcpSocket::readyRead, this, &chatpage2::readSocket);
-        connect(socket, &QTcpSocket::disconnected, this, &chatpage2::discardSocket);
-//        connect(socket, &QAbstractSocket::errorOccurred, this, &chatpage2::displayError);
+        connect(this, &client::newMessage, this, &client::displayMessage);
+        connect(socket, &QTcpSocket::readyRead, this, &client::readSocket);
+        connect(socket, &QTcpSocket::disconnected, this, &client::discardSocket);
+//        connect(socket, &QAbstractSocket::errorOccurred, this, &client::displayError);
 
         socket->connectToHost(QHostAddress::LocalHost,8080); // ersal darkhast vase join b server
 
@@ -24,7 +24,7 @@ chatpage2::chatpage2(QWidget *parent) :
 
 }
 
-chatpage2::~chatpage2()
+client::~client()
 {
 
     if(socket->isOpen())
@@ -33,7 +33,7 @@ chatpage2::~chatpage2()
     delete ui;
 }
 
-void chatpage2::readSocket()
+void client::readSocket()
 {
     QByteArray buffer;
 
@@ -81,7 +81,7 @@ void chatpage2::readSocket()
     }
 }
 
-void chatpage2::discardSocket()
+void client::discardSocket()
 {
     socket->deleteLater();
     socket=nullptr;
@@ -89,7 +89,7 @@ void chatpage2::discardSocket()
 //    ui->statusBar->showMessage("Disconnected!");
 }
 
-void chatpage2::displayError(QAbstractSocket::SocketError socketError)
+void client::displayError(QAbstractSocket::SocketError socketError)
 {
     switch (socketError) {
         case QAbstractSocket::RemoteHostClosedError:
@@ -106,7 +106,7 @@ void chatpage2::displayError(QAbstractSocket::SocketError socketError)
     }
 }
 
-void chatpage2::on_pushButton_clicked()
+void client::on_pushButton_clicked()
 {
     if(socket)
     {
@@ -135,7 +135,7 @@ void chatpage2::on_pushButton_clicked()
         QMessageBox::critical(this,"QTCPClient","Not connected");
 }
 
-//void chatpage2::on_pushButton_sendAttachment_clicked()
+//void client::on_pushButton_sendAttachment_clicked()
 //{
 //    if(socket)
 //    {
@@ -176,7 +176,7 @@ void chatpage2::on_pushButton_clicked()
 //        QMessageBox::critical(this,"QTCPClient","Not connected");
 //}
 
-void chatpage2::displayMessage(const QString& str)
+void client::displayMessage(const QString& str)
 {
     ui->textBrowser_receivedMessages->append(str);
 }

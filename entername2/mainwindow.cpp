@@ -69,7 +69,7 @@ void MainWindow::on_pushButton_4_clicked() {
 
 void MainWindow::on_pushButton_5_clicked() {
 
-    chatpage *c = new chatpage(this);
+    server *c = new server(this);
 
     switch (r) {
             case 0:

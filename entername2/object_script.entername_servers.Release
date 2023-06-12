@@ -1,0 +1,11 @@
+release/client.o
+release/entrycode.o
+release/main.o
+release/mainwindow.o
+release/server.o
+release/qrc_capchaha.o
+release/qrc_cheshmha.o
+release/moc_client.o
+release/moc_entrycode.o
+release/moc_mainwindow.o
+release/moc_server.o

@@ -12,10 +12,10 @@
 #include <QFileDialog>
 
 namespace Ui {
-class chatpage;
+class server;
 }
 
-class chatpage : public QMainWindow
+class server : public QMainWindow
 {
     Q_OBJECT
 
@@ -24,8 +24,8 @@ signals:
     void newMessage(QString);
 
 public:
-    explicit chatpage(QWidget *parent = nullptr);
-    ~chatpage();
+    explicit server(QWidget *parent = nullptr);
+    ~server();
 
 private slots:
     void newConnection();
@@ -43,7 +43,7 @@ private slots:
     void on_pushButton_clicked();
 
 private:
-    Ui::chatpage *ui;
+    Ui::server *ui;
     QTcpServer* m_server;
     QSet<QTcpSocket*> connection_set;
 };

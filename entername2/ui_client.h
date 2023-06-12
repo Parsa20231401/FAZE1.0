@@ -1,13 +1,13 @@
 /********************************************************************************
-** Form generated from reading UI file 'chatpage2.ui'
+** Form generated from reading UI file 'client.ui'
 **
 ** Created by: Qt User Interface Compiler version 5.12.12
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
 
-#ifndef UI_CHATPAGE2_H
-#define UI_CHATPAGE2_H
+#ifndef UI_CLIENT_H
+#define UI_CLIENT_H
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
@@ -21,7 +21,7 @@
 
 QT_BEGIN_NAMESPACE
 
-class Ui_chatpage2
+class Ui_client
 {
 public:
     QWidget *centralwidget;
@@ -31,12 +31,12 @@ public:
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
-    void setupUi(QMainWindow *chatpage2)
+    void setupUi(QMainWindow *client)
     {
-        if (chatpage2->objectName().isEmpty())
-            chatpage2->setObjectName(QString::fromUtf8("chatpage2"));
-        chatpage2->resize(735, 479);
-        centralwidget = new QWidget(chatpage2);
+        if (client->objectName().isEmpty())
+            client->setObjectName(QString::fromUtf8("client"));
+        client->resize(735, 479);
+        centralwidget = new QWidget(client);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         pushButton = new QPushButton(centralwidget);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
@@ -47,32 +47,32 @@ public:
         textBrowser_receivedMessages = new QTextBrowser(centralwidget);
         textBrowser_receivedMessages->setObjectName(QString::fromUtf8("textBrowser_receivedMessages"));
         textBrowser_receivedMessages->setGeometry(QRect(10, 10, 701, 371));
-        chatpage2->setCentralWidget(centralwidget);
-        menubar = new QMenuBar(chatpage2);
+        client->setCentralWidget(centralwidget);
+        menubar = new QMenuBar(client);
         menubar->setObjectName(QString::fromUtf8("menubar"));
         menubar->setGeometry(QRect(0, 0, 735, 26));
-        chatpage2->setMenuBar(menubar);
-        statusbar = new QStatusBar(chatpage2);
+        client->setMenuBar(menubar);
+        statusbar = new QStatusBar(client);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
-        chatpage2->setStatusBar(statusbar);
+        client->setStatusBar(statusbar);
 
-        retranslateUi(chatpage2);
+        retranslateUi(client);
 
-        QMetaObject::connectSlotsByName(chatpage2);
+        QMetaObject::connectSlotsByName(client);
     } // setupUi
 
-    void retranslateUi(QMainWindow *chatpage2)
+    void retranslateUi(QMainWindow *client)
     {
-        chatpage2->setWindowTitle(QApplication::translate("chatpage2", "MainWindow", nullptr));
-        pushButton->setText(QApplication::translate("chatpage2", "PushButton", nullptr));
+        client->setWindowTitle(QApplication::translate("client", "MainWindow", nullptr));
+        pushButton->setText(QApplication::translate("client", "PushButton", nullptr));
     } // retranslateUi
 
 };
 
 namespace Ui {
-    class chatpage2: public Ui_chatpage2 {};
+    class client: public Ui_client {};
 } // namespace Ui
 
 QT_END_NAMESPACE
 
-#endif // UI_CHATPAGE2_H
+#endif // UI_client_H

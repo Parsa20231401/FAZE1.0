@@ -1,9 +1,9 @@
 #include "server.h"
-#include "ui_chatpage.h"
+#include "ui_server.h"
 
-chatpage::chatpage(QWidget *parent) :
+server::server(QWidget *parent) :
     QMainWindow(parent),
-    ui(new Ui::chatpage)
+    ui(new Ui::server)
 {
     ui->setupUi(this);
 
@@ -11,8 +11,8 @@ chatpage::chatpage(QWidget *parent) :
 
     if(m_server->listen(QHostAddress::Any, 8080))
     {
-       connect(this, &chatpage::newMessage, this, &chatpage::displayMessage);
-       connect(m_server, &QTcpServer::newConnection, this, &chatpage::newConnection);
+       connect(this, &server::newMessage, this, &server::displayMessage);
+       connect(m_server, &QTcpServer::newConnection, this, &server::newConnection);
     }
     else
     {
@@ -21,7 +21,7 @@ chatpage::chatpage(QWidget *parent) :
     }
 }
 
-chatpage::~chatpage()
+server::~server()
 {
     foreach (QTcpSocket* socket, connection_set)
     {
@@ -35,7 +35,7 @@ chatpage::~chatpage()
     delete ui;
 }
 
-void chatpage::on_pushButton_clicked()
+void server::on_pushButton_clicked()
 {
     QString receiver = ui->comboBox_receiver->currentText();
 
@@ -61,23 +61,23 @@ void chatpage::on_pushButton_clicked()
 }
 
 
-void chatpage::newConnection()
+void server::newConnection()
 {
     while (m_server->hasPendingConnections())
         appendToSocketList(m_server->nextPendingConnection());
 }
 
-void chatpage::appendToSocketList(QTcpSocket* socket)
+void server::appendToSocketList(QTcpSocket* socket)
 {
     connection_set.insert(socket);
-    connect(socket, &QTcpSocket::readyRead, this, &chatpage::readSocket);
-    connect(socket, &QTcpSocket::disconnected, this, &chatpage::discardSocket);
+    connect(socket, &QTcpSocket::readyRead, this, &server::readSocket);
+    connect(socket, &QTcpSocket::disconnected, this, &server::discardSocket);
 
     ui->comboBox_receiver->addItem(QString::number(socket->socketDescriptor()));
     displayMessage(QString("INFO :: Client with sockd:%1 has just entered the room").arg(socket->socketDescriptor()));
 }
 
-void chatpage::readSocket()
+void server::readSocket()
 {
     QTcpSocket* socket = reinterpret_cast<QTcpSocket*>(sender());
 
@@ -127,7 +127,7 @@ void chatpage::readSocket()
     }
 }
 
-void chatpage::discardSocket()
+void server::discardSocket()
 {
     QTcpSocket* socket = reinterpret_cast<QTcpSocket*>(sender());
     QSet<QTcpSocket*>::iterator it = connection_set.find(socket);
@@ -141,7 +141,7 @@ void chatpage::discardSocket()
 }
 
 
-void chatpage::sendMessage(QTcpSocket* socket)
+void server::sendMessage(QTcpSocket* socket)
 {
     if(socket)
     {
@@ -169,7 +169,7 @@ void chatpage::sendMessage(QTcpSocket* socket)
         QMessageBox::critical(this,"QTCPServer","Not connected");
 }
 
-void chatpage::sendAttachment(QTcpSocket* socket, QString filePath)
+void server::sendAttachment(QTcpSocket* socket, QString filePath)
 {
     if(socket)
     {
@@ -202,12 +202,12 @@ void chatpage::sendAttachment(QTcpSocket* socket, QString filePath)
         QMessageBox::critical(this,"QTCPServer","Not connected");
 }
 
-void chatpage::displayMessage(const QString& str)
+void server::displayMessage(const QString& str)
 {
     ui->textBrowser_receivedMessages->text().append(str);
 }
 
-void chatpage::displayError(QAbstractSocket::SocketError socketError)
+void server::displayError(QAbstractSocket::SocketError socketError)
 {
     switch (socketError) {
         case QAbstractSocket::RemoteHostClosedError:
@@ -225,7 +225,7 @@ void chatpage::displayError(QAbstractSocket::SocketError socketError)
     }
 }
 
-void chatpage::refreshComboBox(){
+void server::refreshComboBox(){
     ui->comboBox_receiver->clear();
     ui->comboBox_receiver->addItem("Broadcast");
     foreach(QTcpSocket* socket, connection_set)

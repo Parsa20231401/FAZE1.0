@@ -6,7 +6,7 @@
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
-#include "../../entername2/client.h"
+#include "../client.h"
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
@@ -22,7 +22,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_client_t {
     QByteArrayData data[11];
-    char stringdata0[142];
+    char stringdata0[139];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -31,17 +31,17 @@ struct qt_meta_stringdata_client_t {
     )
 static const qt_meta_stringdata_client_t qt_meta_stringdata_client = {
     {
-QT_MOC_LITERAL(0, 0, 9), // "client"
-QT_MOC_LITERAL(1, 10, 10), // "newMessage"
-QT_MOC_LITERAL(2, 21, 0), // ""
-QT_MOC_LITERAL(3, 22, 10), // "readSocket"
-QT_MOC_LITERAL(4, 33, 13), // "discardSocket"
-QT_MOC_LITERAL(5, 47, 12), // "displayError"
-QT_MOC_LITERAL(6, 60, 28), // "QAbstractSocket::SocketError"
-QT_MOC_LITERAL(7, 89, 11), // "socketError"
-QT_MOC_LITERAL(8, 101, 14), // "displayMessage"
-QT_MOC_LITERAL(9, 116, 3), // "str"
-QT_MOC_LITERAL(10, 120, 21) // "on_pushButton_clicked"
+QT_MOC_LITERAL(0, 0, 6), // "client"
+QT_MOC_LITERAL(1, 7, 10), // "newMessage"
+QT_MOC_LITERAL(2, 18, 0), // ""
+QT_MOC_LITERAL(3, 19, 10), // "readSocket"
+QT_MOC_LITERAL(4, 30, 13), // "discardSocket"
+QT_MOC_LITERAL(5, 44, 12), // "displayError"
+QT_MOC_LITERAL(6, 57, 28), // "QAbstractSocket::SocketError"
+QT_MOC_LITERAL(7, 86, 11), // "socketError"
+QT_MOC_LITERAL(8, 98, 14), // "displayMessage"
+QT_MOC_LITERAL(9, 113, 3), // "str"
+QT_MOC_LITERAL(10, 117, 21) // "on_pushButton_clicked"
 
     },
     "client\0newMessage\0\0readSocket\0"

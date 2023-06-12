@@ -12,10 +12,10 @@
 #include <QTcpSocket>
 
 namespace Ui {
-class chatpage2;
+class client;
 }
 
-class chatpage2 : public QMainWindow
+class client : public QMainWindow
 {
     Q_OBJECT
 
@@ -32,12 +32,12 @@ private slots:
     void on_pushButton_clicked();
 
 public:
-    explicit chatpage2(QWidget *parent = nullptr);
-    ~chatpage2();
+    explicit client(QWidget *parent = nullptr);
+    ~client();
 
 private:
 
-    Ui::chatpage2 *ui;
+    Ui::client *ui;
     QTcpSocket* socket;
 };
 
