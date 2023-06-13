@@ -961,7 +961,10 @@ debug/entrycode.o: ../entername2/entrycode.cpp ../entername2/entrycode.h \
 		D:/QT/5.12.12/mingw73_32/include/QtWidgets/qactiongroup.h \
 		D:/QT/5.12.12/mingw73_32/include/QtWidgets/QStatusBar \
 		D:/QT/5.12.12/mingw73_32/include/QtWidgets/qstatusbar.h \
-		D:/QT/5.12.12/mingw73_32/include/QtWidgets/QWidget
+		D:/QT/5.12.12/mingw73_32/include/QtWidgets/QWidget \
+		D:/QT/5.12.12/mingw73_32/include/QtWidgets/QMessageBox \
+		D:/QT/5.12.12/mingw73_32/include/QtWidgets/qmessagebox.h \
+		D:/QT/5.12.12/mingw73_32/include/QtWidgets/qdialog.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\entrycode.o ..\entername2\entrycode.cpp
 
 debug/main.o: ../entername2/main.cpp ../entername2/mainwindow.h \
