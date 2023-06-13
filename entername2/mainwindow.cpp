@@ -1,7 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "QMessageBox"
-//#include "entrycode.h"
+#include "entrycode.h"
 #include "stdio.h"
 #include "server.h"
 
@@ -67,7 +67,7 @@ void MainWindow::on_pushButton_4_clicked() {
 
 void MainWindow::on_pushButton_5_clicked() {
 
-    server *c = new server(this);
+    entrycode *c = new entrycode(this);
 
     switch (r) {
             case 0:

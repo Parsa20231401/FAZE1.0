@@ -2,7 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-//#include "entrycode.h"
+#include "entrycode.h"
 #include <QFile>
 #include <QFileDialog>
 #include <QMessageBox>
@@ -43,7 +43,7 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-//    entrycode *c;
+    entrycode *c;
 
 };
 #endif // MAINWINDOW_H

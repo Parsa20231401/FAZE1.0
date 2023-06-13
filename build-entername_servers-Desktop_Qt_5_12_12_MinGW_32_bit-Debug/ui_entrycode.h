@@ -11,8 +11,12 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QGroupBox>
+#include <QtWidgets/QLabel>
+#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QWidget>
 
@@ -21,8 +25,13 @@ QT_BEGIN_NAMESPACE
 class Ui_entrycode
 {
 public:
-    QMenuBar *menubar;
     QWidget *centralwidget;
+    QLineEdit *lineEdit;
+    QGroupBox *groupBox;
+    QLabel *label;
+    QLabel *label_4;
+    QPushButton *pushButton;
+    QMenuBar *menubar;
     QStatusBar *statusbar;
 
     void setupUi(QMainWindow *entrycode)
@@ -30,12 +39,28 @@ public:
         if (entrycode->objectName().isEmpty())
             entrycode->setObjectName(QString::fromUtf8("entrycode"));
         entrycode->resize(800, 600);
-        menubar = new QMenuBar(entrycode);
-        menubar->setObjectName(QString::fromUtf8("menubar"));
-        entrycode->setMenuBar(menubar);
         centralwidget = new QWidget(entrycode);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
+        lineEdit = new QLineEdit(centralwidget);
+        lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
+        lineEdit->setGeometry(QRect(300, 370, 231, 51));
+        groupBox = new QGroupBox(centralwidget);
+        groupBox->setObjectName(QString::fromUtf8("groupBox"));
+        groupBox->setGeometry(QRect(240, 30, 321, 281));
+        label = new QLabel(groupBox);
+        label->setObjectName(QString::fromUtf8("label"));
+        label->setGeometry(QRect(60, 110, 61, 31));
+        label_4 = new QLabel(groupBox);
+        label_4->setObjectName(QString::fromUtf8("label_4"));
+        label_4->setGeometry(QRect(150, 100, 121, 41));
+        pushButton = new QPushButton(groupBox);
+        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+        pushButton->setGeometry(QRect(130, 190, 80, 25));
         entrycode->setCentralWidget(centralwidget);
+        menubar = new QMenuBar(entrycode);
+        menubar->setObjectName(QString::fromUtf8("menubar"));
+        menubar->setGeometry(QRect(0, 0, 800, 25));
+        entrycode->setMenuBar(menubar);
         statusbar = new QStatusBar(entrycode);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
         entrycode->setStatusBar(statusbar);
@@ -48,6 +73,10 @@ public:
     void retranslateUi(QMainWindow *entrycode)
     {
         entrycode->setWindowTitle(QApplication::translate("entrycode", "MainWindow", nullptr));
+        groupBox->setTitle(QApplication::translate("entrycode", "GroupBox", nullptr));
+        label->setText(QApplication::translate("entrycode", "code:", nullptr));
+        label_4->setText(QApplication::translate("entrycode", "TextLabel", nullptr));
+        pushButton->setText(QApplication::translate("entrycode", "ok", nullptr));
     } // retranslateUi
 
 };
