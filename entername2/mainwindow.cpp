@@ -1,7 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "QMessageBox"
-#include "entrycode.h"
+//#include "entrycode.h"
 #include "stdio.h"
 #include "server.h"
 
@@ -38,8 +38,6 @@ MainWindow::~MainWindow() {
 
 
     delete ui;
-    delete c;
-
 }
 
 
