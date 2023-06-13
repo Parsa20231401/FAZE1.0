@@ -21,7 +21,7 @@
 
 QT_BEGIN_NAMESPACE
 
-class Ui_client
+class Ui_chatpage2
 {
 public:
     QWidget *centralwidget;
@@ -31,12 +31,12 @@ public:
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
-    void setupUi(QMainWindow *client)
+    void setupUi(QMainWindow *chatpage2)
     {
-        if (client->objectName().isEmpty())
-            client->setObjectName(QString::fromUtf8("client"));
-        client->resize(735, 479);
-        centralwidget = new QWidget(client);
+        if (chatpage2->objectName().isEmpty())
+            chatpage2->setObjectName(QString::fromUtf8("chatpage2"));
+        chatpage2->resize(735, 479);
+        centralwidget = new QWidget(chatpage2);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         pushButton = new QPushButton(centralwidget);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
@@ -47,30 +47,30 @@ public:
         textBrowser_receivedMessages = new QTextBrowser(centralwidget);
         textBrowser_receivedMessages->setObjectName(QString::fromUtf8("textBrowser_receivedMessages"));
         textBrowser_receivedMessages->setGeometry(QRect(10, 10, 701, 371));
-        client->setCentralWidget(centralwidget);
-        menubar = new QMenuBar(client);
+        chatpage2->setCentralWidget(centralwidget);
+        menubar = new QMenuBar(chatpage2);
         menubar->setObjectName(QString::fromUtf8("menubar"));
         menubar->setGeometry(QRect(0, 0, 735, 26));
-        client->setMenuBar(menubar);
-        statusbar = new QStatusBar(client);
+        chatpage2->setMenuBar(menubar);
+        statusbar = new QStatusBar(chatpage2);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
-        client->setStatusBar(statusbar);
+        chatpage2->setStatusBar(statusbar);
 
-        retranslateUi(client);
+        retranslateUi(chatpage2);
 
-        QMetaObject::connectSlotsByName(client);
+        QMetaObject::connectSlotsByName(chatpage2);
     } // setupUi
 
-    void retranslateUi(QMainWindow *client)
+    void retranslateUi(QMainWindow *chatpage2)
     {
-        client->setWindowTitle(QApplication::translate("client", "MainWindow", nullptr));
-        pushButton->setText(QApplication::translate("client", "PushButton", nullptr));
+        chatpage2->setWindowTitle(QApplication::translate("chatpage2", "MainWindow", nullptr));
+        pushButton->setText(QApplication::translate("chatpage2", "PushButton", nullptr));
     } // retranslateUi
 
 };
 
 namespace Ui {
-    class client: public Ui_client {};
+    class chatpage2: public Ui_chatpage2 {};
 } // namespace Ui
 
 QT_END_NAMESPACE

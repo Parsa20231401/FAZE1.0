@@ -796,7 +796,7 @@ debug/client.o: ../entername2/client.cpp ../entername2/client.h \
 		D:/QT/5.12.12/mingw73_32/include/QtCore/qstandardpaths.h \
 		D:/QT/5.12.12/mingw73_32/include/QtNetwork/QTcpSocket \
 		D:/QT/5.12.12/mingw73_32/include/QtNetwork/qtcpsocket.h \
-		../entername2/ui_chatpage2.h \
+		../entername2/ui_client.h \
 		D:/QT/5.12.12/mingw73_32/include/QtCore/QVariant \
 		D:/QT/5.12.12/mingw73_32/include/QtWidgets/QApplication \
 		D:/QT/5.12.12/mingw73_32/include/QtWidgets/qapplication.h \
@@ -1392,7 +1392,7 @@ debug/server.o: ../entername2/server.cpp ../entername2/server.h \
 		D:/QT/5.12.12/mingw73_32/include/QtWidgets/qfiledialog.h \
 		D:/QT/5.12.12/mingw73_32/include/QtCore/qdir.h \
 		D:/QT/5.12.12/mingw73_32/include/QtCore/qfileinfo.h \
-		../entername2/ui_chatpage.h \
+		../entername2/ui_server.h \
 		D:/QT/5.12.12/mingw73_32/include/QtCore/QVariant \
 		D:/QT/5.12.12/mingw73_32/include/QtWidgets/QApplication \
 		D:/QT/5.12.12/mingw73_32/include/QtWidgets/qapplication.h \

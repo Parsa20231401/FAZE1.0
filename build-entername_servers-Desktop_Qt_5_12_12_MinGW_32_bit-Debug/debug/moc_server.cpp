@@ -20,39 +20,39 @@
 QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
-struct qt_meta_stringdata_chatpage_t {
+struct qt_meta_stringdata_server_t {
     QByteArrayData data[19];
-    char stringdata0[245];
+    char stringdata0[243];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
-    qptrdiff(offsetof(qt_meta_stringdata_chatpage_t, stringdata0) + ofs \
+    qptrdiff(offsetof(qt_meta_stringdata_server_t, stringdata0) + ofs \
         - idx * sizeof(QByteArrayData)) \
     )
-static const qt_meta_stringdata_chatpage_t qt_meta_stringdata_chatpage = {
+static const qt_meta_stringdata_server_t qt_meta_stringdata_server = {
     {
-QT_MOC_LITERAL(0, 0, 8), // "chatpage"
-QT_MOC_LITERAL(1, 9, 10), // "newMessage"
-QT_MOC_LITERAL(2, 20, 0), // ""
-QT_MOC_LITERAL(3, 21, 13), // "newConnection"
-QT_MOC_LITERAL(4, 35, 18), // "appendToSocketList"
-QT_MOC_LITERAL(5, 54, 11), // "QTcpSocket*"
-QT_MOC_LITERAL(6, 66, 6), // "socket"
-QT_MOC_LITERAL(7, 73, 10), // "readSocket"
-QT_MOC_LITERAL(8, 84, 13), // "discardSocket"
-QT_MOC_LITERAL(9, 98, 12), // "displayError"
-QT_MOC_LITERAL(10, 111, 28), // "QAbstractSocket::SocketError"
-QT_MOC_LITERAL(11, 140, 11), // "socketError"
-QT_MOC_LITERAL(12, 152, 14), // "displayMessage"
-QT_MOC_LITERAL(13, 167, 3), // "str"
-QT_MOC_LITERAL(14, 171, 11), // "sendMessage"
-QT_MOC_LITERAL(15, 183, 14), // "sendAttachment"
-QT_MOC_LITERAL(16, 198, 8), // "filePath"
-QT_MOC_LITERAL(17, 207, 15), // "refreshComboBox"
-QT_MOC_LITERAL(18, 223, 21) // "on_pushButton_clicked"
+QT_MOC_LITERAL(0, 0, 6), // "server"
+QT_MOC_LITERAL(1, 7, 10), // "newMessage"
+QT_MOC_LITERAL(2, 18, 0), // ""
+QT_MOC_LITERAL(3, 19, 13), // "newConnection"
+QT_MOC_LITERAL(4, 33, 18), // "appendToSocketList"
+QT_MOC_LITERAL(5, 52, 11), // "QTcpSocket*"
+QT_MOC_LITERAL(6, 64, 6), // "socket"
+QT_MOC_LITERAL(7, 71, 10), // "readSocket"
+QT_MOC_LITERAL(8, 82, 13), // "discardSocket"
+QT_MOC_LITERAL(9, 96, 12), // "displayError"
+QT_MOC_LITERAL(10, 109, 28), // "QAbstractSocket::SocketError"
+QT_MOC_LITERAL(11, 138, 11), // "socketError"
+QT_MOC_LITERAL(12, 150, 14), // "displayMessage"
+QT_MOC_LITERAL(13, 165, 3), // "str"
+QT_MOC_LITERAL(14, 169, 11), // "sendMessage"
+QT_MOC_LITERAL(15, 181, 14), // "sendAttachment"
+QT_MOC_LITERAL(16, 196, 8), // "filePath"
+QT_MOC_LITERAL(17, 205, 15), // "refreshComboBox"
+QT_MOC_LITERAL(18, 221, 21) // "on_pushButton_clicked"
 
     },
-    "chatpage\0newMessage\0\0newConnection\0"
+    "server\0newMessage\0\0newConnection\0"
     "appendToSocketList\0QTcpSocket*\0socket\0"
     "readSocket\0discardSocket\0displayError\0"
     "QAbstractSocket::SocketError\0socketError\0"
@@ -62,7 +62,7 @@ QT_MOC_LITERAL(18, 223, 21) // "on_pushButton_clicked"
 };
 #undef QT_MOC_LITERAL
 
-static const uint qt_meta_data_chatpage[] = {
+static const uint qt_meta_data_server[] = {
 
  // content:
        8,       // revision
@@ -108,10 +108,10 @@ static const uint qt_meta_data_chatpage[] = {
        0        // eod
 };
 
-void chatpage::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+void server::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     if (_c == QMetaObject::InvokeMetaMethod) {
-        auto *_t = static_cast<chatpage *>(_o);
+        auto *_t = static_cast<server *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
         case 0: _t->newMessage((*reinterpret_cast< QString(*)>(_a[1]))); break;
@@ -162,8 +162,8 @@ void chatpage::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, vo
     } else if (_c == QMetaObject::IndexOfMethod) {
         int *result = reinterpret_cast<int *>(_a[0]);
         {
-            using _t = void (chatpage::*)(QString );
-            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&chatpage::newMessage)) {
+            using _t = void (server::*)(QString );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&server::newMessage)) {
                 *result = 0;
                 return;
             }
@@ -171,30 +171,30 @@ void chatpage::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, vo
     }
 }
 
-QT_INIT_METAOBJECT const QMetaObject chatpage::staticMetaObject = { {
+QT_INIT_METAOBJECT const QMetaObject server::staticMetaObject = { {
     &QMainWindow::staticMetaObject,
-    qt_meta_stringdata_chatpage.data,
-    qt_meta_data_chatpage,
+    qt_meta_stringdata_server.data,
+    qt_meta_data_server,
     qt_static_metacall,
     nullptr,
     nullptr
 } };
 
 
-const QMetaObject *chatpage::metaObject() const
+const QMetaObject *server::metaObject() const
 {
     return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
 }
 
-void *chatpage::qt_metacast(const char *_clname)
+void *server::qt_metacast(const char *_clname)
 {
     if (!_clname) return nullptr;
-    if (!strcmp(_clname, qt_meta_stringdata_chatpage.stringdata0))
+    if (!strcmp(_clname, qt_meta_stringdata_server.stringdata0))
         return static_cast<void*>(this);
     return QMainWindow::qt_metacast(_clname);
 }
 
-int chatpage::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+int server::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
     _id = QMainWindow::qt_metacall(_c, _id, _a);
     if (_id < 0)
@@ -212,7 +212,7 @@ int chatpage::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 }
 
 // SIGNAL 0
-void chatpage::newMessage(QString _t1)
+void server::newMessage(QString _t1)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
     QMetaObject::activate(this, &staticMetaObject, 0, _a);
