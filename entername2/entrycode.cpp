@@ -49,78 +49,42 @@ void entrycode::on_pushButton_clicked()
 //}
 
 
+void entrycode::on_pushButton_2_clicked()
+{
+    QString code = ui->lineEdit->text();
+
+    if (code == thelen)
+    {
+        server *serverPage = new server(this);
+        serverPage->show();
+        client *clientPage = new client(this);
+        clientPage->show();
+    }
+    else{
+        QMessageBox::information(this,"WRONG code","try again");
+    }
+}
+
+
 //void entrycode::on_pushButton_2_toggled(bool checked)
 //{
 //    QString code = ui->lineEdit->text();
 
-//    server *serverPage = new server(this);
-//    client *clientPage = new client(this);
+//   server *serverPage = new server(this);
+//   client *clientPage = new client(this);
 
-//    if (code == thelen)
-//    {
-//        if (checked == true)
-//            serverPage->show();
-//        else
-//            clientPage->show();
-//    }
-//    else{
-//        QMessageBox::information(this,"WRONG code","try again");
-//    }
+//   if (code == thelen)
+//   {
+//       if (checked){
+//           serverPage->show();
+//       }
+//       else {
+//           clientPage->show();
+//       }
+//   }
+//   else{
+//       QMessageBox::information(this,"WRONG code","try again");
+//   }
 //}
 
-
-
-//void entrycode::on_pushButton_2_clicked()
-//{
-//    QString code = ui->lineEdit->text();
-
-////    ui->pushButton_2->setCheckable(true)
-//    server *serverPage = new server(this);
-////    client *clientPage = new client(this);
-
-//    if (code == thelen)
-//    {
-////        if (checked == true)
-//            serverPage->show();
-////        else
-////            clientPage->show();
-//    }
-//    else{
-//        QMessageBox::information(this,"WRONG code","try again");
-//    }
-//}
-
-
-void entrycode::on_pushButton_2_toggled(bool checked)
-{
-    QString code = ui->lineEdit->text();
-
-   server *serverPage = new server(this);
-   client *clientPage = new client(this);
-
-   if (code == thelen)
-   {
-       if (checked){
-           serverPage->show();
-       }
-       else {
-           clientPage->show();
-       }
-   }
-   else{
-       QMessageBox::information(this,"WRONG code","try again");
-   }
-}
-
-
-void entrycode::on_pushButton_3_toggled(bool checked)
-{
-    if (checked){
-        ui->pushButton_2->setText("it workes");
-    }
-    else
-    {
-        ui->pushButton_2->setText("it still workes");
-    }
-}
 

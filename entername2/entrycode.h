@@ -21,11 +21,8 @@ private slots:
 
 //    void on_lineEdit_returnPressed();
 
-//    void on_pushButton_2_clicked();
+    void on_pushButton_2_clicked();
 
-    void on_pushButton_2_toggled(bool checked);
-
-    void on_pushButton_3_toggled(bool checked);
 
 private:
     Ui::entrycode *ui;
