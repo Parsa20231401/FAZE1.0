@@ -35,6 +35,7 @@ public:
     QLabel *label;
     QLabel *label_4;
     QPushButton *pushButton_2;
+    QPushButton *pushButton_3;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -78,6 +79,9 @@ public:
         pushButton_2 = new QPushButton(centralwidget);
         pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
         pushButton_2->setGeometry(QRect(460, 374, 111, 41));
+        pushButton_3 = new QPushButton(centralwidget);
+        pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
+        pushButton_3->setGeometry(QRect(50, 170, 101, 211));
         entrycode->setCentralWidget(centralwidget);
         menubar = new QMenuBar(entrycode);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -100,6 +104,7 @@ public:
         label->setText(QApplication::translate("entrycode", "code:", nullptr));
         label_4->setText(QApplication::translate("entrycode", "TextLabel", nullptr));
         pushButton_2->setText(QApplication::translate("entrycode", "open", nullptr));
+        pushButton_3->setText(QApplication::translate("entrycode", "PushButton", nullptr));
     } // retranslateUi
 
 };

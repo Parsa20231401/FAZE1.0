@@ -2,7 +2,6 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include "entrycode.h"
 #include <QFile>
 #include <QFileDialog>
 #include <QMessageBox>
@@ -12,6 +11,10 @@
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
+
+namespace Ui {
+class MainWindow;
+}
 
 class MainWindow : public QMainWindow
 {
@@ -23,6 +26,8 @@ public:
 
 private slots:
     void on_pushButton_2_clicked();
+
+
 
     void on_pushButton_4_clicked();
 
@@ -40,10 +45,11 @@ private slots:
 
    void on_pushButton_3_clicked();
 
+   void on_pushButton_clicked();
+
+   void on_shortcutButton1_clicked();
 
 private:
     Ui::MainWindow *ui;
-    entrycode *c;
-
 };
 #endif // MAINWINDOW_H

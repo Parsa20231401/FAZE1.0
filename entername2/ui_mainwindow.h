@@ -35,7 +35,6 @@ public:
     QLabel *label_5;
     QLineEdit *lineEdit;
     QLineEdit *lineEdit_2;
-    QLabel *label_6;
     QLabel *label_8;
     QPushButton *pushButton;
     QLabel *label_12;
@@ -74,6 +73,7 @@ public:
     QGroupBox *groupBox_4;
     QLineEdit *lineEdit_5;
     QPushButton *pushButton_5;
+    QPushButton *shortcutButton1;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -89,7 +89,7 @@ public:
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         groupBox = new QGroupBox(centralwidget);
         groupBox->setObjectName(QString::fromUtf8("groupBox"));
-        groupBox->setGeometry(QRect(230, 50, 551, 401));
+        groupBox->setGeometry(QRect(190, 70, 551, 401));
         groupBox->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 0, 0);\n"
 "background-color: rgb(255, 255, 255);"));
         label = new QLabel(groupBox);
@@ -113,9 +113,6 @@ public:
         lineEdit_2 = new QLineEdit(groupBox);
         lineEdit_2->setObjectName(QString::fromUtf8("lineEdit_2"));
         lineEdit_2->setGeometry(QRect(100, 130, 137, 22));
-        label_6 = new QLabel(groupBox);
-        label_6->setObjectName(QString::fromUtf8("label_6"));
-        label_6->setGeometry(QRect(20, 200, 51, 16));
         label_8 = new QLabel(groupBox);
         label_8->setObjectName(QString::fromUtf8("label_8"));
         label_8->setGeometry(QRect(240, 70, 307, 16));
@@ -253,10 +250,17 @@ public:
         pushButton_5->setObjectName(QString::fromUtf8("pushButton_5"));
         pushButton_5->setEnabled(true);
         pushButton_5->setGeometry(QRect(140, 170, 93, 28));
+        shortcutButton1 = new QPushButton(centralwidget);
+        shortcutButton1->setObjectName(QString::fromUtf8("shortcutButton1"));
+        shortcutButton1->setGeometry(QRect(850, 540, 261, 71));
+        QFont font;
+        font.setPointSize(12);
+        shortcutButton1->setFont(font);
+        shortcutButton1->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 0, 0);"));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 1583, 26));
+        menubar->setGeometry(QRect(0, 0, 1583, 25));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
@@ -277,7 +281,6 @@ public:
         label_4->setText(QApplication::translate("MainWindow", "password:", nullptr));
         label_5->setText(QApplication::translate("MainWindow", "username:", nullptr));
         lineEdit->setText(QString());
-        label_6->setText(QString());
         label_8->setText(QApplication::translate("MainWindow", "rule2:your user name should have at least 8character", nullptr));
         pushButton->setText(QApplication::translate("MainWindow", "log in", nullptr));
         label_12->setText(QString());
@@ -310,6 +313,7 @@ public:
         groupBox_4->setTitle(QApplication::translate("MainWindow", "enter the capcha", nullptr));
         lineEdit_5->setPlaceholderText(QApplication::translate("MainWindow", "write here", nullptr));
         pushButton_5->setText(QApplication::translate("MainWindow", "go", nullptr));
+        shortcutButton1->setText(QApplication::translate("MainWindow", "temporary button", nullptr));
     } // retranslateUi
 
 };

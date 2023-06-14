@@ -250,6 +250,7 @@ Makefile: entername_servers.pro D:/QT/5.12.12/mingw73_32/mkspecs/win32-g++/qmake
 		D:/QT/5.12.12/mingw73_32/lib/Qt5Widgets.prl \
 		D:/QT/5.12.12/mingw73_32/lib/Qt5Gui.prl \
 		D:/QT/5.12.12/mingw73_32/lib/Qt5Network.prl \
+		D:/QT/5.12.12/mingw73_32/lib/Qt5Sql.prl \
 		D:/QT/5.12.12/mingw73_32/lib/Qt5Core.prl \
 		D:/QT/5.12.12/mingw73_32/lib/qtmain.prl
 	$(QMAKE) -o Makefile entername_servers.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
@@ -440,6 +441,7 @@ entername_servers.pro:
 D:/QT/5.12.12/mingw73_32/lib/Qt5Widgets.prl:
 D:/QT/5.12.12/mingw73_32/lib/Qt5Gui.prl:
 D:/QT/5.12.12/mingw73_32/lib/Qt5Network.prl:
+D:/QT/5.12.12/mingw73_32/lib/Qt5Sql.prl:
 D:/QT/5.12.12/mingw73_32/lib/Qt5Core.prl:
 D:/QT/5.12.12/mingw73_32/lib/qtmain.prl:
 qmake: FORCE

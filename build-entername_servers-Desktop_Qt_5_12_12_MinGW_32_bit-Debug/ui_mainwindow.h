@@ -34,8 +34,6 @@ public:
     QLabel *label_4;
     QLabel *label_5;
     QLineEdit *lineEdit;
-    QLineEdit *lineEdit_2;
-    QLabel *label_6;
     QLabel *label_8;
     QPushButton *pushButton;
     QLabel *label_12;
@@ -48,6 +46,7 @@ public:
     QLabel *label_25;
     QLabel *label_26;
     QComboBox *comboBox_receiver;
+    QPushButton *pushButton_8;
     QGroupBox *groupBox_3;
     QLabel *label_14;
     QLabel *label_15;
@@ -89,7 +88,7 @@ public:
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         groupBox = new QGroupBox(centralwidget);
         groupBox->setObjectName(QString::fromUtf8("groupBox"));
-        groupBox->setGeometry(QRect(230, 50, 551, 401));
+        groupBox->setGeometry(QRect(190, 70, 551, 401));
         groupBox->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 0, 0);\n"
 "background-color: rgb(255, 255, 255);"));
         label = new QLabel(groupBox);
@@ -110,12 +109,6 @@ public:
         lineEdit = new QLineEdit(groupBox);
         lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
         lineEdit->setGeometry(QRect(100, 70, 137, 22));
-        lineEdit_2 = new QLineEdit(groupBox);
-        lineEdit_2->setObjectName(QString::fromUtf8("lineEdit_2"));
-        lineEdit_2->setGeometry(QRect(100, 130, 137, 22));
-        label_6 = new QLabel(groupBox);
-        label_6->setObjectName(QString::fromUtf8("label_6"));
-        label_6->setGeometry(QRect(20, 200, 51, 16));
         label_8 = new QLabel(groupBox);
         label_8->setObjectName(QString::fromUtf8("label_8"));
         label_8->setGeometry(QRect(240, 70, 307, 16));
@@ -161,6 +154,10 @@ public:
         comboBox_receiver = new QComboBox(groupBox);
         comboBox_receiver->setObjectName(QString::fromUtf8("comboBox_receiver"));
         comboBox_receiver->setGeometry(QRect(60, 240, 131, 22));
+        pushButton_8 = new QPushButton(groupBox);
+        pushButton_8->setObjectName(QString::fromUtf8("pushButton_8"));
+        pushButton_8->setGeometry(QRect(59, 294, 111, 51));
+        pushButton_8->setStyleSheet(QString::fromUtf8("background-color: rgb(170, 170, 255);"));
         groupBox_3 = new QGroupBox(centralwidget);
         groupBox_3->setObjectName(QString::fromUtf8("groupBox_3"));
         groupBox_3->setGeometry(QRect(830, 60, 721, 411));
@@ -256,7 +253,7 @@ public:
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 1583, 26));
+        menubar->setGeometry(QRect(0, 0, 1583, 25));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
@@ -277,7 +274,6 @@ public:
         label_4->setText(QApplication::translate("MainWindow", "password:", nullptr));
         label_5->setText(QApplication::translate("MainWindow", "username:", nullptr));
         lineEdit->setText(QString());
-        label_6->setText(QString());
         label_8->setText(QApplication::translate("MainWindow", "rule2:your user name should have at least 8character", nullptr));
         pushButton->setText(QApplication::translate("MainWindow", "log in", nullptr));
         label_12->setText(QString());
@@ -289,6 +285,7 @@ public:
         label_7->setText(QApplication::translate("MainWindow", "rule1:you can not use(*&^%#$)", nullptr));
         label_25->setText(QApplication::translate("MainWindow", "rule1:you just have to use numbers", nullptr));
         label_26->setText(QApplication::translate("MainWindow", "rule2:your password should have at least 8character", nullptr));
+        pushButton_8->setText(QApplication::translate("MainWindow", "PushButton", nullptr));
         groupBox_3->setTitle(QString());
         label_14->setText(QApplication::translate("MainWindow", "welcome", nullptr));
         label_15->setText(QApplication::translate("MainWindow", "username:", nullptr));

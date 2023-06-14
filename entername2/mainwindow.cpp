@@ -2,8 +2,11 @@
 #include "ui_mainwindow.h"
 #include "QMessageBox"
 #include "entrycode.h"
-#include "stdio.h"
-#include "server.h"
+#include "QSqlDatabase"
+#include "QSqlQuery"
+#include "QSqlDriver"
+#include "QSqlQueryModel"
+
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow) {
     ui->setupUi(this);
@@ -25,28 +28,28 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     ui->comboBox->addItem("france +33");
     ui->comboBox->addItem("netherlands +31");
     ui->comboBox->addItem("australia +43");
-    ui->comboBox-> addItem("germany +49");
+    ui->comboBox->addItem("germany +49");
     ui->comboBox->addItem("japan +81");
     ui->comboBox->addItem("turkey +90");
     ui->comboBox->addItem("iraq +964");
     ui->comboBox->addItem("iran +98");
-//    entrycode *p = new entrycode(this);
+
+
+    QSqlDatabase database;
+    database = QSqlDatabase::addDatabase("QSQLITE");
+    database.setDatabaseName("d:\\usersinfo.db");
+    database.open();
 
 }
 
 MainWindow::~MainWindow() {
-
-
     delete ui;
 }
-
-
 
 void MainWindow::on_pushButton_2_clicked() {
     ui->groupBox->hide();
     ui->groupBox_3->show();
     ui->groupBox_3->move(320, 50);
-
 }
 
 int r;
@@ -67,40 +70,64 @@ void MainWindow::on_pushButton_4_clicked() {
 
 void MainWindow::on_pushButton_5_clicked() {
 
-    entrycode *c = new entrycode(this);
+
+
+    QSqlQuery q;
+    QString a1, a2, a3, a4, a5;
+
+    a1 = ui->lineEdit_3->text();
+    a2 = ui->lineEdit_4->text();
+    a3 = ui->lineEdit_6->text();
+    a4 = ui->lineEdit_7->text();
+    a5 = ui->comboBox->currentText();
+
+    q.exec("SELECT username FROM usersdata WHERE username='"+a1+"'");
+
+    if(q.first()){
+
+        QMessageBox::warning(this,"error","this username already exist");
+    }
+    else{
+
+        q.exec("INSERT INTO usersdata(username, password, email, phone, countrycode)VALUES('"+a1+"','"+a2+"','"+a3+"','"+a4+"','"+a5+"') ");
+
+    entrycode *p = new entrycode(this);
 
     switch (r) {
             case 0:
                 if (ui->lineEdit_5->text() == "433841") {
-                    c->show();
+                    p->show();
+                    hide();
                 } else {
                     QMessageBox::information(this, "wrong", "please enter correct captcha", "ok");
                 }
                 break;
             case 1:
                 if (ui->lineEdit_5->text() == "2W4M") {
-                    c->show();
+                    p->show();
+                    hide();
                 } else {
                     QMessageBox::information(this, "wrong", "please enter correct captcha", "ok");
                 }
                 break;
             case 2:
                 if (ui->lineEdit_5->text() == "Captcha") {
-                    c->show();
-
+                    p->show();
+                    hide();
                 } else {
                     QMessageBox::information(this, "wrong", "please enter correct captcha", "ok");
                 }
                 break;
             case 3:
                 if (ui->lineEdit_5->text() == "4SZXT") {
-                    c->show();
-
+                    p->show();
+                    hide();
                 } else {
                     QMessageBox::information(this, "wrong", "please enter correct captcha", "ok");
                 }
                 break;
         }
+    }
 }
 
 
@@ -161,8 +188,6 @@ void MainWindow::on_lineEdit_3_textEdited(const QString &arg1)
     }
 }
 
-
-
 void MainWindow::on_lineEdit_4_textEdited(const QString &arg1)
 {
     int len,i,sw=1;
@@ -177,8 +202,10 @@ void MainWindow::on_lineEdit_4_textEdited(const QString &arg1)
          if(sw)
              ui->label_28->setText("correct");
     }
-//     if(ui->label_27->text()=="wrong"||ui->label_28->text()=="wrong")
-//         ui->pushButton_5->setEnabled(false);
+     if(ui->label_27->text()=="wrong"||ui->label_28->text()=="wrong")
+         ui->pushButton_5->setEnabled(false);
+     if(ui->label_27->text()=="correct" && ui->label_28->text()=="correct")
+         ui->pushButton_5->setEnabled(true);
 }
 
 
@@ -187,5 +214,41 @@ void MainWindow::on_pushButton_3_clicked()
     ui->pushButton_3->hide();
     ui->pushButton_6->show();
     ui->lineEdit_4->setEchoMode(QLineEdit::Password);
+}
+
+
+void MainWindow::on_pushButton_clicked()
+{
+    QSqlQuery q, p;
+    QString a1, a2;
+
+    a1 = ui->lineEdit->text();
+    a2 = ui->lineEdit_2->text();
+
+    q.exec("SELECT username FROM usersdata WHERE username='"+a1+"'");
+
+    if(q.first()){
+
+        p.exec("SELECT password FROM usersdata WHERE password='"+a2+"'");
+        if(p.first()){
+
+            QMessageBox::information(this,"correct","Go to faze2");
+            hide();
+        }
+        else {
+            QMessageBox::information(this,"wrong","try again");
+        }
+    }
+    else {
+        QMessageBox::information(this,"wrong","try again");
+    }
+
+}
+
+
+void MainWindow::on_shortcutButton1_clicked()
+{
+    entrycode *x = new entrycode(this);
+    x->show();
 }
 
