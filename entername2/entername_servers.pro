@@ -13,18 +13,21 @@ SOURCES += \
     entrycode.cpp \
     main.cpp \
     mainwindow.cpp \
+    safhepishvaz.cpp \
     server.cpp
 
 HEADERS += \
     client.h \
     entrycode.h \
     mainwindow.h \
+    safhepishvaz.h \
     server.h
 
 FORMS += \
     client.ui \
     entrycode.ui \
     mainwindow.ui \
+    safhepishvaz.ui \
     server.ui
 
 # Default rules for deployment.

@@ -22,7 +22,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWindow_t {
     QByteArrayData data[14];
-    char stringdata0[281];
+    char stringdata0[284];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -44,7 +44,7 @@ QT_MOC_LITERAL(9, 161, 24), // "on_lineEdit_3_textEdited"
 QT_MOC_LITERAL(10, 186, 24), // "on_lineEdit_4_textEdited"
 QT_MOC_LITERAL(11, 211, 23), // "on_pushButton_3_clicked"
 QT_MOC_LITERAL(12, 235, 21), // "on_pushButton_clicked"
-QT_MOC_LITERAL(13, 257, 23) // "on_pushButton_7_clicked"
+QT_MOC_LITERAL(13, 257, 26) // "on_shortcutButton1_clicked"
 
     },
     "MainWindow\0on_pushButton_2_clicked\0\0"
@@ -54,7 +54,7 @@ QT_MOC_LITERAL(13, 257, 23) // "on_pushButton_7_clicked"
     "on_lineEdit_3_textEdited\0"
     "on_lineEdit_4_textEdited\0"
     "on_pushButton_3_clicked\0on_pushButton_clicked\0"
-    "on_pushButton_7_clicked"
+    "on_shortcutButton1_clicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -116,7 +116,7 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 7: _t->on_lineEdit_4_textEdited((*reinterpret_cast< const QString(*)>(_a[1]))); break;
         case 8: _t->on_pushButton_3_clicked(); break;
         case 9: _t->on_pushButton_clicked(); break;
-        case 10: _t->on_pushButton_7_clicked(); break;
+        case 10: _t->on_shortcutButton1_clicked(); break;
         default: ;
         }
     }
