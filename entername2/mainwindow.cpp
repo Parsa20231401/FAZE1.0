@@ -18,7 +18,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     ui->label_4->setText("<b>password:</b>");
     ui->label_15->setText("<b>username:</b>");
     ui->label_16->setText("<b>password:</b>");
-    ui->label_14->setText("<b>welcome</b>");
     ui->label_21->setText("<b>email:</b>");
     ui->label_22->setText("<b>telephone number:</b>");
     ui->groupBox_4->hide();
