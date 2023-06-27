@@ -250,5 +250,6 @@ void MainWindow::on_shortcutButton1_clicked()
 {
     entrycode *x = new entrycode(this);
     x->show();
+    hide();
 }
 

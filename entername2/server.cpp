@@ -39,7 +39,7 @@ void server::on_pushButton_clicked()
 {
     QString receiver = ui->comboBox_receiver->currentText();
 
-    if(receiver=="Broadcast")
+    if(receiver == "Broadcast")
     {
         foreach (QTcpSocket* socket,connection_set)
         {

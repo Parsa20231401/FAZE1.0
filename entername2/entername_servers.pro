@@ -37,7 +37,8 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
     capchaha.qrc \
-    cheshmha.qrc
+    cheshmha.qrc \
+    logo.qrc
 
 SUBDIRS += \
     ../../../Downloads/QTcpSocket-master/QTcpSocket-master/QTCPServer/QTCPServer.pro
