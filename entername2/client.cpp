@@ -18,12 +18,12 @@ client::client(QWidget *parent) :
 
         socket->connectToHost(QHostAddress::LocalHost,8080); // ersal darkhast vase join b server
 
-        if(socket->waitForConnected())
-           QMessageBox::information(this,"Server Status" , "connected !");
-        else{
-            QMessageBox::critical(this,"QTCPClient", QString("The following error occurred: %1.").arg(socket->errorString()));
-            exit(EXIT_FAILURE);
-        }
+//        if(socket->waitForConnected())
+////           QMessageBox::information(this,"Server Status" , "connected !");
+//        else{
+//            QMessageBox::critical(this,"QTCPClient", QString("The following error occurred: %1.").arg(socket->errorString()));
+//            exit(EXIT_FAILURE);
+//        }
 
 }
 

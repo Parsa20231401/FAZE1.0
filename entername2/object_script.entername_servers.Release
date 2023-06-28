@@ -5,6 +5,7 @@ release/mainwindow.o
 release/safhepishvaz.o
 release/server.o
 release/qrc_capchaha.o
+release/qrc_chat_icons.o
 release/qrc_cheshmha.o
 release/qrc_logo.o
 release/moc_client.o

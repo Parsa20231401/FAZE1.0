@@ -34,7 +34,6 @@ public:
     QHBoxLayout *horizontalLayout;
     QLabel *label;
     QLabel *label_4;
-    QPushButton *pushButton_2;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -47,7 +46,7 @@ public:
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         lineEdit = new QLineEdit(centralwidget);
         lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
-        lineEdit->setGeometry(QRect(170, 360, 231, 71));
+        lineEdit->setGeometry(QRect(280, 350, 231, 71));
         QFont font;
         font.setPointSize(16);
         lineEdit->setFont(font);
@@ -75,9 +74,6 @@ public:
 
         horizontalLayout->addWidget(label_4);
 
-        pushButton_2 = new QPushButton(centralwidget);
-        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
-        pushButton_2->setGeometry(QRect(460, 374, 111, 41));
         entrycode->setCentralWidget(centralwidget);
         menubar = new QMenuBar(entrycode);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -99,7 +95,6 @@ public:
         pushButton->setText(QApplication::translate("entrycode", "ok", nullptr));
         label->setText(QApplication::translate("entrycode", "code:", nullptr));
         label_4->setText(QApplication::translate("entrycode", "TextLabel", nullptr));
-        pushButton_2->setText(QApplication::translate("entrycode", "open", nullptr));
     } // retranslateUi
 
 };

@@ -37,6 +37,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
     capchaha.qrc \
+    chat_icons.qrc \
     cheshmha.qrc \
     logo.qrc
 

@@ -17,8 +17,8 @@
    <widget class="QLineEdit" name="lineEdit">
     <property name="geometry">
      <rect>
-      <x>170</x>
-      <y>360</y>
+      <x>280</x>
+      <y>350</y>
       <width>231</width>
       <height>71</height>
      </rect>
@@ -90,19 +90,6 @@
       </item>
      </layout>
     </widget>
-   </widget>
-   <widget class="QPushButton" name="pushButton_2">
-    <property name="geometry">
-     <rect>
-      <x>460</x>
-      <y>374</y>
-      <width>111</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>open</string>
-    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">

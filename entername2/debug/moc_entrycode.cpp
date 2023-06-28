@@ -22,7 +22,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_entrycode_t {
     QByteArrayData data[4];
-    char stringdata0[57];
+    char stringdata0[59];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -34,11 +34,11 @@ static const qt_meta_stringdata_entrycode_t qt_meta_stringdata_entrycode = {
 QT_MOC_LITERAL(0, 0, 9), // "entrycode"
 QT_MOC_LITERAL(1, 10, 21), // "on_pushButton_clicked"
 QT_MOC_LITERAL(2, 32, 0), // ""
-QT_MOC_LITERAL(3, 33, 23) // "on_pushButton_2_clicked"
+QT_MOC_LITERAL(3, 33, 25) // "on_lineEdit_returnPressed"
 
     },
     "entrycode\0on_pushButton_clicked\0\0"
-    "on_pushButton_2_clicked"
+    "on_lineEdit_returnPressed"
 };
 #undef QT_MOC_LITERAL
 
@@ -73,7 +73,7 @@ void entrycode::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, v
         Q_UNUSED(_t)
         switch (_id) {
         case 0: _t->on_pushButton_clicked(); break;
-        case 1: _t->on_pushButton_2_clicked(); break;
+        case 1: _t->on_lineEdit_returnPressed(); break;
         default: ;
         }
     }

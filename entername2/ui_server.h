@@ -38,7 +38,7 @@ public:
         if (server->objectName().isEmpty())
             server->setObjectName(QString::fromUtf8("server"));
         server->resize(550, 591);
-        server->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
+        server->setStyleSheet(QString::fromUtf8(""));
         centralwidget = new QWidget(server);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         pushButton = new QPushButton(centralwidget);

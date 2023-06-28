@@ -1,5 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "server.h"
+#include "client.h"
 #include "QMessageBox"
 #include "entrycode.h"
 #include "QSqlDatabase"
@@ -247,8 +249,10 @@ void MainWindow::on_pushButton_clicked()
 
 void MainWindow::on_shortcutButton1_clicked()
 {
-    entrycode *x = new entrycode(this);
-    x->show();
+    server *serverPage = new server(this);
+    serverPage->show();
+    client *clientPage = new client(this);
+    clientPage->show();
     hide();
 }
 
