@@ -12,12 +12,12 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QComboBox>
-#include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
+#include <QtWidgets/QTextBrowser>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -28,8 +28,8 @@ public:
     QWidget *centralwidget;
     QPushButton *pushButton;
     QLineEdit *lineEdit;
-    QLabel *textBrowser_receivedMessages;
     QComboBox *comboBox_receiver;
+    QTextBrowser *textBrowser;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -46,17 +46,16 @@ public:
         lineEdit = new QLineEdit(centralwidget);
         lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
         lineEdit->setGeometry(QRect(0, 480, 641, 31));
-        textBrowser_receivedMessages = new QLabel(centralwidget);
-        textBrowser_receivedMessages->setObjectName(QString::fromUtf8("textBrowser_receivedMessages"));
-        textBrowser_receivedMessages->setGeometry(QRect(0, 0, 731, 481));
-        textBrowser_receivedMessages->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 85, 0);"));
         comboBox_receiver = new QComboBox(centralwidget);
         comboBox_receiver->setObjectName(QString::fromUtf8("comboBox_receiver"));
         comboBox_receiver->setGeometry(QRect(480, 430, 181, 31));
+        textBrowser = new QTextBrowser(centralwidget);
+        textBrowser->setObjectName(QString::fromUtf8("textBrowser"));
+        textBrowser->setGeometry(QRect(50, 120, 501, 261));
         chatpage->setCentralWidget(centralwidget);
         menubar = new QMenuBar(chatpage);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 889, 26));
+        menubar->setGeometry(QRect(0, 0, 889, 25));
         chatpage->setMenuBar(menubar);
         statusbar = new QStatusBar(chatpage);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
@@ -71,7 +70,6 @@ public:
     {
         chatpage->setWindowTitle(QApplication::translate("chatpage", "MainWindow", nullptr));
         pushButton->setText(QApplication::translate("chatpage", "PushButton", nullptr));
-        textBrowser_receivedMessages->setText(QApplication::translate("chatpage", "TextLabel", nullptr));
     } // retranslateUi
 
 };

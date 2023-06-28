@@ -12,13 +12,16 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QComboBox>
+#include <QtWidgets/QFormLayout>
 #include <QtWidgets/QGroupBox>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
+#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -31,45 +34,57 @@ public:
     QLabel *label;
     QLabel *label_2;
     QLabel *label_3;
-    QLabel *label_4;
-    QLabel *label_5;
-    QLineEdit *lineEdit;
-    QLineEdit *lineEdit_2;
-    QLabel *label_8;
     QPushButton *pushButton;
     QLabel *label_12;
     QGroupBox *groupBox_2;
     QLabel *label_13;
     QPushButton *pushButton_2;
+    QWidget *formLayoutWidget;
+    QFormLayout *formLayout;
+    QLabel *label_5;
+    QLineEdit *lineEdit;
     QLabel *label_19;
+    QLabel *label_4;
+    QLineEdit *lineEdit_2;
     QLabel *label_20;
+    QWidget *verticalLayoutWidget;
+    QVBoxLayout *verticalLayout_2;
     QLabel *label_7;
+    QLabel *label_8;
+    QWidget *verticalLayoutWidget_2;
+    QVBoxLayout *verticalLayout_3;
     QLabel *label_25;
     QLabel *label_26;
-    QComboBox *comboBox_receiver;
     QGroupBox *groupBox_3;
-    QLabel *label_14;
-    QLabel *label_15;
-    QLineEdit *lineEdit_3;
-    QLabel *label_16;
-    QLineEdit *lineEdit_4;
     QLabel *label_17;
     QPushButton *pushButton_4;
     QLabel *label_18;
     QLabel *label_11;
+    QPushButton *pushButton_3;
+    QWidget *formLayoutWidget_2;
+    QFormLayout *formLayout_3;
+    QLabel *label_15;
+    QLineEdit *lineEdit_3;
+    QLabel *label_27;
+    QLabel *label_16;
+    QHBoxLayout *horizontalLayout_3;
+    QLineEdit *lineEdit_4;
     QPushButton *pushButton_6;
+    QLabel *label_28;
     QLabel *label_21;
     QLineEdit *lineEdit_6;
     QLabel *label_22;
-    QLineEdit *lineEdit_7;
+    QHBoxLayout *horizontalLayout_5;
     QComboBox *comboBox;
+    QLineEdit *lineEdit_7;
+    QWidget *verticalLayoutWidget_3;
+    QVBoxLayout *verticalLayout_4;
     QLabel *label_23;
     QLabel *label_24;
+    QWidget *verticalLayoutWidget_4;
+    QVBoxLayout *verticalLayout_5;
     QLabel *label_9;
     QLabel *label_10;
-    QLabel *label_27;
-    QLabel *label_28;
-    QPushButton *pushButton_3;
     QGroupBox *groupBox_4;
     QLineEdit *lineEdit_5;
     QPushButton *pushButton_5;
@@ -89,7 +104,7 @@ public:
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         groupBox = new QGroupBox(centralwidget);
         groupBox->setObjectName(QString::fromUtf8("groupBox"));
-        groupBox->setGeometry(QRect(190, 70, 551, 401));
+        groupBox->setGeometry(QRect(170, 80, 581, 401));
         groupBox->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 0, 0);\n"
 "background-color: rgb(255, 255, 255);"));
         label = new QLabel(groupBox);
@@ -97,35 +112,19 @@ public:
         label->setGeometry(QRect(10, 0, 151, 21));
         label_2 = new QLabel(groupBox);
         label_2->setObjectName(QString::fromUtf8("label_2"));
-        label_2->setGeometry(QRect(10, 20, 141, 31));
+        label_2->setGeometry(QRect(10, 10, 161, 31));
         label_3 = new QLabel(groupBox);
         label_3->setObjectName(QString::fromUtf8("label_3"));
         label_3->setGeometry(QRect(20, 100, 55, 16));
-        label_4 = new QLabel(groupBox);
-        label_4->setObjectName(QString::fromUtf8("label_4"));
-        label_4->setGeometry(QRect(10, 130, 71, 16));
-        label_5 = new QLabel(groupBox);
-        label_5->setObjectName(QString::fromUtf8("label_5"));
-        label_5->setGeometry(QRect(10, 70, 62, 16));
-        lineEdit = new QLineEdit(groupBox);
-        lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
-        lineEdit->setGeometry(QRect(100, 70, 137, 22));
-        lineEdit_2 = new QLineEdit(groupBox);
-        lineEdit_2->setObjectName(QString::fromUtf8("lineEdit_2"));
-        lineEdit_2->setGeometry(QRect(100, 130, 137, 22));
-        label_8 = new QLabel(groupBox);
-        label_8->setObjectName(QString::fromUtf8("label_8"));
-        label_8->setGeometry(QRect(240, 70, 307, 16));
-        label_8->setStyleSheet(QString::fromUtf8("color: rgb(255, 0, 0);"));
         pushButton = new QPushButton(groupBox);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setGeometry(QRect(350, 230, 93, 28));
+        pushButton->setGeometry(QRect(200, 220, 93, 28));
         label_12 = new QLabel(groupBox);
         label_12->setObjectName(QString::fromUtf8("label_12"));
         label_12->setGeometry(QRect(200, 280, 121, 16));
         groupBox_2 = new QGroupBox(groupBox);
         groupBox_2->setObjectName(QString::fromUtf8("groupBox_2"));
-        groupBox_2->setGeometry(QRect(250, 280, 281, 71));
+        groupBox_2->setGeometry(QRect(120, 260, 281, 71));
         groupBox_2->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
         label_13 = new QLabel(groupBox_2);
         label_13->setObjectName(QString::fromUtf8("label_13"));
@@ -133,50 +132,86 @@ public:
         pushButton_2 = new QPushButton(groupBox_2);
         pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
         pushButton_2->setGeometry(QRect(150, 20, 91, 41));
-        label_19 = new QLabel(groupBox);
+        formLayoutWidget = new QWidget(groupBox);
+        formLayoutWidget->setObjectName(QString::fromUtf8("formLayoutWidget"));
+        formLayoutWidget->setGeometry(QRect(10, 50, 221, 111));
+        formLayout = new QFormLayout(formLayoutWidget);
+        formLayout->setObjectName(QString::fromUtf8("formLayout"));
+        formLayout->setContentsMargins(0, 0, 0, 0);
+        label_5 = new QLabel(formLayoutWidget);
+        label_5->setObjectName(QString::fromUtf8("label_5"));
+
+        formLayout->setWidget(0, QFormLayout::LabelRole, label_5);
+
+        lineEdit = new QLineEdit(formLayoutWidget);
+        lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
+
+        formLayout->setWidget(0, QFormLayout::FieldRole, lineEdit);
+
+        label_19 = new QLabel(formLayoutWidget);
         label_19->setObjectName(QString::fromUtf8("label_19"));
-        label_19->setGeometry(QRect(100, 100, 141, 20));
         label_19->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 127);"));
         label_19->setFrameShape(QFrame::Box);
-        label_20 = new QLabel(groupBox);
+
+        formLayout->setWidget(1, QFormLayout::FieldRole, label_19);
+
+        label_4 = new QLabel(formLayoutWidget);
+        label_4->setObjectName(QString::fromUtf8("label_4"));
+
+        formLayout->setWidget(2, QFormLayout::LabelRole, label_4);
+
+        lineEdit_2 = new QLineEdit(formLayoutWidget);
+        lineEdit_2->setObjectName(QString::fromUtf8("lineEdit_2"));
+
+        formLayout->setWidget(2, QFormLayout::FieldRole, lineEdit_2);
+
+        label_20 = new QLabel(formLayoutWidget);
         label_20->setObjectName(QString::fromUtf8("label_20"));
-        label_20->setGeometry(QRect(100, 170, 141, 20));
         label_20->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 127);"));
         label_20->setFrameShape(QFrame::Box);
-        label_7 = new QLabel(groupBox);
+
+        formLayout->setWidget(3, QFormLayout::FieldRole, label_20);
+
+        verticalLayoutWidget = new QWidget(groupBox);
+        verticalLayoutWidget->setObjectName(QString::fromUtf8("verticalLayoutWidget"));
+        verticalLayoutWidget->setGeometry(QRect(240, 40, 321, 41));
+        verticalLayout_2 = new QVBoxLayout(verticalLayoutWidget);
+        verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
+        verticalLayout_2->setContentsMargins(0, 0, 0, 0);
+        label_7 = new QLabel(verticalLayoutWidget);
         label_7->setObjectName(QString::fromUtf8("label_7"));
-        label_7->setGeometry(QRect(240, 50, 188, 16));
         label_7->setStyleSheet(QString::fromUtf8("color: rgb(255, 0, 0);"));
-        label_25 = new QLabel(groupBox);
+
+        verticalLayout_2->addWidget(label_7);
+
+        label_8 = new QLabel(verticalLayoutWidget);
+        label_8->setObjectName(QString::fromUtf8("label_8"));
+        label_8->setStyleSheet(QString::fromUtf8("color: rgb(255, 0, 0);"));
+
+        verticalLayout_2->addWidget(label_8);
+
+        verticalLayoutWidget_2 = new QWidget(groupBox);
+        verticalLayoutWidget_2->setObjectName(QString::fromUtf8("verticalLayoutWidget_2"));
+        verticalLayoutWidget_2->setGeometry(QRect(240, 100, 321, 41));
+        verticalLayout_3 = new QVBoxLayout(verticalLayoutWidget_2);
+        verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
+        verticalLayout_3->setContentsMargins(0, 0, 0, 0);
+        label_25 = new QLabel(verticalLayoutWidget_2);
         label_25->setObjectName(QString::fromUtf8("label_25"));
-        label_25->setGeometry(QRect(240, 120, 251, 21));
         label_25->setStyleSheet(QString::fromUtf8("color: rgb(255, 0, 0);"));
-        label_26 = new QLabel(groupBox);
+
+        verticalLayout_3->addWidget(label_25);
+
+        label_26 = new QLabel(verticalLayoutWidget_2);
         label_26->setObjectName(QString::fromUtf8("label_26"));
-        label_26->setGeometry(QRect(240, 140, 311, 41));
         label_26->setStyleSheet(QString::fromUtf8("color: rgb(255, 0, 0);"));
-        comboBox_receiver = new QComboBox(groupBox);
-        comboBox_receiver->setObjectName(QString::fromUtf8("comboBox_receiver"));
-        comboBox_receiver->setGeometry(QRect(60, 240, 131, 22));
+
+        verticalLayout_3->addWidget(label_26);
+
         groupBox_3 = new QGroupBox(centralwidget);
         groupBox_3->setObjectName(QString::fromUtf8("groupBox_3"));
-        groupBox_3->setGeometry(QRect(830, 60, 721, 411));
+        groupBox_3->setGeometry(QRect(820, 80, 721, 401));
         groupBox_3->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
-        label_14 = new QLabel(groupBox_3);
-        label_14->setObjectName(QString::fromUtf8("label_14"));
-        label_14->setGeometry(QRect(160, 0, 55, 16));
-        label_15 = new QLabel(groupBox_3);
-        label_15->setObjectName(QString::fromUtf8("label_15"));
-        label_15->setGeometry(QRect(61, 43, 62, 16));
-        lineEdit_3 = new QLineEdit(groupBox_3);
-        lineEdit_3->setObjectName(QString::fromUtf8("lineEdit_3"));
-        lineEdit_3->setGeometry(QRect(133, 42, 137, 22));
-        label_16 = new QLabel(groupBox_3);
-        label_16->setObjectName(QString::fromUtf8("label_16"));
-        label_16->setGeometry(QRect(50, 110, 60, 16));
-        lineEdit_4 = new QLineEdit(groupBox_3);
-        lineEdit_4->setObjectName(QString::fromUtf8("lineEdit_4"));
-        lineEdit_4->setGeometry(QRect(131, 104, 137, 22));
         label_17 = new QLabel(groupBox_3);
         label_17->setObjectName(QString::fromUtf8("label_17"));
         label_17->setGeometry(QRect(260, 100, 55, 16));
@@ -190,55 +225,127 @@ public:
         label_11->setObjectName(QString::fromUtf8("label_11"));
         label_11->setGeometry(QRect(300, 250, 161, 61));
         label_11->setFrameShape(QFrame::Box);
-        pushButton_6 = new QPushButton(groupBox_3);
-        pushButton_6->setObjectName(QString::fromUtf8("pushButton_6"));
-        pushButton_6->setGeometry(QRect(275, 101, 41, 28));
-        pushButton_6->setStyleSheet(QString::fromUtf8("image: url(:/new/prefix1/cheshm1.jpg);"));
-        label_21 = new QLabel(groupBox_3);
-        label_21->setObjectName(QString::fromUtf8("label_21"));
-        label_21->setGeometry(QRect(60, 170, 55, 16));
-        lineEdit_6 = new QLineEdit(groupBox_3);
-        lineEdit_6->setObjectName(QString::fromUtf8("lineEdit_6"));
-        lineEdit_6->setGeometry(QRect(200, 170, 141, 22));
-        label_22 = new QLabel(groupBox_3);
-        label_22->setObjectName(QString::fromUtf8("label_22"));
-        label_22->setGeometry(QRect(60, 200, 121, 16));
-        lineEdit_7 = new QLineEdit(groupBox_3);
-        lineEdit_7->setObjectName(QString::fromUtf8("lineEdit_7"));
-        lineEdit_7->setGeometry(QRect(370, 200, 151, 22));
-        comboBox = new QComboBox(groupBox_3);
-        comboBox->setObjectName(QString::fromUtf8("comboBox"));
-        comboBox->setGeometry(QRect(200, 200, 121, 21));
-        label_23 = new QLabel(groupBox_3);
-        label_23->setObjectName(QString::fromUtf8("label_23"));
-        label_23->setGeometry(QRect(330, 30, 188, 16));
-        label_23->setStyleSheet(QString::fromUtf8("color: rgb(255, 0, 0);"));
-        label_24 = new QLabel(groupBox_3);
-        label_24->setObjectName(QString::fromUtf8("label_24"));
-        label_24->setGeometry(QRect(330, 50, 307, 16));
-        label_24->setStyleSheet(QString::fromUtf8("color: rgb(255, 0, 0);"));
-        label_9 = new QLabel(groupBox_3);
-        label_9->setObjectName(QString::fromUtf8("label_9"));
-        label_9->setGeometry(QRect(340, 110, 321, 20));
-        label_9->setStyleSheet(QString::fromUtf8("color: rgb(255, 0, 0);"));
-        label_10 = new QLabel(groupBox_3);
-        label_10->setObjectName(QString::fromUtf8("label_10"));
-        label_10->setGeometry(QRect(340, 130, 321, 16));
-        label_10->setStyleSheet(QString::fromUtf8("color: rgb(255, 0, 0);"));
-        label_27 = new QLabel(groupBox_3);
-        label_27->setObjectName(QString::fromUtf8("label_27"));
-        label_27->setGeometry(QRect(130, 70, 141, 21));
-        label_27->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 127);"));
-        label_27->setFrameShape(QFrame::Box);
-        label_28 = new QLabel(groupBox_3);
-        label_28->setObjectName(QString::fromUtf8("label_28"));
-        label_28->setGeometry(QRect(130, 140, 131, 20));
-        label_28->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 127);"));
-        label_28->setFrameShape(QFrame::Box);
         pushButton_3 = new QPushButton(groupBox_3);
         pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
         pushButton_3->setGeometry(QRect(580, 210, 41, 28));
         pushButton_3->setStyleSheet(QString::fromUtf8("image: url(:/new/prefix1/cheshm2.jpg);"));
+        formLayoutWidget_2 = new QWidget(groupBox_3);
+        formLayoutWidget_2->setObjectName(QString::fromUtf8("formLayoutWidget_2"));
+        formLayoutWidget_2->setGeometry(QRect(30, 30, 291, 203));
+        formLayout_3 = new QFormLayout(formLayoutWidget_2);
+        formLayout_3->setObjectName(QString::fromUtf8("formLayout_3"));
+        formLayout_3->setContentsMargins(0, 0, 0, 0);
+        label_15 = new QLabel(formLayoutWidget_2);
+        label_15->setObjectName(QString::fromUtf8("label_15"));
+
+        formLayout_3->setWidget(0, QFormLayout::LabelRole, label_15);
+
+        lineEdit_3 = new QLineEdit(formLayoutWidget_2);
+        lineEdit_3->setObjectName(QString::fromUtf8("lineEdit_3"));
+
+        formLayout_3->setWidget(0, QFormLayout::FieldRole, lineEdit_3);
+
+        label_27 = new QLabel(formLayoutWidget_2);
+        label_27->setObjectName(QString::fromUtf8("label_27"));
+        label_27->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 127);"));
+        label_27->setFrameShape(QFrame::Box);
+
+        formLayout_3->setWidget(1, QFormLayout::FieldRole, label_27);
+
+        label_16 = new QLabel(formLayoutWidget_2);
+        label_16->setObjectName(QString::fromUtf8("label_16"));
+
+        formLayout_3->setWidget(2, QFormLayout::LabelRole, label_16);
+
+        horizontalLayout_3 = new QHBoxLayout();
+        horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
+        lineEdit_4 = new QLineEdit(formLayoutWidget_2);
+        lineEdit_4->setObjectName(QString::fromUtf8("lineEdit_4"));
+
+        horizontalLayout_3->addWidget(lineEdit_4);
+
+        pushButton_6 = new QPushButton(formLayoutWidget_2);
+        pushButton_6->setObjectName(QString::fromUtf8("pushButton_6"));
+        pushButton_6->setStyleSheet(QString::fromUtf8("image: url(:/new/prefix1/cheshm1.jpg);"));
+
+        horizontalLayout_3->addWidget(pushButton_6);
+
+
+        formLayout_3->setLayout(2, QFormLayout::FieldRole, horizontalLayout_3);
+
+        label_28 = new QLabel(formLayoutWidget_2);
+        label_28->setObjectName(QString::fromUtf8("label_28"));
+        label_28->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 127);"));
+        label_28->setFrameShape(QFrame::Box);
+
+        formLayout_3->setWidget(3, QFormLayout::FieldRole, label_28);
+
+        label_21 = new QLabel(formLayoutWidget_2);
+        label_21->setObjectName(QString::fromUtf8("label_21"));
+
+        formLayout_3->setWidget(4, QFormLayout::LabelRole, label_21);
+
+        lineEdit_6 = new QLineEdit(formLayoutWidget_2);
+        lineEdit_6->setObjectName(QString::fromUtf8("lineEdit_6"));
+
+        formLayout_3->setWidget(4, QFormLayout::FieldRole, lineEdit_6);
+
+        label_22 = new QLabel(formLayoutWidget_2);
+        label_22->setObjectName(QString::fromUtf8("label_22"));
+
+        formLayout_3->setWidget(5, QFormLayout::LabelRole, label_22);
+
+        horizontalLayout_5 = new QHBoxLayout();
+        horizontalLayout_5->setObjectName(QString::fromUtf8("horizontalLayout_5"));
+        comboBox = new QComboBox(formLayoutWidget_2);
+        comboBox->setObjectName(QString::fromUtf8("comboBox"));
+
+        horizontalLayout_5->addWidget(comboBox);
+
+        lineEdit_7 = new QLineEdit(formLayoutWidget_2);
+        lineEdit_7->setObjectName(QString::fromUtf8("lineEdit_7"));
+
+        horizontalLayout_5->addWidget(lineEdit_7);
+
+
+        formLayout_3->setLayout(5, QFormLayout::FieldRole, horizontalLayout_5);
+
+        verticalLayoutWidget_3 = new QWidget(groupBox_3);
+        verticalLayoutWidget_3->setObjectName(QString::fromUtf8("verticalLayoutWidget_3"));
+        verticalLayoutWidget_3->setGeometry(QRect(330, 20, 331, 41));
+        verticalLayout_4 = new QVBoxLayout(verticalLayoutWidget_3);
+        verticalLayout_4->setObjectName(QString::fromUtf8("verticalLayout_4"));
+        verticalLayout_4->setContentsMargins(0, 0, 0, 0);
+        label_23 = new QLabel(verticalLayoutWidget_3);
+        label_23->setObjectName(QString::fromUtf8("label_23"));
+        label_23->setStyleSheet(QString::fromUtf8("color: rgb(255, 0, 0);"));
+
+        verticalLayout_4->addWidget(label_23);
+
+        label_24 = new QLabel(verticalLayoutWidget_3);
+        label_24->setObjectName(QString::fromUtf8("label_24"));
+        label_24->setStyleSheet(QString::fromUtf8("color: rgb(255, 0, 0);"));
+
+        verticalLayout_4->addWidget(label_24);
+
+        verticalLayoutWidget_4 = new QWidget(groupBox_3);
+        verticalLayoutWidget_4->setObjectName(QString::fromUtf8("verticalLayoutWidget_4"));
+        verticalLayoutWidget_4->setGeometry(QRect(330, 90, 321, 41));
+        verticalLayout_5 = new QVBoxLayout(verticalLayoutWidget_4);
+        verticalLayout_5->setObjectName(QString::fromUtf8("verticalLayout_5"));
+        verticalLayout_5->setContentsMargins(0, 0, 0, 0);
+        label_9 = new QLabel(verticalLayoutWidget_4);
+        label_9->setObjectName(QString::fromUtf8("label_9"));
+        label_9->setStyleSheet(QString::fromUtf8("color: rgb(255, 0, 0);"));
+
+        verticalLayout_5->addWidget(label_9);
+
+        label_10 = new QLabel(verticalLayoutWidget_4);
+        label_10->setObjectName(QString::fromUtf8("label_10"));
+        label_10->setStyleSheet(QString::fromUtf8("color: rgb(255, 0, 0);"));
+
+        verticalLayout_5->addWidget(label_10);
+
         groupBox_4 = new QGroupBox(centralwidget);
         groupBox_4->setObjectName(QString::fromUtf8("groupBox_4"));
         groupBox_4->setGeometry(QRect(420, 490, 371, 271));
@@ -278,38 +385,37 @@ public:
         label->setText(QString());
         label_2->setText(QApplication::translate("MainWindow", "enter youe information:", nullptr));
         label_3->setText(QString());
-        label_4->setText(QApplication::translate("MainWindow", "password:", nullptr));
-        label_5->setText(QApplication::translate("MainWindow", "username:", nullptr));
-        lineEdit->setText(QString());
-        label_8->setText(QApplication::translate("MainWindow", "rule2:your user name should have at least 8character", nullptr));
         pushButton->setText(QApplication::translate("MainWindow", "log in", nullptr));
         label_12->setText(QString());
         groupBox_2->setTitle(QString());
         label_13->setText(QApplication::translate("MainWindow", "not a member?", nullptr));
         pushButton_2->setText(QApplication::translate("MainWindow", "sign up", nullptr));
+        label_5->setText(QApplication::translate("MainWindow", "username:", nullptr));
+        lineEdit->setText(QString());
         label_19->setText(QString());
+        label_4->setText(QApplication::translate("MainWindow", "password:", nullptr));
         label_20->setText(QString());
         label_7->setText(QApplication::translate("MainWindow", "rule1:you can not use(*&^%#$)", nullptr));
+        label_8->setText(QApplication::translate("MainWindow", "rule2:your username should have atleast 8 characters", nullptr));
         label_25->setText(QApplication::translate("MainWindow", "rule1:you just have to use numbers", nullptr));
-        label_26->setText(QApplication::translate("MainWindow", "rule2:your password should have at least 8character", nullptr));
+        label_26->setText(QApplication::translate("MainWindow", "rule2:your password should have atleast 8 characters", nullptr));
         groupBox_3->setTitle(QString());
-        label_14->setText(QApplication::translate("MainWindow", "welcome", nullptr));
-        label_15->setText(QApplication::translate("MainWindow", "username:", nullptr));
-        label_16->setText(QApplication::translate("MainWindow", "password:", nullptr));
         label_17->setText(QString());
         pushButton_4->setText(QApplication::translate("MainWindow", "CREATE CAPCHA", nullptr));
         label_18->setText(QString());
         label_11->setText(QString());
-        pushButton_6->setText(QString());
-        label_21->setText(QApplication::translate("MainWindow", "email:", nullptr));
-        label_22->setText(QApplication::translate("MainWindow", "telephone number:", nullptr));
-        label_23->setText(QApplication::translate("MainWindow", "rule1:you can not use(*&^%#$)", nullptr));
-        label_24->setText(QApplication::translate("MainWindow", "rule2:your user name should have at least 8character", nullptr));
-        label_9->setText(QApplication::translate("MainWindow", "rule1:you just have to use numbers", nullptr));
-        label_10->setText(QApplication::translate("MainWindow", "rule2:your password should have at least 8character", nullptr));
-        label_27->setText(QString());
-        label_28->setText(QString());
         pushButton_3->setText(QString());
+        label_15->setText(QApplication::translate("MainWindow", "username:", nullptr));
+        label_27->setText(QString());
+        label_16->setText(QApplication::translate("MainWindow", "password:", nullptr));
+        pushButton_6->setText(QString());
+        label_28->setText(QString());
+        label_21->setText(QApplication::translate("MainWindow", "email:", nullptr));
+        label_22->setText(QApplication::translate("MainWindow", "phone number:", nullptr));
+        label_23->setText(QApplication::translate("MainWindow", "rule1:you can not use(*&^%#$)", nullptr));
+        label_24->setText(QApplication::translate("MainWindow", "rule2:your username should have atleast 8 characters", nullptr));
+        label_9->setText(QApplication::translate("MainWindow", "rule1:you just have to use numbers", nullptr));
+        label_10->setText(QApplication::translate("MainWindow", "rule2:your password should have atleast 8 characters", nullptr));
         groupBox_4->setTitle(QApplication::translate("MainWindow", "enter the capcha", nullptr));
         lineEdit_5->setPlaceholderText(QApplication::translate("MainWindow", "write here", nullptr));
         pushButton_5->setText(QApplication::translate("MainWindow", "go", nullptr));

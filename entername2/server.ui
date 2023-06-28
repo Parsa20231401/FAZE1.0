@@ -37,22 +37,6 @@
      </rect>
     </property>
    </widget>
-   <widget class="QLabel" name="textBrowser_receivedMessages">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>731</width>
-      <height>481</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 85, 0);</string>
-    </property>
-    <property name="text">
-     <string>TextLabel</string>
-    </property>
-   </widget>
    <widget class="QComboBox" name="comboBox_receiver">
     <property name="geometry">
      <rect>
@@ -63,6 +47,16 @@
      </rect>
     </property>
    </widget>
+   <widget class="QTextBrowser" name="textBrowser">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>120</y>
+      <width>501</width>
+      <height>261</height>
+     </rect>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -70,7 +64,7 @@
      <x>0</x>
      <y>0</y>
      <width>889</width>
-     <height>26</height>
+     <height>25</height>
     </rect>
    </property>
   </widget>
