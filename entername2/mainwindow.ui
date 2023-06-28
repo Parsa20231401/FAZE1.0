@@ -585,16 +585,6 @@ background-color: rgb(255, 255, 255);</string>
      <string>temporary button</string>
     </property>
    </widget>
-   <widget class="QComboBox" name="comboBox_receiver">
-    <property name="geometry">
-     <rect>
-      <x>590</x>
-      <y>10</y>
-      <width>131</width>
-      <height>22</height>
-     </rect>
-    </property>
-   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

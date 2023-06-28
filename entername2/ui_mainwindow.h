@@ -89,7 +89,6 @@ public:
     QLineEdit *lineEdit_5;
     QPushButton *pushButton_5;
     QPushButton *shortcutButton1;
-    QComboBox *comboBox_receiver;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -365,9 +364,6 @@ public:
         font.setPointSize(12);
         shortcutButton1->setFont(font);
         shortcutButton1->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 0, 0);"));
-        comboBox_receiver = new QComboBox(centralwidget);
-        comboBox_receiver->setObjectName(QString::fromUtf8("comboBox_receiver"));
-        comboBox_receiver->setGeometry(QRect(590, 10, 131, 22));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));

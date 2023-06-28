@@ -95,7 +95,7 @@ public:
     void retranslateUi(QMainWindow *entrycode)
     {
         entrycode->setWindowTitle(QApplication::translate("entrycode", "MainWindow", nullptr));
-        groupBox->setTitle(QApplication::translate("entrycode", "GroupBox", nullptr));
+        groupBox->setTitle(QString());
         pushButton->setText(QApplication::translate("entrycode", "ok", nullptr));
         label->setText(QApplication::translate("entrycode", "code:", nullptr));
         label_4->setText(QApplication::translate("entrycode", "TextLabel", nullptr));
