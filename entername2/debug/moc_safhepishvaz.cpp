@@ -22,7 +22,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_safhePishvaz_t {
     QByteArrayData data[3];
-    char stringdata0[36];
+    char stringdata0[39];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -32,11 +32,12 @@ struct qt_meta_stringdata_safhePishvaz_t {
 static const qt_meta_stringdata_safhePishvaz_t qt_meta_stringdata_safhePishvaz = {
     {
 QT_MOC_LITERAL(0, 0, 12), // "safhePishvaz"
-QT_MOC_LITERAL(1, 13, 21), // "on_pushButton_clicked"
-QT_MOC_LITERAL(2, 35, 0) // ""
+QT_MOC_LITERAL(1, 13, 24), // "on_welcomeButton_clicked"
+QT_MOC_LITERAL(2, 38, 0) // ""
 
     },
-    "safhePishvaz\0on_pushButton_clicked\0"
+    "safhePishvaz\0on_welcomeButton_clicked\0"
+    ""
 };
 #undef QT_MOC_LITERAL
 
@@ -68,7 +69,7 @@ void safhePishvaz::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
         auto *_t = static_cast<safhePishvaz *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->on_pushButton_clicked(); break;
+        case 0: _t->on_welcomeButton_clicked(); break;
         default: ;
         }
     }

@@ -2,6 +2,7 @@ debug/client.o
 debug/entrycode.o
 debug/main.o
 debug/mainwindow.o
+debug/pick_username.o
 debug/safhepishvaz.o
 debug/server.o
 debug/qrc_capchaha.o
@@ -11,5 +12,6 @@ debug/qrc_logo.o
 debug/moc_client.o
 debug/moc_entrycode.o
 debug/moc_mainwindow.o
+debug/moc_pick_username.o
 debug/moc_safhepishvaz.o
 debug/moc_server.o

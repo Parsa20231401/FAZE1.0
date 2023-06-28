@@ -30,7 +30,7 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralwidget;
-    QGroupBox *groupBox;
+    QGroupBox *loginBox;
     QLabel *label;
     QLabel *label_2;
     QLabel *label_3;
@@ -55,7 +55,7 @@ public:
     QVBoxLayout *verticalLayout_3;
     QLabel *label_25;
     QLabel *label_26;
-    QGroupBox *groupBox_3;
+    QGroupBox *sginupBox;
     QLabel *label_17;
     QPushButton *pushButton_4;
     QLabel *label_18;
@@ -102,27 +102,27 @@ public:
 ""));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
-        groupBox = new QGroupBox(centralwidget);
-        groupBox->setObjectName(QString::fromUtf8("groupBox"));
-        groupBox->setGeometry(QRect(170, 80, 581, 401));
-        groupBox->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 0, 0);\n"
+        loginBox = new QGroupBox(centralwidget);
+        loginBox->setObjectName(QString::fromUtf8("loginBox"));
+        loginBox->setGeometry(QRect(170, 80, 581, 401));
+        loginBox->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 0, 0);\n"
 "background-color: rgb(255, 255, 255);"));
-        label = new QLabel(groupBox);
+        label = new QLabel(loginBox);
         label->setObjectName(QString::fromUtf8("label"));
         label->setGeometry(QRect(10, 0, 151, 21));
-        label_2 = new QLabel(groupBox);
+        label_2 = new QLabel(loginBox);
         label_2->setObjectName(QString::fromUtf8("label_2"));
         label_2->setGeometry(QRect(10, 10, 161, 31));
-        label_3 = new QLabel(groupBox);
+        label_3 = new QLabel(loginBox);
         label_3->setObjectName(QString::fromUtf8("label_3"));
         label_3->setGeometry(QRect(20, 100, 55, 16));
-        pushButton = new QPushButton(groupBox);
+        pushButton = new QPushButton(loginBox);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
         pushButton->setGeometry(QRect(200, 220, 93, 28));
-        label_12 = new QLabel(groupBox);
+        label_12 = new QLabel(loginBox);
         label_12->setObjectName(QString::fromUtf8("label_12"));
         label_12->setGeometry(QRect(200, 280, 121, 16));
-        groupBox_2 = new QGroupBox(groupBox);
+        groupBox_2 = new QGroupBox(loginBox);
         groupBox_2->setObjectName(QString::fromUtf8("groupBox_2"));
         groupBox_2->setGeometry(QRect(120, 260, 281, 71));
         groupBox_2->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
@@ -132,7 +132,7 @@ public:
         pushButton_2 = new QPushButton(groupBox_2);
         pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
         pushButton_2->setGeometry(QRect(150, 20, 91, 41));
-        formLayoutWidget = new QWidget(groupBox);
+        formLayoutWidget = new QWidget(loginBox);
         formLayoutWidget->setObjectName(QString::fromUtf8("formLayoutWidget"));
         formLayoutWidget->setGeometry(QRect(10, 50, 221, 111));
         formLayout = new QFormLayout(formLayoutWidget);
@@ -172,7 +172,7 @@ public:
 
         formLayout->setWidget(3, QFormLayout::FieldRole, label_20);
 
-        verticalLayoutWidget = new QWidget(groupBox);
+        verticalLayoutWidget = new QWidget(loginBox);
         verticalLayoutWidget->setObjectName(QString::fromUtf8("verticalLayoutWidget"));
         verticalLayoutWidget->setGeometry(QRect(240, 40, 321, 41));
         verticalLayout_2 = new QVBoxLayout(verticalLayoutWidget);
@@ -190,7 +190,7 @@ public:
 
         verticalLayout_2->addWidget(label_8);
 
-        verticalLayoutWidget_2 = new QWidget(groupBox);
+        verticalLayoutWidget_2 = new QWidget(loginBox);
         verticalLayoutWidget_2->setObjectName(QString::fromUtf8("verticalLayoutWidget_2"));
         verticalLayoutWidget_2->setGeometry(QRect(240, 100, 321, 41));
         verticalLayout_3 = new QVBoxLayout(verticalLayoutWidget_2);
@@ -208,28 +208,28 @@ public:
 
         verticalLayout_3->addWidget(label_26);
 
-        groupBox_3 = new QGroupBox(centralwidget);
-        groupBox_3->setObjectName(QString::fromUtf8("groupBox_3"));
-        groupBox_3->setGeometry(QRect(820, 80, 721, 401));
-        groupBox_3->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
-        label_17 = new QLabel(groupBox_3);
+        sginupBox = new QGroupBox(centralwidget);
+        sginupBox->setObjectName(QString::fromUtf8("sginupBox"));
+        sginupBox->setGeometry(QRect(820, 80, 721, 401));
+        sginupBox->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
+        label_17 = new QLabel(sginupBox);
         label_17->setObjectName(QString::fromUtf8("label_17"));
         label_17->setGeometry(QRect(260, 100, 55, 16));
-        pushButton_4 = new QPushButton(groupBox_3);
+        pushButton_4 = new QPushButton(sginupBox);
         pushButton_4->setObjectName(QString::fromUtf8("pushButton_4"));
         pushButton_4->setGeometry(QRect(330, 330, 121, 31));
-        label_18 = new QLabel(groupBox_3);
+        label_18 = new QLabel(sginupBox);
         label_18->setObjectName(QString::fromUtf8("label_18"));
         label_18->setGeometry(QRect(280, 240, 55, 16));
-        label_11 = new QLabel(groupBox_3);
+        label_11 = new QLabel(sginupBox);
         label_11->setObjectName(QString::fromUtf8("label_11"));
         label_11->setGeometry(QRect(300, 250, 161, 61));
         label_11->setFrameShape(QFrame::Box);
-        pushButton_3 = new QPushButton(groupBox_3);
+        pushButton_3 = new QPushButton(sginupBox);
         pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
         pushButton_3->setGeometry(QRect(580, 210, 41, 28));
         pushButton_3->setStyleSheet(QString::fromUtf8("image: url(:/new/prefix1/cheshm2.jpg);"));
-        formLayoutWidget_2 = new QWidget(groupBox_3);
+        formLayoutWidget_2 = new QWidget(sginupBox);
         formLayoutWidget_2->setObjectName(QString::fromUtf8("formLayoutWidget_2"));
         formLayoutWidget_2->setGeometry(QRect(30, 30, 291, 203));
         formLayout_3 = new QFormLayout(formLayoutWidget_2);
@@ -310,7 +310,7 @@ public:
 
         formLayout_3->setLayout(5, QFormLayout::FieldRole, horizontalLayout_5);
 
-        verticalLayoutWidget_3 = new QWidget(groupBox_3);
+        verticalLayoutWidget_3 = new QWidget(sginupBox);
         verticalLayoutWidget_3->setObjectName(QString::fromUtf8("verticalLayoutWidget_3"));
         verticalLayoutWidget_3->setGeometry(QRect(330, 20, 331, 41));
         verticalLayout_4 = new QVBoxLayout(verticalLayoutWidget_3);
@@ -328,7 +328,7 @@ public:
 
         verticalLayout_4->addWidget(label_24);
 
-        verticalLayoutWidget_4 = new QWidget(groupBox_3);
+        verticalLayoutWidget_4 = new QWidget(sginupBox);
         verticalLayoutWidget_4->setObjectName(QString::fromUtf8("verticalLayoutWidget_4"));
         verticalLayoutWidget_4->setGeometry(QRect(330, 90, 321, 41));
         verticalLayout_5 = new QVBoxLayout(verticalLayoutWidget_4);
@@ -381,7 +381,7 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", nullptr));
-        groupBox->setTitle(QString());
+        loginBox->setTitle(QString());
         label->setText(QString());
         label_2->setText(QApplication::translate("MainWindow", "enter youe information:", nullptr));
         label_3->setText(QString());
@@ -399,7 +399,7 @@ public:
         label_8->setText(QApplication::translate("MainWindow", "rule2:your username should have atleast 8 characters", nullptr));
         label_25->setText(QApplication::translate("MainWindow", "rule1:you just have to use numbers", nullptr));
         label_26->setText(QApplication::translate("MainWindow", "rule2:your password should have atleast 8 characters", nullptr));
-        groupBox_3->setTitle(QString());
+        sginupBox->setTitle(QString());
         label_17->setText(QString());
         pushButton_4->setText(QApplication::translate("MainWindow", "CREATE CAPCHA", nullptr));
         label_18->setText(QString());

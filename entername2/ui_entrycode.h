@@ -27,13 +27,13 @@ class Ui_entrycode
 {
 public:
     QWidget *centralwidget;
-    QLineEdit *lineEdit;
+    QLineEdit *codeInput;
     QGroupBox *groupBox;
-    QPushButton *pushButton;
+    QPushButton *ok_pushButton;
     QWidget *horizontalLayoutWidget;
     QHBoxLayout *horizontalLayout;
-    QLabel *label;
-    QLabel *label_4;
+    QLabel *code_label;
+    QLabel *textcode_label;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -44,35 +44,35 @@ public:
         entrycode->resize(800, 600);
         centralwidget = new QWidget(entrycode);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
-        lineEdit = new QLineEdit(centralwidget);
-        lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
-        lineEdit->setGeometry(QRect(280, 350, 231, 71));
+        codeInput = new QLineEdit(centralwidget);
+        codeInput->setObjectName(QString::fromUtf8("codeInput"));
+        codeInput->setGeometry(QRect(280, 350, 231, 71));
         QFont font;
         font.setPointSize(16);
-        lineEdit->setFont(font);
+        codeInput->setFont(font);
         groupBox = new QGroupBox(centralwidget);
         groupBox->setObjectName(QString::fromUtf8("groupBox"));
         groupBox->setGeometry(QRect(240, 30, 321, 281));
-        pushButton = new QPushButton(groupBox);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setGeometry(QRect(110, 190, 101, 41));
+        ok_pushButton = new QPushButton(groupBox);
+        ok_pushButton->setObjectName(QString::fromUtf8("ok_pushButton"));
+        ok_pushButton->setGeometry(QRect(110, 190, 101, 41));
         horizontalLayoutWidget = new QWidget(groupBox);
         horizontalLayoutWidget->setObjectName(QString::fromUtf8("horizontalLayoutWidget"));
-        horizontalLayoutWidget->setGeometry(QRect(60, 70, 211, 81));
+        horizontalLayoutWidget->setGeometry(QRect(60, 70, 215, 81));
         horizontalLayout = new QHBoxLayout(horizontalLayoutWidget);
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
-        label = new QLabel(horizontalLayoutWidget);
-        label->setObjectName(QString::fromUtf8("label"));
-        label->setFont(font);
+        code_label = new QLabel(horizontalLayoutWidget);
+        code_label->setObjectName(QString::fromUtf8("code_label"));
+        code_label->setFont(font);
 
-        horizontalLayout->addWidget(label);
+        horizontalLayout->addWidget(code_label);
 
-        label_4 = new QLabel(horizontalLayoutWidget);
-        label_4->setObjectName(QString::fromUtf8("label_4"));
-        label_4->setFont(font);
+        textcode_label = new QLabel(horizontalLayoutWidget);
+        textcode_label->setObjectName(QString::fromUtf8("textcode_label"));
+        textcode_label->setFont(font);
 
-        horizontalLayout->addWidget(label_4);
+        horizontalLayout->addWidget(textcode_label);
 
         entrycode->setCentralWidget(centralwidget);
         menubar = new QMenuBar(entrycode);
@@ -92,9 +92,9 @@ public:
     {
         entrycode->setWindowTitle(QApplication::translate("entrycode", "MainWindow", nullptr));
         groupBox->setTitle(QString());
-        pushButton->setText(QApplication::translate("entrycode", "ok", nullptr));
-        label->setText(QApplication::translate("entrycode", "code:", nullptr));
-        label_4->setText(QApplication::translate("entrycode", "TextLabel", nullptr));
+        ok_pushButton->setText(QApplication::translate("entrycode", "ok", nullptr));
+        code_label->setText(QApplication::translate("entrycode", "code:", nullptr));
+        textcode_label->setText(QApplication::translate("entrycode", "TextLabel", nullptr));
     } // retranslateUi
 
 };

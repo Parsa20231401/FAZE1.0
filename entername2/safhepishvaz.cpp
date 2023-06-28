@@ -15,10 +15,10 @@ safhePishvaz::~safhePishvaz()
     delete ui;
 }
 
-void safhePishvaz::on_pushButton_clicked()
+void safhePishvaz::on_welcomeButton_clicked()
 {
-    MainWindow *safe2 = new MainWindow;
-    safe2->show();
+    MainWindow *loginPage = new MainWindow;
+    loginPage->show();
     hide();
 }
 

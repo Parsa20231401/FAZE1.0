@@ -14,9 +14,9 @@ entrycode::entrycode(QWidget *parent) :
     int n;
     n = rand()%9000+1000;
     thelen = QString::number(n);
-    ui->label_4->setText(thelen);
+    ui->textcode_label->setText(thelen);
 
-    ui->lineEdit->hide();
+    ui->codeInput->hide();
 }
 
 entrycode::~entrycode()
@@ -25,16 +25,17 @@ entrycode::~entrycode()
 }
 
 
-void entrycode::on_pushButton_clicked()
+void entrycode::on_ok_pushButton_clicked()
 {
     ui->groupBox->hide();
-    ui->lineEdit->show();
+    ui->codeInput->show();
+
 }
 
 
-void entrycode::on_lineEdit_returnPressed()
+void entrycode::on_codeInput_returnPressed()
 {
-    QString code = ui->lineEdit->text();
+    QString code = ui->codeInput->text();
 
     if (code == thelen)
     {

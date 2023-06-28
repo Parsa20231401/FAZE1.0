@@ -2,6 +2,7 @@ release/client.o
 release/entrycode.o
 release/main.o
 release/mainwindow.o
+release/pick_username.o
 release/safhepishvaz.o
 release/server.o
 release/qrc_capchaha.o
@@ -11,5 +12,6 @@ release/qrc_logo.o
 release/moc_client.o
 release/moc_entrycode.o
 release/moc_mainwindow.o
+release/moc_pick_username.o
 release/moc_safhepishvaz.o
 release/moc_server.o

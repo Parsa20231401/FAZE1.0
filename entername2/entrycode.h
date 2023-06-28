@@ -17,9 +17,9 @@ public:
 
 private slots:
 
-    void on_pushButton_clicked();
+    void on_ok_pushButton_clicked();
 
-    void on_lineEdit_returnPressed();
+    void on_codeInput_returnPressed();
 
 //    void on_pushButton_2_clicked();
 

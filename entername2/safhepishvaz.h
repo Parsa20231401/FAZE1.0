@@ -16,7 +16,7 @@ public:
     ~safhePishvaz();
 
 private slots:
-    void on_pushButton_clicked();
+    void on_welcomeButton_clicked();
 
 private:
     Ui::safhePishvaz *ui;

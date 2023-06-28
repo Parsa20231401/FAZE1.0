@@ -12,7 +12,7 @@
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow) {
     ui->setupUi(this);
-    ui->groupBox_3->hide();
+    ui->sginupBox->hide();
     ui->lineEdit_4->setEchoMode(QLineEdit::Password);
     ui->lineEdit_2->setEchoMode(QLineEdit::Password);
     ui->label_5->setText("<b>username:</b>");
@@ -40,7 +40,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     database = QSqlDatabase::addDatabase("QSQLITE");
     database.setDatabaseName("d:\\usersinfo.db");
     database.open();
-
 }
 
 MainWindow::~MainWindow() {
@@ -48,9 +47,9 @@ MainWindow::~MainWindow() {
 }
 
 void MainWindow::on_pushButton_2_clicked() {
-    ui->groupBox->hide();
-    ui->groupBox_3->show();
-    ui->groupBox_3->move(320, 50);
+    ui->loginBox->hide();
+    ui->sginupBox->show();
+    ui->sginupBox->move(320, 50);
 }
 
 int r;

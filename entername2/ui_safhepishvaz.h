@@ -22,7 +22,7 @@ class Ui_safhePishvaz
 {
 public:
     QWidget *centralwidget;
-    QPushButton *pushButton;
+    QPushButton *welcomeButton;
     QLabel *label;
 
     void setupUi(QMainWindow *safhePishvaz)
@@ -39,13 +39,13 @@ public:
         safhePishvaz->setMaximumSize(QSize(538, 521));
         centralwidget = new QWidget(safhePishvaz);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
-        pushButton = new QPushButton(centralwidget);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setGeometry(QRect(0, 0, 541, 521));
+        welcomeButton = new QPushButton(centralwidget);
+        welcomeButton->setObjectName(QString::fromUtf8("welcomeButton"));
+        welcomeButton->setGeometry(QRect(0, 0, 541, 521));
         QFont font;
         font.setPointSize(16);
-        pushButton->setFont(font);
-        pushButton->setStyleSheet(QString::fromUtf8("background-image: url(:/new/prefix10/logo.png);\n"
+        welcomeButton->setFont(font);
+        welcomeButton->setStyleSheet(QString::fromUtf8("background-image: url(:/new/prefix10/logo.png);\n"
 "background-color: rgb(170, 255, 127);\n"
 ""));
         label = new QLabel(centralwidget);
@@ -67,7 +67,7 @@ public:
     void retranslateUi(QMainWindow *safhePishvaz)
     {
         safhePishvaz->setWindowTitle(QApplication::translate("safhePishvaz", "MainWindow", nullptr));
-        pushButton->setText(QString());
+        welcomeButton->setText(QString());
         label->setText(QApplication::translate("safhePishvaz", "welcome to my version of telegram", nullptr));
     } // retranslateUi
 

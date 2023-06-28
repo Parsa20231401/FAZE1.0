@@ -19,7 +19,7 @@
 </string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QGroupBox" name="groupBox">
+   <widget class="QGroupBox" name="loginBox">
     <property name="geometry">
      <rect>
       <x>170</x>
@@ -269,7 +269,7 @@ background-color: rgb(255, 255, 255);</string>
      </layout>
     </widget>
    </widget>
-   <widget class="QGroupBox" name="groupBox_3">
+   <widget class="QGroupBox" name="sginupBox">
     <property name="geometry">
      <rect>
       <x>820</x>

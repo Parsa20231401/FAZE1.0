@@ -13,6 +13,7 @@ SOURCES += \
     entrycode.cpp \
     main.cpp \
     mainwindow.cpp \
+    pick_username.cpp \
     safhepishvaz.cpp \
     server.cpp
 
@@ -20,6 +21,7 @@ HEADERS += \
     client.h \
     entrycode.h \
     mainwindow.h \
+    pick_username.h \
     safhepishvaz.h \
     server.h
 
@@ -27,6 +29,7 @@ FORMS += \
     client.ui \
     entrycode.ui \
     mainwindow.ui \
+    pick_username.ui \
     safhepishvaz.ui \
     server.ui
 
