@@ -1,5 +1,8 @@
 #include "client.h"
 #include "ui_client.h"
+#include <QFrame>
+#include <QLabel>
+#include <QVBoxLayout>
 
 client::client(QWidget *parent) :
     QMainWindow(parent),
@@ -178,7 +181,27 @@ void client::on_pushButton_clicked()
 
 void client::displayMessage(const QString& str)
 {
-    ui->textBrowser_receivedMessages->append(str);
+
+    QListWidgetItem* item = new QListWidgetItem();
+    item->setText(str);
+    item->setTextAlignment(Qt::AlignLeft);
+    item->setFlags(item->flags() | Qt::ItemIsSelectable | Qt::ItemIsEnabled);
+
+    QFrame* frame = new QFrame;
+    frame->setFrameStyle(QFrame::Box);
+    frame->setLineWidth(1);
+    frame->setFixedHeight(40);
+
+    QVBoxLayout* layout = new QVBoxLayout(frame);
+    QLabel* label = new QLabel;
+    label->setText(str);
+    label->setAlignment(Qt::AlignLeft);
+    layout->addWidget(label);
+
+    ui->listWidget->addItem(item);
+    ui->listWidget->setItemWidget(item, frame);
+    ui->listWidget->setLayout(new QVBoxLayout());
+    ui->listWidget->setSpacing(10);
 }
 
 

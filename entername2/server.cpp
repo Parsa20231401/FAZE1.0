@@ -1,5 +1,8 @@
 #include "server.h"
 #include "ui_server.h"
+#include <QFrame>
+#include <QLabel>
+#include <QVBoxLayout>
 
 server::server(QWidget *parent) :
     QMainWindow(parent),
@@ -74,7 +77,7 @@ void server::appendToSocketList(QTcpSocket* socket)
     connect(socket, &QTcpSocket::disconnected, this, &server::discardSocket);
 
     ui->comboBox_receiver->addItem(QString::number(socket->socketDescriptor()));
-    displayMessage(QString("INFO :: Client with sockd:%1 has just entered the room").arg(socket->socketDescriptor()));
+//    displayMessage(QString("INFO :: Client with sockd:%1 has just entered the room").arg(socket->socketDescriptor()));
 }
 
 void server::readSocket()
@@ -202,10 +205,34 @@ void server::sendAttachment(QTcpSocket* socket, QString filePath)
         QMessageBox::critical(this,"QTCPServer","Not connected");
 }
 
+
 void server::displayMessage(const QString& str)
 {
-    ui->textBrowser_receivedMessages->append(str);
+
+    QListWidgetItem* item = new QListWidgetItem();
+    item->setText(str);
+    item->setTextAlignment(Qt::AlignLeft);
+    item->setFlags(item->flags() | Qt::ItemIsSelectable | Qt::ItemIsEnabled);
+
+    QFrame* frame = new QFrame;
+    frame->setFrameStyle(QFrame::Box);
+    frame->setLineWidth(1);
+    frame->setFixedHeight(40);
+
+    QVBoxLayout* layout = new QVBoxLayout(frame);
+    QLabel* label = new QLabel;
+    label->setText(str);
+    label->setAlignment(Qt::AlignLeft);
+    layout->addWidget(label);
+
+    ui->listWidget->addItem(item);
+    ui->listWidget->setItemWidget(item, frame);
+    ui->listWidget->setLayout(new QVBoxLayout());
+    ui->listWidget->setSpacing(10);
 }
+
+
+
 
 void server::displayError(QAbstractSocket::SocketError socketError)
 {

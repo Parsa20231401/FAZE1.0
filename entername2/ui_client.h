@@ -12,6 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QLineEdit>
+#include <QtWidgets/QListWidget>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
@@ -28,6 +29,7 @@ public:
     QPushButton *pushButton;
     QLineEdit *lineEdit;
     QTextBrowser *textBrowser_receivedMessages;
+    QListWidget *listWidget;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -47,7 +49,10 @@ public:
         lineEdit->setGeometry(QRect(0, 400, 641, 31));
         textBrowser_receivedMessages = new QTextBrowser(centralwidget);
         textBrowser_receivedMessages->setObjectName(QString::fromUtf8("textBrowser_receivedMessages"));
-        textBrowser_receivedMessages->setGeometry(QRect(10, 10, 701, 371));
+        textBrowser_receivedMessages->setGeometry(QRect(10, 10, 201, 111));
+        listWidget = new QListWidget(centralwidget);
+        listWidget->setObjectName(QString::fromUtf8("listWidget"));
+        listWidget->setGeometry(QRect(240, 160, 256, 192));
         client->setCentralWidget(centralwidget);
         menubar = new QMenuBar(client);
         menubar->setObjectName(QString::fromUtf8("menubar"));
