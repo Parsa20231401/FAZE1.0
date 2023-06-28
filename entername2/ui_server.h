@@ -12,7 +12,6 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QComboBox>
-#include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QListWidget>
 #include <QtWidgets/QMainWindow>
@@ -31,7 +30,6 @@ public:
     QLineEdit *lineEdit;
     QComboBox *comboBox_receiver;
     QListWidget *listWidget;
-    QLabel *label;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -39,31 +37,28 @@ public:
     {
         if (server->objectName().isEmpty())
             server->setObjectName(QString::fromUtf8("server"));
-        server->resize(889, 591);
+        server->resize(550, 591);
         server->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
         centralwidget = new QWidget(server);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         pushButton = new QPushButton(centralwidget);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setGeometry(QRect(640, 480, 91, 31));
-        pushButton->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 255, 127);"));
+        pushButton->setGeometry(QRect(450, 480, 91, 31));
+        pushButton->setStyleSheet(QString::fromUtf8("background-color: rgb(85, 170, 0);"));
         lineEdit = new QLineEdit(centralwidget);
         lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
-        lineEdit->setGeometry(QRect(0, 480, 641, 31));
+        lineEdit->setGeometry(QRect(0, 480, 451, 31));
         comboBox_receiver = new QComboBox(centralwidget);
         comboBox_receiver->setObjectName(QString::fromUtf8("comboBox_receiver"));
-        comboBox_receiver->setGeometry(QRect(480, 430, 181, 31));
+        comboBox_receiver->setGeometry(QRect(190, 330, 181, 31));
         listWidget = new QListWidget(centralwidget);
         listWidget->setObjectName(QString::fromUtf8("listWidget"));
-        listWidget->setGeometry(QRect(40, 151, 591, 251));
-        listWidget->setStyleSheet(QString::fromUtf8(""));
-        label = new QLabel(centralwidget);
-        label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(140, 420, 241, 41));
+        listWidget->setGeometry(QRect(30, 150, 481, 321));
+        listWidget->setStyleSheet(QString::fromUtf8("background-color: rgb(85, 170, 127);"));
         server->setCentralWidget(centralwidget);
         menubar = new QMenuBar(server);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 889, 25));
+        menubar->setGeometry(QRect(0, 0, 550, 25));
         server->setMenuBar(menubar);
         statusbar = new QStatusBar(server);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
@@ -78,7 +73,6 @@ public:
     {
         server->setWindowTitle(QApplication::translate("server", "MainWindow", nullptr));
         pushButton->setText(QApplication::translate("server", "PushButton", nullptr));
-        label->setText(QApplication::translate("server", "TextLabel", nullptr));
     } // retranslateUi
 
 };

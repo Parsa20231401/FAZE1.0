@@ -111,6 +111,30 @@ void client::displayError(QAbstractSocket::SocketError socketError)
 
 void client::on_pushButton_clicked()
 {
+    QString str = ui->lineEdit->text();
+    QListWidgetItem* item = new QListWidgetItem();
+    item->setText(str);
+    item->setTextAlignment(Qt::AlignRight);
+    item->setFlags(item->flags() | Qt::ItemIsSelectable | Qt::ItemIsEnabled);
+
+    QFrame* frame = new QFrame;
+    frame->setFrameStyle(QFrame::Box);
+    frame->setLineWidth(1);
+    frame->setFixedHeight(40);
+
+    QVBoxLayout* layout = new QVBoxLayout(frame);
+    QLabel* label = new QLabel;
+    label->setText(str);
+    label->setAlignment(Qt::AlignRight);
+    layout->addWidget(label);
+
+    ui->listWidget->addItem(item);
+    ui->listWidget->setItemWidget(item, frame);
+    ui->listWidget->setLayout(new QVBoxLayout());
+    ui->listWidget->setSpacing(10);
+
+
+
     if(socket)
     {
         if(socket->isOpen())
@@ -179,8 +203,10 @@ void client::on_pushButton_clicked()
 //        QMessageBox::critical(this,"QTCPClient","Not connected");
 //}
 
-void client::displayMessage(const QString& str)
+void client::displayMessage(const QString& str1)
 {
+    QString str = str1;
+    str.remove(0,8);
 
     QListWidgetItem* item = new QListWidgetItem();
     item->setText(str);

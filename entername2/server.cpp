@@ -3,6 +3,7 @@
 #include <QFrame>
 #include <QLabel>
 #include <QVBoxLayout>
+#include <QString>
 
 server::server(QWidget *parent) :
     QMainWindow(parent),
@@ -40,6 +41,36 @@ server::~server()
 
 void server::on_pushButton_clicked()
 {
+
+    QString str = ui->lineEdit->text();
+    QListWidgetItem* item = new QListWidgetItem();
+    item->setText(str);
+    item->setTextAlignment(Qt::AlignRight);
+    item->setFlags(item->flags() | Qt::ItemIsSelectable | Qt::ItemIsEnabled);
+
+    QFrame* frame = new QFrame;
+    frame->setFrameStyle(QFrame::Box);
+    frame->setLineWidth(1);
+    frame->setFixedHeight(40);
+
+    QVBoxLayout* layout = new QVBoxLayout(frame);
+    QLabel* label = new QLabel;
+    label->setText(str);
+    label->setAlignment(Qt::AlignRight);
+    layout->addWidget(label);
+
+    ui->listWidget->addItem(item);
+    ui->listWidget->setItemWidget(item, frame);
+    ui->listWidget->setLayout(new QVBoxLayout());
+    ui->listWidget->setSpacing(10);
+
+
+
+
+
+
+
+
     QString receiver = ui->comboBox_receiver->currentText();
 
     if(receiver == "Broadcast")
@@ -206,8 +237,10 @@ void server::sendAttachment(QTcpSocket* socket, QString filePath)
 }
 
 
-void server::displayMessage(const QString& str)
+void server::displayMessage(const QString& str1)
 {
+    QString str = str1;
+    str.remove(0,8);
 
     QListWidgetItem* item = new QListWidgetItem();
     item->setText(str);
