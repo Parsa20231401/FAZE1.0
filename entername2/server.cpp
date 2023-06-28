@@ -204,7 +204,7 @@ void server::sendAttachment(QTcpSocket* socket, QString filePath)
 
 void server::displayMessage(const QString& str)
 {
-    ui->textBrowser_receivedMessages->text().append(str);
+    ui->textBrowser_receivedMessages->append(str);
 }
 
 void server::displayError(QAbstractSocket::SocketError socketError)

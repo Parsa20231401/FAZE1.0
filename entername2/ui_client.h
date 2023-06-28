@@ -36,6 +36,7 @@ public:
         if (client->objectName().isEmpty())
             client->setObjectName(QString::fromUtf8("client"));
         client->resize(735, 479);
+        client->setStyleSheet(QString::fromUtf8("background-color: rgb(85, 170, 127);"));
         centralwidget = new QWidget(client);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         pushButton = new QPushButton(centralwidget);
@@ -50,7 +51,7 @@ public:
         client->setCentralWidget(centralwidget);
         menubar = new QMenuBar(client);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 735, 26));
+        menubar->setGeometry(QRect(0, 0, 735, 25));
         client->setMenuBar(menubar);
         statusbar = new QStatusBar(client);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
@@ -75,4 +76,4 @@ namespace Ui {
 
 QT_END_NAMESPACE
 
-#endif // UI_client_H
+#endif // UI_CLIENT_H

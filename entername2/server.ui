@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>chatpage</class>
- <widget class="QMainWindow" name="chatpage">
+ <class>server</class>
+ <widget class="QMainWindow" name="server">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -12,6 +12,9 @@
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(255, 255, 255);</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QPushButton" name="pushButton">
@@ -47,13 +50,13 @@
      </rect>
     </property>
    </widget>
-   <widget class="QTextBrowser" name="textBrowser">
+   <widget class="QTextBrowser" name="textBrowser_receivedMessages">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>120</y>
-      <width>501</width>
-      <height>261</height>
+      <x>30</x>
+      <y>90</y>
+      <width>611</width>
+      <height>331</height>
      </rect>
     </property>
    </widget>
