@@ -60,23 +60,39 @@ void client::readSocket()
     if(fileType=="attachment"){
         QString fileName = header.split(",")[1].split(":")[1];
         QString ext = fileName.split(".")[1];
-        QString size = header.split(",")[2].split(":")[1].split(";")[0];
+//        QString size = header.split(",")[2].split(":")[1].split(";")[0];
 
-        if (QMessageBox::Yes == QMessageBox::question(this, "QTCPServer", QString("You are receiving an attachment from sd:%1 of size: %2 bytes, called %3. Do you want to accept it?").arg(socket->socketDescriptor()).arg(size).arg(fileName)))
-        {
+//        if (QMessageBox::Yes == QMessageBox::question(this, "QTCPServer", QString("You are receiving an attachment from sd:%1 of size: %2 bytes, called %3. Do you want to accept it?").arg(socket->socketDescriptor()).arg(size).arg(fileName)))
+//        {
             QString filePath = QFileDialog::getSaveFileName(this, tr("Save File"), QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)+"/"+fileName, QString("File (*.%1)").arg(ext));
+
+
+
+            QImage *image = new QImage(filePath);
+            QLabel *label = new QLabel;
+            QSize desiredSize(200, 200);
+            QPixmap pixmap(QPixmap::fromImage(image->scaled(desiredSize, Qt::KeepAspectRatio, Qt::SmoothTransformation)));
+            label->setPixmap(pixmap);
+            QListWidgetItem *item = new QListWidgetItem;
+            item->setSizeHint(pixmap.size());
+            ui->listWidget->addItem(item);
+            ui->listWidget->setItemWidget(item, label);
+            ui->listWidget->setSpacing(10);
+
+
+
 
             QFile file(filePath);
             if(file.open(QIODevice::WriteOnly)){
                 file.write(buffer);
-                QString message = QString("INFO :: Attachment from sd:%1 successfully stored on disk under the path %2").arg(socket->socketDescriptor()).arg(QString(filePath));
-                emit newMessage(message);
+//                QString message = QString("INFO :: Attachment from sd:%1 successfully stored on disk under the path %2").arg(socket->socketDescriptor()).arg(QString(filePath));
+//                emit newMessage(message);
             }else
                 QMessageBox::critical(this,"QTCPServer", "An error occurred while trying to write the attachment.");
-        }else{
-            QString message = QString("INFO :: Attachment from sd:%1 discarded").arg(socket->socketDescriptor());
-            emit newMessage(message);
-        }
+//        }else{
+//            QString message = QString("INFO :: Attachment from sd:%1 discarded").arg(socket->socketDescriptor());
+//            emit newMessage(message);
+//        }
     }else if(fileType=="message"){
         QString message = QString("%1 :: %2").arg(socket->socketDescriptor()).arg(QString::fromStdString(buffer.toStdString()));
         emit newMessage(message);
@@ -174,27 +190,41 @@ void client::on_pushButton_sendAttachment_clicked()
             if(filePath.isEmpty()){
 //                QMessageBox::critical(this,"QTCPClient","You haven't selected any attachment!");
                 return;
-            }
+         }
+
+
+            QImage *image = new QImage(filePath);
+            QLabel *label = new QLabel;
+            QSize desiredSize(200, 200); // Set the desired size of the image
+            QPixmap pixmap(QPixmap::fromImage(image->scaled(desiredSize, Qt::KeepAspectRatio, Qt::SmoothTransformation)));
+            label->setPixmap(pixmap);
+            QListWidgetItem *item = new QListWidgetItem;
+            item->setSizeHint(pixmap.size()); // Set the size hint of the item to match the size of the pixmap
+            ui->listWidget->addItem(item);
+            ui->listWidget->setItemWidget(item, label);
+
+
 
             QFile m_file(filePath);
             if(m_file.open(QIODevice::ReadOnly)){
 
-                QFileInfo fileInfo(m_file.fileName());
-                QString fileName(fileInfo.fileName());
+            QFileInfo fileInfo(m_file.fileName());
+            QString fileName(fileInfo.fileName());
 
-                QDataStream socketStream(socket);
-                socketStream.setVersion(QDataStream::Qt_DefaultCompiledVersion);
+            QDataStream socketStream(socket);
+            socketStream.setVersion(QDataStream::Qt_DefaultCompiledVersion);
 
-                QByteArray header;
-                header.prepend(QString("fileType:attachment,fileName:%1,fileSize:%2;").arg(fileName).arg(m_file.size()).toUtf8());
-                header.resize(128);
+            QByteArray header;
+            header.prepend(QString("fileType:attachment,fileName:%1,fileSize:%2;").arg(fileName).arg(m_file.size()).toUtf8());
+            header.resize(128);
 
-                QByteArray byteArray = m_file.readAll();
-                byteArray.prepend(header);
+            QByteArray byteArray = m_file.readAll();
+            byteArray.prepend(header);
 
-                socketStream.setVersion(QDataStream::Qt_DefaultCompiledVersion);
-                socketStream << byteArray;
-            }else
+            socketStream.setVersion(QDataStream::Qt_DefaultCompiledVersion);
+            socketStream << byteArray;
+            }
+            else
                 QMessageBox::critical(this,"QTCPClient","Attachment is not readable!");
         }
         else
