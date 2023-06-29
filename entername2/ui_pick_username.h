@@ -16,6 +16,7 @@
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QWidget>
 
@@ -29,6 +30,9 @@ public:
     QHBoxLayout *horizontalLayout;
     QLabel *label;
     QLineEdit *lineEdit;
+    QPushButton *pushButton;
+    QLabel *profile;
+    QPushButton *addProfile;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -41,7 +45,7 @@ public:
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         horizontalLayoutWidget = new QWidget(centralwidget);
         horizontalLayoutWidget->setObjectName(QString::fromUtf8("horizontalLayoutWidget"));
-        horizontalLayoutWidget->setGeometry(QRect(190, 70, 371, 141));
+        horizontalLayoutWidget->setGeometry(QRect(320, 200, 371, 141));
         horizontalLayout = new QHBoxLayout(horizontalLayoutWidget);
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
@@ -58,6 +62,19 @@ public:
 
         horizontalLayout->addWidget(lineEdit);
 
+        pushButton = new QPushButton(centralwidget);
+        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+        pushButton->setGeometry(QRect(310, 380, 171, 51));
+        profile = new QLabel(centralwidget);
+        profile->setObjectName(QString::fromUtf8("profile"));
+        profile->setGeometry(QRect(90, 140, 191, 201));
+        profile->setPixmap(QPixmap(QString::fromUtf8(":/new/prefix1/mode-portrait.png")));
+        profile->setScaledContents(true);
+        addProfile = new QPushButton(centralwidget);
+        addProfile->setObjectName(QString::fromUtf8("addProfile"));
+        addProfile->setGeometry(QRect(230, 290, 51, 51));
+        addProfile->setStyleSheet(QString::fromUtf8("image: url(:/new/prefix1/square-plus.png);\n"
+"background-color: rgb(255, 255, 255);"));
         pick_username->setCentralWidget(centralwidget);
         menubar = new QMenuBar(pick_username);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -76,6 +93,9 @@ public:
     {
         pick_username->setWindowTitle(QApplication::translate("pick_username", "MainWindow", nullptr));
         label->setText(QApplication::translate("pick_username", "pick a username: ", nullptr));
+        pushButton->setText(QApplication::translate("pick_username", "PushButton", nullptr));
+        profile->setText(QString());
+        addProfile->setText(QString());
     } // retranslateUi
 
 };

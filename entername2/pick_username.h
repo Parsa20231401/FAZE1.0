@@ -15,6 +15,11 @@ public:
     explicit pick_username(QWidget *parent = nullptr);
     ~pick_username();
 
+private slots:
+    void on_pushButton_clicked();
+
+    void on_addProfile_clicked();
+
 private:
     Ui::pick_username *ui;
 };

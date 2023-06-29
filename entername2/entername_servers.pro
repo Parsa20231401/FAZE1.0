@@ -39,10 +39,12 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 RESOURCES += \
+    attachment.qrc \
     capchaha.qrc \
     chat_icons.qrc \
     cheshmha.qrc \
-    logo.qrc
+    logo.qrc \
+    userProfile.qrc
 
 SUBDIRS += \
     ../../../Downloads/QTcpSocket-master/QTcpSocket-master/QTCPServer/QTCPServer.pro

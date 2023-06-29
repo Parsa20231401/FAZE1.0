@@ -5,10 +5,12 @@ debug/mainwindow.o
 debug/pick_username.o
 debug/safhepishvaz.o
 debug/server.o
+debug/qrc_attachment.o
 debug/qrc_capchaha.o
 debug/qrc_chat_icons.o
 debug/qrc_cheshmha.o
 debug/qrc_logo.o
+debug/qrc_userProfile.o
 debug/moc_client.o
 debug/moc_entrycode.o
 debug/moc_mainwindow.o

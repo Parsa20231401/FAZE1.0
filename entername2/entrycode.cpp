@@ -1,8 +1,7 @@
 #include "entrycode.h"
 #include "ui_entrycode.h"
 #include "QMessageBox"
-#include "server.h"
-#include "client.h"
+#include "pick_username.h"
 
 QString thelen;
 
@@ -29,7 +28,6 @@ void entrycode::on_ok_pushButton_clicked()
 {
     ui->groupBox->hide();
     ui->codeInput->show();
-
 }
 
 
@@ -39,10 +37,8 @@ void entrycode::on_codeInput_returnPressed()
 
     if (code == thelen)
     {
-        server *serverPage = new server(this);
-        serverPage->show();
-        client *clientPage = new client(this);
-        clientPage->show();
+        pick_username *usernamePage = new pick_username(this);
+        usernamePage->show();
         hide();
     }
     else{

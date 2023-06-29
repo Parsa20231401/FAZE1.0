@@ -139,16 +139,15 @@ void server::readSocket()
 
     buffer = buffer.mid(128);
 
-    if(fileType=="attachment"){
+    if(fileType=="attachment")
+    {
         QString fileName = header.split(",")[1].split(":")[1];
         QString ext = fileName.split(".")[1];
 //        QString size = header.split(",")[2].split(":")[1].split(";")[0];
 
 //        if (QMessageBox::Yes == QMessageBox::question(this, "QTCPServer", QString("You are receiving an attachment from sd:%1 of size: %2 bytes, called %3. Do you want to accept it?").arg(socket->socketDescriptor()).arg(size).arg(fileName)))
 //        {
-            QString defaultSaveLoc = "C:\\Users\\Asus\\Desktop\\telegramProjectImages";
-
-            QString filePath = QFileDialog::getSaveFileName(this, tr("Save File"), defaultSaveLoc+"/"+fileName, QString("File (*.%1)").arg(ext));
+            QString filePath = QFileDialog::getSaveFileName(this, tr("Save File"), QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)+"/"+fileName, QString("File (*.%1)").arg(ext));
 
             QFile file(filePath);
             if(file.open(QIODevice::WriteOnly)){

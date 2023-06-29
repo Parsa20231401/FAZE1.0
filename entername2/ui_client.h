@@ -11,6 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QListWidget>
 #include <QtWidgets/QMainWindow>
@@ -25,10 +26,12 @@ class Ui_client
 {
 public:
     QWidget *centralwidget;
-    QPushButton *pushButton;
-    QLineEdit *lineEdit;
     QListWidget *listWidget;
+    QWidget *horizontalLayoutWidget;
+    QHBoxLayout *horizontalLayout;
+    QLineEdit *lineEdit;
     QPushButton *pushButton_sendAttachment;
+    QPushButton *pushButton;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -40,20 +43,33 @@ public:
         client->setStyleSheet(QString::fromUtf8(""));
         centralwidget = new QWidget(client);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
-        pushButton = new QPushButton(centralwidget);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setGeometry(QRect(330, 400, 101, 31));
-        pushButton->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 85, 0);"));
-        lineEdit = new QLineEdit(centralwidget);
-        lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
-        lineEdit->setGeometry(QRect(20, 400, 311, 31));
         listWidget = new QListWidget(centralwidget);
         listWidget->setObjectName(QString::fromUtf8("listWidget"));
-        listWidget->setGeometry(QRect(30, 50, 371, 271));
+        listWidget->setGeometry(QRect(30, 50, 371, 291));
         listWidget->setStyleSheet(QString::fromUtf8("background-color: rgb(85, 170, 127);"));
-        pushButton_sendAttachment = new QPushButton(centralwidget);
+        horizontalLayoutWidget = new QWidget(centralwidget);
+        horizontalLayoutWidget->setObjectName(QString::fromUtf8("horizontalLayoutWidget"));
+        horizontalLayoutWidget->setGeometry(QRect(30, 350, 371, 51));
+        horizontalLayout = new QHBoxLayout(horizontalLayoutWidget);
+        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
+        horizontalLayout->setContentsMargins(0, 0, 0, 0);
+        lineEdit = new QLineEdit(horizontalLayoutWidget);
+        lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
+
+        horizontalLayout->addWidget(lineEdit);
+
+        pushButton_sendAttachment = new QPushButton(horizontalLayoutWidget);
         pushButton_sendAttachment->setObjectName(QString::fromUtf8("pushButton_sendAttachment"));
-        pushButton_sendAttachment->setGeometry(QRect(350, 370, 71, 25));
+        pushButton_sendAttachment->setStyleSheet(QString::fromUtf8("image: url(:/new/prefix1/attachment.png);"));
+
+        horizontalLayout->addWidget(pushButton_sendAttachment);
+
+        pushButton = new QPushButton(horizontalLayoutWidget);
+        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+        pushButton->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 85, 0);"));
+
+        horizontalLayout->addWidget(pushButton);
+
         client->setCentralWidget(centralwidget);
         menubar = new QMenuBar(client);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -71,8 +87,8 @@ public:
     void retranslateUi(QMainWindow *client)
     {
         client->setWindowTitle(QApplication::translate("client", "MainWindow", nullptr));
+        pushButton_sendAttachment->setText(QString());
         pushButton->setText(QApplication::translate("client", "PushButton", nullptr));
-        pushButton_sendAttachment->setText(QApplication::translate("client", "PushButton", nullptr));
     } // retranslateUi
 
 };
