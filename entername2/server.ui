@@ -20,9 +20,9 @@
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>450</x>
+      <x>440</x>
       <y>480</y>
-      <width>91</width>
+      <width>101</width>
       <height>31</height>
      </rect>
     </property>
@@ -38,7 +38,7 @@
      <rect>
       <x>0</x>
       <y>480</y>
-      <width>451</width>
+      <width>361</width>
       <height>31</height>
      </rect>
     </property>
@@ -64,6 +64,19 @@
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(85, 170, 127);</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_sendAttachment">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>490</y>
+      <width>80</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>PushButton</string>
     </property>
    </widget>
   </widget>

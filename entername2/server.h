@@ -42,6 +42,8 @@ private slots:
 
     void on_pushButton_clicked();
 
+    void on_pushButton_sendAttachment_clicked();
+
 private:
     Ui::server *ui;
     QTcpServer* m_server;

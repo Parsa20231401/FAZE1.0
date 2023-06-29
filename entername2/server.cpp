@@ -43,6 +43,10 @@ void server::on_pushButton_clicked()
 {
 
     QString str = ui->lineEdit->text();
+    if (str.length() < 1){
+        return;
+    }
+
     QListWidgetItem* item = new QListWidgetItem();
     item->setText(str);
     item->setTextAlignment(Qt::AlignRight);
@@ -125,8 +129,8 @@ void server::readSocket()
 
     if(!socketStream.commitTransaction())
     {
-        QString message = QString("%1 :: Waiting for more data to come..").arg(socket->socketDescriptor());
-        emit newMessage(message);
+//        QString message = QString("%1 :: Waiting for more data to come..").arg(socket->socketDescriptor());
+//        emit newMessage(message);
         return;
     }
 
@@ -290,5 +294,51 @@ void server::refreshComboBox(){
     ui->comboBox_receiver->addItem("Broadcast");
     foreach(QTcpSocket* socket, connection_set)
         ui->comboBox_receiver->addItem(QString::number(socket->socketDescriptor()));
+}
+
+
+void server::on_pushButton_sendAttachment_clicked()
+{
+
+        QString receiver = ui->comboBox_receiver->currentText();
+        QString filePath = QFileDialog::getOpenFileName(this, ("Select an attachment"), QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation), ("File (*.json *.txt *.png *.jpg *.jpeg)"));
+
+
+        QImage *image = new QImage(filePath);
+        QLabel *label = new QLabel;
+        QSize desiredSize(200, 200); // Set the desired size of the image
+        QPixmap pixmap(QPixmap::fromImage(image->scaled(desiredSize, Qt::KeepAspectRatio, Qt::SmoothTransformation)));
+        label->setPixmap(pixmap);
+        QListWidgetItem *item = new QListWidgetItem;
+        item->setSizeHint(pixmap.size()); // Set the size hint of the item to match the size of the pixmap
+        ui->listWidget->addItem(item);
+        ui->listWidget->setItemWidget(item, label);
+
+
+
+
+        if(filePath.isEmpty()){
+//            QMessageBox::critical(this,"QTCPClient","You haven't selected any attachment!");
+            return;
+        }
+        if(receiver=="Broadcast")
+        {
+            foreach (QTcpSocket* socket,connection_set)
+            {
+                sendAttachment(socket, filePath);
+            }
+        }
+        else
+        {
+            foreach (QTcpSocket* socket,connection_set)
+            {
+                if(socket->socketDescriptor() == receiver.toLongLong())
+                {
+                    sendAttachment(socket, filePath);
+                    break;
+                }
+            }
+        }
+        ui->lineEdit->clear();
 }
 

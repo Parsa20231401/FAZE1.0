@@ -28,6 +28,7 @@ public:
     QPushButton *pushButton;
     QLineEdit *lineEdit;
     QListWidget *listWidget;
+    QPushButton *pushButton_sendAttachment;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -48,8 +49,11 @@ public:
         lineEdit->setGeometry(QRect(20, 400, 311, 31));
         listWidget = new QListWidget(centralwidget);
         listWidget->setObjectName(QString::fromUtf8("listWidget"));
-        listWidget->setGeometry(QRect(30, 91, 371, 271));
+        listWidget->setGeometry(QRect(30, 50, 371, 271));
         listWidget->setStyleSheet(QString::fromUtf8("background-color: rgb(85, 170, 127);"));
+        pushButton_sendAttachment = new QPushButton(centralwidget);
+        pushButton_sendAttachment->setObjectName(QString::fromUtf8("pushButton_sendAttachment"));
+        pushButton_sendAttachment->setGeometry(QRect(350, 370, 71, 25));
         client->setCentralWidget(centralwidget);
         menubar = new QMenuBar(client);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -68,6 +72,7 @@ public:
     {
         client->setWindowTitle(QApplication::translate("client", "MainWindow", nullptr));
         pushButton->setText(QApplication::translate("client", "PushButton", nullptr));
+        pushButton_sendAttachment->setText(QApplication::translate("client", "PushButton", nullptr));
     } // retranslateUi
 
 };

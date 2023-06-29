@@ -30,6 +30,7 @@ public:
     QLineEdit *lineEdit;
     QComboBox *comboBox_receiver;
     QListWidget *listWidget;
+    QPushButton *pushButton_sendAttachment;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -43,11 +44,11 @@ public:
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         pushButton = new QPushButton(centralwidget);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setGeometry(QRect(450, 480, 91, 31));
+        pushButton->setGeometry(QRect(440, 480, 101, 31));
         pushButton->setStyleSheet(QString::fromUtf8("background-color: rgb(85, 170, 0);"));
         lineEdit = new QLineEdit(centralwidget);
         lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
-        lineEdit->setGeometry(QRect(0, 480, 451, 31));
+        lineEdit->setGeometry(QRect(0, 480, 361, 31));
         comboBox_receiver = new QComboBox(centralwidget);
         comboBox_receiver->setObjectName(QString::fromUtf8("comboBox_receiver"));
         comboBox_receiver->setGeometry(QRect(190, 330, 181, 31));
@@ -55,6 +56,9 @@ public:
         listWidget->setObjectName(QString::fromUtf8("listWidget"));
         listWidget->setGeometry(QRect(30, 150, 481, 321));
         listWidget->setStyleSheet(QString::fromUtf8("background-color: rgb(85, 170, 127);"));
+        pushButton_sendAttachment = new QPushButton(centralwidget);
+        pushButton_sendAttachment->setObjectName(QString::fromUtf8("pushButton_sendAttachment"));
+        pushButton_sendAttachment->setGeometry(QRect(360, 490, 80, 25));
         server->setCentralWidget(centralwidget);
         menubar = new QMenuBar(server);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -73,6 +77,7 @@ public:
     {
         server->setWindowTitle(QApplication::translate("server", "MainWindow", nullptr));
         pushButton->setText(QApplication::translate("server", "PushButton", nullptr));
+        pushButton_sendAttachment->setText(QApplication::translate("server", "PushButton", nullptr));
     } // retranslateUi
 
 };

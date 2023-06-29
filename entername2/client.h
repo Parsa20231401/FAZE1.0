@@ -31,6 +31,8 @@ private slots:
 
     void on_pushButton_clicked();
 
+    void on_pushButton_sendAttachment_clicked();
+
 public:
     explicit client(QWidget *parent = nullptr);
     ~client();

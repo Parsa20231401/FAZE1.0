@@ -14,7 +14,6 @@ client::client(QWidget *parent) :
         connect(this, &client::newMessage, this, &client::displayMessage);
         connect(socket, &QTcpSocket::readyRead, this, &client::readSocket);
         connect(socket, &QTcpSocket::disconnected, this, &client::discardSocket);
-//        connect(socket, &QAbstractSocket::errorOccurred, this, &client::displayError);
 
         socket->connectToHost(QHostAddress::LocalHost,8080); // ersal darkhast vase join b server
 
@@ -48,8 +47,8 @@ void client::readSocket()
 
     if(!socketStream.commitTransaction())
     {
-        QString message = QString("%1 :: Waiting for more data to come..").arg(socket->socketDescriptor());
-        emit newMessage(message);
+//        QString message = QString("%1 :: Waiting for more data to come..").arg(socket->socketDescriptor());
+//        emit newMessage(message);
         return;
     }
 
@@ -89,7 +88,6 @@ void client::discardSocket()
     socket->deleteLater();
     socket=nullptr;
 
-//    ui->statusBar->showMessage("Disconnected!");
 }
 
 void client::displayError(QAbstractSocket::SocketError socketError)
@@ -112,6 +110,9 @@ void client::displayError(QAbstractSocket::SocketError socketError)
 void client::on_pushButton_clicked()
 {
     QString str = ui->lineEdit->text();
+    if (str.length() < 1){
+        return;
+    }
     QListWidgetItem* item = new QListWidgetItem();
     item->setText(str);
     item->setTextAlignment(Qt::AlignRight);
@@ -162,46 +163,46 @@ void client::on_pushButton_clicked()
         QMessageBox::critical(this,"QTCPClient","Not connected");
 }
 
-//void client::on_pushButton_sendAttachment_clicked()
-//{
-//    if(socket)
-//    {
-//        if(socket->isOpen())
-//        {
-//            QString filePath = QFileDialog::getOpenFileName(this, ("Select an attachment"), QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation), ("File (*.json *.txt *.png *.jpg *.jpeg)"));
+void client::on_pushButton_sendAttachment_clicked()
+{
+    if(socket)
+    {
+        if(socket->isOpen())
+        {
+            QString filePath = QFileDialog::getOpenFileName(this, ("Select an attachment"), QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation), ("File (*.json *.txt *.png *.jpg *.jpeg)"));
 
-//            if(filePath.isEmpty()){
+            if(filePath.isEmpty()){
 //                QMessageBox::critical(this,"QTCPClient","You haven't selected any attachment!");
-//                return;
-//            }
+                return;
+            }
 
-//            QFile m_file(filePath);
-//            if(m_file.open(QIODevice::ReadOnly)){
+            QFile m_file(filePath);
+            if(m_file.open(QIODevice::ReadOnly)){
 
-//                QFileInfo fileInfo(m_file.fileName());
-//                QString fileName(fileInfo.fileName());
+                QFileInfo fileInfo(m_file.fileName());
+                QString fileName(fileInfo.fileName());
 
-//                QDataStream socketStream(socket);
-//                socketStream.setVersion(QDataStream::Qt_DefaultCompiledVersion);
+                QDataStream socketStream(socket);
+                socketStream.setVersion(QDataStream::Qt_DefaultCompiledVersion);
 
-//                QByteArray header;
-//                header.prepend(QString("fileType:attachment,fileName:%1,fileSize:%2;").arg(fileName).arg(m_file.size()).toUtf8());
-//                header.resize(128);
+                QByteArray header;
+                header.prepend(QString("fileType:attachment,fileName:%1,fileSize:%2;").arg(fileName).arg(m_file.size()).toUtf8());
+                header.resize(128);
 
-//                QByteArray byteArray = m_file.readAll();
-//                byteArray.prepend(header);
+                QByteArray byteArray = m_file.readAll();
+                byteArray.prepend(header);
 
-//                socketStream.setVersion(QDataStream::Qt_DefaultCompiledVersion);
-//                socketStream << byteArray;
-//            }else
-//                QMessageBox::critical(this,"QTCPClient","Attachment is not readable!");
-//        }
-//        else
-//            QMessageBox::critical(this,"QTCPClient","Socket doesn't seem to be opened");
-//    }
-//    else
-//        QMessageBox::critical(this,"QTCPClient","Not connected");
-//}
+                socketStream.setVersion(QDataStream::Qt_DefaultCompiledVersion);
+                socketStream << byteArray;
+            }else
+                QMessageBox::critical(this,"QTCPClient","Attachment is not readable!");
+        }
+        else
+            QMessageBox::critical(this,"QTCPClient","Socket doesn't seem to be opened");
+    }
+    else
+        QMessageBox::critical(this,"QTCPClient","Not connected");
+}
 
 void client::displayMessage(const QString& str1)
 {
