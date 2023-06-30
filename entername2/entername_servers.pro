@@ -41,14 +41,11 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 RESOURCES += \
-    bot_user.qrc \
-    chat_icons.qrc \
     resources/Logo.qrc \
     resources/capcha.qrc \
     resources/chatIcons.qrc \
     resources/eyes.qrc \
     resources/userProfile.qrc \
-    userProfile.qrc
 
 SUBDIRS += \
     ../../../Downloads/QTcpSocket-master/QTcpSocket-master/QTCPServer/QTCPServer.pro

@@ -6,8 +6,6 @@ release/mainwindow.o
 release/pick_username.o
 release/safhepishvaz.o
 release/server.o
-release/qrc_bot_user.o
-release/qrc_chat_icons.o
 release/qrc_Logo.o
 release/qrc_capcha.o
 release/qrc_chatIcons.o

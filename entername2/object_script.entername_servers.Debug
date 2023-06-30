@@ -6,8 +6,6 @@ debug/mainwindow.o
 debug/pick_username.o
 debug/safhepishvaz.o
 debug/server.o
-debug/qrc_bot_user.o
-debug/qrc_chat_icons.o
 debug/qrc_Logo.o
 debug/qrc_capcha.o
 debug/qrc_chatIcons.o
