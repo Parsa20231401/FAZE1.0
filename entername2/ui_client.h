@@ -65,7 +65,8 @@ public:
 
         pushButton_sendAttachment = new QPushButton(verticalLayoutWidget);
         pushButton_sendAttachment->setObjectName(QString::fromUtf8("pushButton_sendAttachment"));
-        pushButton_sendAttachment->setStyleSheet(QString::fromUtf8("image: url(:/new/prefix1/images/attachment.png);"));
+        pushButton_sendAttachment->setStyleSheet(QString::fromUtf8("image: url(:/new/prefix1/images/attachment.png);\n"
+"background-color: rgb(170, 0, 255);"));
 
         horizontalLayout->addWidget(pushButton_sendAttachment);
 
