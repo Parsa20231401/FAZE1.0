@@ -83,8 +83,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">image: url(:/new/prefix1/square-plus.png);
-background-color: rgb(255, 255, 255);</string>
+     <string notr="true">image: url(:/new/prefix1/square-plus.png);</string>
     </property>
     <property name="text">
      <string/>

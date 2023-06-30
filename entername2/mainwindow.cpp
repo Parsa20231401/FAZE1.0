@@ -13,8 +13,8 @@
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow) {
     ui->setupUi(this);
     ui->sginupBox->hide();
-    ui->lineEdit_4->setEchoMode(QLineEdit::Password);
-    ui->lineEdit_2->setEchoMode(QLineEdit::Password);
+    ui->password_username->setEchoMode(QLineEdit::Password);
+    ui->login_password->setEchoMode(QLineEdit::Password);
     ui->label_5->setText("<b>username:</b>");
     ui->label_2->setText("<b>enter youe information:</b>");
     ui->label_4->setText("<b>password:</b>");
@@ -23,7 +23,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     ui->label_21->setText("<b>email:</b>");
     ui->label_22->setText("<b>telephone number:</b>");
     ui->groupBox_4->hide();
-    ui->pushButton_3->hide();
+    ui->unsee_button->hide();
     ui->comboBox->addItem("egypt +20");
     ui->comboBox->addItem("south africa +27");
     ui->comboBox->addItem("france +33");
@@ -35,7 +35,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     ui->comboBox->addItem("iraq +964");
     ui->comboBox->addItem("iran +98");
 
-
     QSqlDatabase database;
     database = QSqlDatabase::addDatabase("QSQLITE");
     database.setDatabaseName("d:\\usersinfo.db");
@@ -46,7 +45,7 @@ MainWindow::~MainWindow() {
     delete ui;
 }
 
-void MainWindow::on_pushButton_2_clicked() {
+void MainWindow::on_signup_button_clicked() {
     ui->loginBox->hide();
     ui->sginupBox->show();
     ui->sginupBox->move(320, 50);
@@ -75,8 +74,8 @@ void MainWindow::on_pushButton_5_clicked() {
     QSqlQuery q;
     QString a1, a2, a3, a4, a5;
 
-    a1 = ui->lineEdit_3->text();
-    a2 = ui->lineEdit_4->text();
+    a1 = ui->signup_username->text();
+    a2 = ui->password_username->text();
     a3 = ui->lineEdit_6->text();
     a4 = ui->lineEdit_7->text();
     a5 = ui->comboBox->currentText();
@@ -131,15 +130,20 @@ void MainWindow::on_pushButton_5_clicked() {
 }
 
 
-void MainWindow::on_pushButton_6_clicked()
+void MainWindow::on_see_button_clicked()
 {
-    ui->lineEdit_4->setEchoMode(QLineEdit::Normal);
-    ui->pushButton_6->hide();
-    ui->pushButton_3->move(275,101);
-    ui->pushButton_3->show();
+    ui->password_username->setEchoMode(QLineEdit::Normal);
+
+    QRect Geometry = ui->see_button->geometry();
+    int x = Geometry.x();
+    int y = Geometry.y();
+    ui->unsee_button->move(x, y);
+    ui->unsee_button->show();
+
+    ui->see_button->hide();
 }
 
-void MainWindow::on_lineEdit_textEdited(const QString &arg1)
+void MainWindow::on_login_username_textEdited(const QString &arg1)
 {
    int len,i,sw=1;
    len=arg1.length();
@@ -156,7 +160,7 @@ void MainWindow::on_lineEdit_textEdited(const QString &arg1)
 }
 
 
-void MainWindow::on_lineEdit_2_textEdited(const QString &arg1)
+void MainWindow::on_login_password_textEdited(const QString &arg1)
 {
     int len,i,sw=1;
     len=arg1.length();
@@ -173,7 +177,7 @@ void MainWindow::on_lineEdit_2_textEdited(const QString &arg1)
 }
 
 
-void MainWindow::on_lineEdit_3_textEdited(const QString &arg1)
+void MainWindow::on_signup_username_textEdited(const QString &arg1)
 {
     int len,i,sw=1;
     len=arg1.length();
@@ -188,7 +192,7 @@ void MainWindow::on_lineEdit_3_textEdited(const QString &arg1)
     }
 }
 
-void MainWindow::on_lineEdit_4_textEdited(const QString &arg1)
+void MainWindow::on_password_username_textEdited(const QString &arg1)
 {
     int len,i,sw=1;
     len=arg1.length();
@@ -209,21 +213,21 @@ void MainWindow::on_lineEdit_4_textEdited(const QString &arg1)
 }
 
 
-void MainWindow::on_pushButton_3_clicked()
+void MainWindow::on_unsee_button_clicked()
 {
-    ui->pushButton_3->hide();
-    ui->pushButton_6->show();
-    ui->lineEdit_4->setEchoMode(QLineEdit::Password);
+    ui->unsee_button->hide();
+    ui->see_button->show();
+    ui->password_username->setEchoMode(QLineEdit::Password);
 }
 
 
-void MainWindow::on_pushButton_clicked()
+void MainWindow::on_login_Button_clicked()
 {
     QSqlQuery q, p;
     QString a1, a2;
 
-    a1 = ui->lineEdit->text();
-    a2 = ui->lineEdit_2->text();
+    a1 = ui->login_username->text();
+    a2 = ui->login_password->text();
 
     q.exec("SELECT username FROM usersdata WHERE username='"+a1+"'");
 
@@ -232,15 +236,18 @@ void MainWindow::on_pushButton_clicked()
         p.exec("SELECT password FROM usersdata WHERE password='"+a2+"'");
         if(p.first()){
 
-            QMessageBox::information(this,"correct","Go to faze2");
+            server *serverPage = new server(this);
+            serverPage->show();
+            client *clientPage = new client(this);
+            clientPage->show();
             hide();
         }
         else {
-            QMessageBox::information(this,"wrong","try again");
+            QMessageBox::information(this,"wrong username/password","try again");
         }
     }
     else {
-        QMessageBox::information(this,"wrong","try again");
+        QMessageBox::information(this,"wrong username/password","try again");
     }
 
 }

@@ -278,7 +278,7 @@ void client::displayMessage(const QString& str1)
     QDateTime currentDateTime = QDateTime::fromSecsSinceEpoch(secondsSinceEpoch);
     QString time = currentDateTime.toString("hh:mm");
 
-    QIcon icon(":/new/prefix1/bot_user.png");
+    QIcon icon(":/new/prefix1/bot_user.png"); ////////////////// add profile from the database
     QPixmap pixmap = icon.pixmap(QSize(100, 100));
     QListWidgetItem* item = new QListWidgetItem();
 

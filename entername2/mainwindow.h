@@ -20,7 +20,7 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_pushButton_2_clicked();
+    void on_signup_button_clicked();
 
 
 
@@ -28,19 +28,19 @@ private slots:
 
    void on_pushButton_5_clicked();
 
-   void on_pushButton_6_clicked();
+   void on_see_button_clicked();
 
-   void on_lineEdit_textEdited(const QString &arg1);
+   void on_login_username_textEdited(const QString &arg1);
 
-   void on_lineEdit_2_textEdited(const QString &arg1);
+   void on_login_password_textEdited(const QString &arg1);
 
-   void on_lineEdit_3_textEdited(const QString &arg1);
+   void on_signup_username_textEdited(const QString &arg1);
 
-   void on_lineEdit_4_textEdited(const QString &arg1);
+   void on_password_username_textEdited(const QString &arg1);
 
-   void on_pushButton_3_clicked();
+   void on_unsee_button_clicked();
 
-   void on_pushButton_clicked();
+   void on_login_Button_clicked();
 
    void on_shortcutButton1_clicked();
 

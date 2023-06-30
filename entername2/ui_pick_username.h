@@ -73,8 +73,8 @@ public:
         addProfile = new QPushButton(centralwidget);
         addProfile->setObjectName(QString::fromUtf8("addProfile"));
         addProfile->setGeometry(QRect(230, 290, 51, 51));
-        addProfile->setStyleSheet(QString::fromUtf8("image: url(:/new/prefix1/square-plus.png);\n"
-"background-color: rgb(255, 255, 255);"));
+        addProfile->setStyleSheet(QString::fromUtf8("image: url(:/new/prefix1/bot_user.png);\n"
+""));
         pick_username->setCentralWidget(centralwidget);
         menubar = new QMenuBar(pick_username);
         menubar->setObjectName(QString::fromUtf8("menubar"));

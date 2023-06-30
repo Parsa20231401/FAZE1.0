@@ -22,7 +22,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWindow_t {
     QByteArrayData data[14];
-    char stringdata0[284];
+    char stringdata0[307];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -32,28 +32,29 @@ struct qt_meta_stringdata_MainWindow_t {
 static const qt_meta_stringdata_MainWindow_t qt_meta_stringdata_MainWindow = {
     {
 QT_MOC_LITERAL(0, 0, 10), // "MainWindow"
-QT_MOC_LITERAL(1, 11, 23), // "on_pushButton_2_clicked"
-QT_MOC_LITERAL(2, 35, 0), // ""
-QT_MOC_LITERAL(3, 36, 23), // "on_pushButton_4_clicked"
-QT_MOC_LITERAL(4, 60, 23), // "on_pushButton_5_clicked"
-QT_MOC_LITERAL(5, 84, 23), // "on_pushButton_6_clicked"
-QT_MOC_LITERAL(6, 108, 22), // "on_lineEdit_textEdited"
-QT_MOC_LITERAL(7, 131, 4), // "arg1"
-QT_MOC_LITERAL(8, 136, 24), // "on_lineEdit_2_textEdited"
-QT_MOC_LITERAL(9, 161, 24), // "on_lineEdit_3_textEdited"
-QT_MOC_LITERAL(10, 186, 24), // "on_lineEdit_4_textEdited"
-QT_MOC_LITERAL(11, 211, 23), // "on_pushButton_3_clicked"
-QT_MOC_LITERAL(12, 235, 21), // "on_pushButton_clicked"
-QT_MOC_LITERAL(13, 257, 26) // "on_shortcutButton1_clicked"
+QT_MOC_LITERAL(1, 11, 24), // "on_signup_button_clicked"
+QT_MOC_LITERAL(2, 36, 0), // ""
+QT_MOC_LITERAL(3, 37, 23), // "on_pushButton_4_clicked"
+QT_MOC_LITERAL(4, 61, 23), // "on_pushButton_5_clicked"
+QT_MOC_LITERAL(5, 85, 21), // "on_see_button_clicked"
+QT_MOC_LITERAL(6, 107, 28), // "on_login_username_textEdited"
+QT_MOC_LITERAL(7, 136, 4), // "arg1"
+QT_MOC_LITERAL(8, 141, 28), // "on_login_password_textEdited"
+QT_MOC_LITERAL(9, 170, 29), // "on_signup_username_textEdited"
+QT_MOC_LITERAL(10, 200, 31), // "on_password_username_textEdited"
+QT_MOC_LITERAL(11, 232, 23), // "on_unsee_button_clicked"
+QT_MOC_LITERAL(12, 256, 23), // "on_login_Button_clicked"
+QT_MOC_LITERAL(13, 280, 26) // "on_shortcutButton1_clicked"
 
     },
-    "MainWindow\0on_pushButton_2_clicked\0\0"
-    "on_pushButton_4_clicked\0on_pushButton_5_clicked\0"
-    "on_pushButton_6_clicked\0on_lineEdit_textEdited\0"
-    "arg1\0on_lineEdit_2_textEdited\0"
-    "on_lineEdit_3_textEdited\0"
-    "on_lineEdit_4_textEdited\0"
-    "on_pushButton_3_clicked\0on_pushButton_clicked\0"
+    "MainWindow\0on_signup_button_clicked\0"
+    "\0on_pushButton_4_clicked\0"
+    "on_pushButton_5_clicked\0on_see_button_clicked\0"
+    "on_login_username_textEdited\0arg1\0"
+    "on_login_password_textEdited\0"
+    "on_signup_username_textEdited\0"
+    "on_password_username_textEdited\0"
+    "on_unsee_button_clicked\0on_login_Button_clicked\0"
     "on_shortcutButton1_clicked"
 };
 #undef QT_MOC_LITERAL
@@ -106,16 +107,16 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         auto *_t = static_cast<MainWindow *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->on_pushButton_2_clicked(); break;
+        case 0: _t->on_signup_button_clicked(); break;
         case 1: _t->on_pushButton_4_clicked(); break;
         case 2: _t->on_pushButton_5_clicked(); break;
-        case 3: _t->on_pushButton_6_clicked(); break;
-        case 4: _t->on_lineEdit_textEdited((*reinterpret_cast< const QString(*)>(_a[1]))); break;
-        case 5: _t->on_lineEdit_2_textEdited((*reinterpret_cast< const QString(*)>(_a[1]))); break;
-        case 6: _t->on_lineEdit_3_textEdited((*reinterpret_cast< const QString(*)>(_a[1]))); break;
-        case 7: _t->on_lineEdit_4_textEdited((*reinterpret_cast< const QString(*)>(_a[1]))); break;
-        case 8: _t->on_pushButton_3_clicked(); break;
-        case 9: _t->on_pushButton_clicked(); break;
+        case 3: _t->on_see_button_clicked(); break;
+        case 4: _t->on_login_username_textEdited((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 5: _t->on_login_password_textEdited((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 6: _t->on_signup_username_textEdited((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 7: _t->on_password_username_textEdited((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 8: _t->on_unsee_button_clicked(); break;
+        case 9: _t->on_login_Button_clicked(); break;
         case 10: _t->on_shortcutButton1_clicked(); break;
         default: ;
         }

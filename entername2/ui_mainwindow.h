@@ -34,18 +34,18 @@ public:
     QLabel *label;
     QLabel *label_2;
     QLabel *label_3;
-    QPushButton *pushButton;
+    QPushButton *login_Button;
     QLabel *label_12;
     QGroupBox *groupBox_2;
     QLabel *label_13;
-    QPushButton *pushButton_2;
+    QPushButton *signup_button;
     QWidget *formLayoutWidget;
     QFormLayout *formLayout;
     QLabel *label_5;
-    QLineEdit *lineEdit;
+    QLineEdit *login_username;
     QLabel *label_19;
     QLabel *label_4;
-    QLineEdit *lineEdit_2;
+    QLineEdit *login_password;
     QLabel *label_20;
     QWidget *verticalLayoutWidget;
     QVBoxLayout *verticalLayout_2;
@@ -60,16 +60,15 @@ public:
     QPushButton *pushButton_4;
     QLabel *label_18;
     QLabel *label_11;
-    QPushButton *pushButton_3;
+    QPushButton *unsee_button;
     QWidget *formLayoutWidget_2;
     QFormLayout *formLayout_3;
     QLabel *label_15;
-    QLineEdit *lineEdit_3;
+    QLineEdit *signup_username;
     QLabel *label_27;
     QLabel *label_16;
     QHBoxLayout *horizontalLayout_3;
-    QLineEdit *lineEdit_4;
-    QPushButton *pushButton_6;
+    QLineEdit *password_username;
     QLabel *label_28;
     QLabel *label_21;
     QLineEdit *lineEdit_6;
@@ -85,6 +84,7 @@ public:
     QVBoxLayout *verticalLayout_5;
     QLabel *label_9;
     QLabel *label_10;
+    QPushButton *see_button;
     QGroupBox *groupBox_4;
     QLineEdit *lineEdit_5;
     QPushButton *pushButton_5;
@@ -116,9 +116,9 @@ public:
         label_3 = new QLabel(loginBox);
         label_3->setObjectName(QString::fromUtf8("label_3"));
         label_3->setGeometry(QRect(20, 100, 55, 16));
-        pushButton = new QPushButton(loginBox);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setGeometry(QRect(200, 220, 93, 28));
+        login_Button = new QPushButton(loginBox);
+        login_Button->setObjectName(QString::fromUtf8("login_Button"));
+        login_Button->setGeometry(QRect(200, 220, 93, 28));
         label_12 = new QLabel(loginBox);
         label_12->setObjectName(QString::fromUtf8("label_12"));
         label_12->setGeometry(QRect(200, 280, 121, 16));
@@ -129,9 +129,9 @@ public:
         label_13 = new QLabel(groupBox_2);
         label_13->setObjectName(QString::fromUtf8("label_13"));
         label_13->setGeometry(QRect(30, 30, 111, 16));
-        pushButton_2 = new QPushButton(groupBox_2);
-        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
-        pushButton_2->setGeometry(QRect(150, 20, 91, 41));
+        signup_button = new QPushButton(groupBox_2);
+        signup_button->setObjectName(QString::fromUtf8("signup_button"));
+        signup_button->setGeometry(QRect(150, 20, 91, 41));
         formLayoutWidget = new QWidget(loginBox);
         formLayoutWidget->setObjectName(QString::fromUtf8("formLayoutWidget"));
         formLayoutWidget->setGeometry(QRect(10, 50, 221, 111));
@@ -143,10 +143,10 @@ public:
 
         formLayout->setWidget(0, QFormLayout::LabelRole, label_5);
 
-        lineEdit = new QLineEdit(formLayoutWidget);
-        lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
+        login_username = new QLineEdit(formLayoutWidget);
+        login_username->setObjectName(QString::fromUtf8("login_username"));
 
-        formLayout->setWidget(0, QFormLayout::FieldRole, lineEdit);
+        formLayout->setWidget(0, QFormLayout::FieldRole, login_username);
 
         label_19 = new QLabel(formLayoutWidget);
         label_19->setObjectName(QString::fromUtf8("label_19"));
@@ -160,10 +160,10 @@ public:
 
         formLayout->setWidget(2, QFormLayout::LabelRole, label_4);
 
-        lineEdit_2 = new QLineEdit(formLayoutWidget);
-        lineEdit_2->setObjectName(QString::fromUtf8("lineEdit_2"));
+        login_password = new QLineEdit(formLayoutWidget);
+        login_password->setObjectName(QString::fromUtf8("login_password"));
 
-        formLayout->setWidget(2, QFormLayout::FieldRole, lineEdit_2);
+        formLayout->setWidget(2, QFormLayout::FieldRole, login_password);
 
         label_20 = new QLabel(formLayoutWidget);
         label_20->setObjectName(QString::fromUtf8("label_20"));
@@ -210,7 +210,7 @@ public:
 
         sginupBox = new QGroupBox(centralwidget);
         sginupBox->setObjectName(QString::fromUtf8("sginupBox"));
-        sginupBox->setGeometry(QRect(820, 80, 721, 401));
+        sginupBox->setGeometry(QRect(780, 80, 721, 401));
         sginupBox->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
         label_17 = new QLabel(sginupBox);
         label_17->setObjectName(QString::fromUtf8("label_17"));
@@ -223,15 +223,15 @@ public:
         label_18->setGeometry(QRect(280, 240, 55, 16));
         label_11 = new QLabel(sginupBox);
         label_11->setObjectName(QString::fromUtf8("label_11"));
-        label_11->setGeometry(QRect(300, 250, 161, 61));
+        label_11->setGeometry(QRect(310, 260, 161, 61));
         label_11->setFrameShape(QFrame::Box);
-        pushButton_3 = new QPushButton(sginupBox);
-        pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
-        pushButton_3->setGeometry(QRect(580, 210, 41, 28));
-        pushButton_3->setStyleSheet(QString::fromUtf8("image: url(:/new/prefix1/cheshm2.jpg);"));
+        unsee_button = new QPushButton(sginupBox);
+        unsee_button->setObjectName(QString::fromUtf8("unsee_button"));
+        unsee_button->setGeometry(QRect(580, 210, 41, 28));
+        unsee_button->setStyleSheet(QString::fromUtf8("image: url(:/new/prefix1/cheshm2.jpg);"));
         formLayoutWidget_2 = new QWidget(sginupBox);
         formLayoutWidget_2->setObjectName(QString::fromUtf8("formLayoutWidget_2"));
-        formLayoutWidget_2->setGeometry(QRect(30, 30, 291, 203));
+        formLayoutWidget_2->setGeometry(QRect(30, 30, 289, 205));
         formLayout_3 = new QFormLayout(formLayoutWidget_2);
         formLayout_3->setObjectName(QString::fromUtf8("formLayout_3"));
         formLayout_3->setContentsMargins(0, 0, 0, 0);
@@ -240,10 +240,10 @@ public:
 
         formLayout_3->setWidget(0, QFormLayout::LabelRole, label_15);
 
-        lineEdit_3 = new QLineEdit(formLayoutWidget_2);
-        lineEdit_3->setObjectName(QString::fromUtf8("lineEdit_3"));
+        signup_username = new QLineEdit(formLayoutWidget_2);
+        signup_username->setObjectName(QString::fromUtf8("signup_username"));
 
-        formLayout_3->setWidget(0, QFormLayout::FieldRole, lineEdit_3);
+        formLayout_3->setWidget(0, QFormLayout::FieldRole, signup_username);
 
         label_27 = new QLabel(formLayoutWidget_2);
         label_27->setObjectName(QString::fromUtf8("label_27"));
@@ -259,16 +259,16 @@ public:
 
         horizontalLayout_3 = new QHBoxLayout();
         horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
-        lineEdit_4 = new QLineEdit(formLayoutWidget_2);
-        lineEdit_4->setObjectName(QString::fromUtf8("lineEdit_4"));
+        password_username = new QLineEdit(formLayoutWidget_2);
+        password_username->setObjectName(QString::fromUtf8("password_username"));
+        QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(password_username->sizePolicy().hasHeightForWidth());
+        password_username->setSizePolicy(sizePolicy);
+        password_username->setMaximumSize(QSize(200, 24));
 
-        horizontalLayout_3->addWidget(lineEdit_4);
-
-        pushButton_6 = new QPushButton(formLayoutWidget_2);
-        pushButton_6->setObjectName(QString::fromUtf8("pushButton_6"));
-        pushButton_6->setStyleSheet(QString::fromUtf8("image: url(:/new/prefix1/cheshm1.jpg);"));
-
-        horizontalLayout_3->addWidget(pushButton_6);
+        horizontalLayout_3->addWidget(password_username);
 
 
         formLayout_3->setLayout(2, QFormLayout::FieldRole, horizontalLayout_3);
@@ -299,6 +299,7 @@ public:
         horizontalLayout_5->setObjectName(QString::fromUtf8("horizontalLayout_5"));
         comboBox = new QComboBox(formLayoutWidget_2);
         comboBox->setObjectName(QString::fromUtf8("comboBox"));
+        comboBox->setMaximumSize(QSize(60, 16777215));
 
         horizontalLayout_5->addWidget(comboBox);
 
@@ -330,7 +331,7 @@ public:
 
         verticalLayoutWidget_4 = new QWidget(sginupBox);
         verticalLayoutWidget_4->setObjectName(QString::fromUtf8("verticalLayoutWidget_4"));
-        verticalLayoutWidget_4->setGeometry(QRect(330, 90, 321, 41));
+        verticalLayoutWidget_4->setGeometry(QRect(330, 140, 321, 41));
         verticalLayout_5 = new QVBoxLayout(verticalLayoutWidget_4);
         verticalLayout_5->setObjectName(QString::fromUtf8("verticalLayout_5"));
         verticalLayout_5->setContentsMargins(0, 0, 0, 0);
@@ -346,6 +347,12 @@ public:
 
         verticalLayout_5->addWidget(label_10);
 
+        see_button = new QPushButton(sginupBox);
+        see_button->setObjectName(QString::fromUtf8("see_button"));
+        see_button->setGeometry(QRect(330, 110, 41, 25));
+        sizePolicy.setHeightForWidth(see_button->sizePolicy().hasHeightForWidth());
+        see_button->setSizePolicy(sizePolicy);
+        see_button->setStyleSheet(QString::fromUtf8("image: url(:/new/prefix1/cheshm1.jpg);"));
         groupBox_4 = new QGroupBox(centralwidget);
         groupBox_4->setObjectName(QString::fromUtf8("groupBox_4"));
         groupBox_4->setGeometry(QRect(420, 490, 371, 271));
@@ -385,13 +392,13 @@ public:
         label->setText(QString());
         label_2->setText(QApplication::translate("MainWindow", "enter youe information:", nullptr));
         label_3->setText(QString());
-        pushButton->setText(QApplication::translate("MainWindow", "log in", nullptr));
+        login_Button->setText(QApplication::translate("MainWindow", "log in", nullptr));
         label_12->setText(QString());
         groupBox_2->setTitle(QString());
         label_13->setText(QApplication::translate("MainWindow", "not a member?", nullptr));
-        pushButton_2->setText(QApplication::translate("MainWindow", "sign up", nullptr));
+        signup_button->setText(QApplication::translate("MainWindow", "sign up", nullptr));
         label_5->setText(QApplication::translate("MainWindow", "username:", nullptr));
-        lineEdit->setText(QString());
+        login_username->setText(QString());
         label_19->setText(QString());
         label_4->setText(QApplication::translate("MainWindow", "password:", nullptr));
         label_20->setText(QString());
@@ -404,11 +411,10 @@ public:
         pushButton_4->setText(QApplication::translate("MainWindow", "CREATE CAPCHA", nullptr));
         label_18->setText(QString());
         label_11->setText(QString());
-        pushButton_3->setText(QString());
+        unsee_button->setText(QString());
         label_15->setText(QApplication::translate("MainWindow", "username:", nullptr));
         label_27->setText(QString());
         label_16->setText(QApplication::translate("MainWindow", "password:", nullptr));
-        pushButton_6->setText(QString());
         label_28->setText(QString());
         label_21->setText(QApplication::translate("MainWindow", "email:", nullptr));
         label_22->setText(QApplication::translate("MainWindow", "phone number:", nullptr));
@@ -416,6 +422,7 @@ public:
         label_24->setText(QApplication::translate("MainWindow", "rule2:your username should have atleast 8 characters", nullptr));
         label_9->setText(QApplication::translate("MainWindow", "rule1:you just have to use numbers", nullptr));
         label_10->setText(QApplication::translate("MainWindow", "rule2:your password should have atleast 8 characters", nullptr));
+        see_button->setText(QString());
         groupBox_4->setTitle(QApplication::translate("MainWindow", "enter the capcha", nullptr));
         lineEdit_5->setPlaceholderText(QApplication::translate("MainWindow", "write here", nullptr));
         pushButton_5->setText(QApplication::translate("MainWindow", "go", nullptr));
