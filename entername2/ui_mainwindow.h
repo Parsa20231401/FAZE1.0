@@ -226,7 +226,7 @@ public:
         unsee_button = new QPushButton(sginupBox);
         unsee_button->setObjectName(QString::fromUtf8("unsee_button"));
         unsee_button->setGeometry(QRect(580, 210, 41, 28));
-        unsee_button->setStyleSheet(QString::fromUtf8("image: url(:/new/prefix1/cheshm2.jpg);"));
+        unsee_button->setStyleSheet(QString::fromUtf8("image: url(:/new/prefix1/images/hide.jpg);"));
         formLayoutWidget_2 = new QWidget(sginupBox);
         formLayoutWidget_2->setObjectName(QString::fromUtf8("formLayoutWidget_2"));
         formLayoutWidget_2->setGeometry(QRect(30, 30, 289, 205));
@@ -350,7 +350,7 @@ public:
         see_button->setGeometry(QRect(330, 110, 41, 25));
         sizePolicy.setHeightForWidth(see_button->sizePolicy().hasHeightForWidth());
         see_button->setSizePolicy(sizePolicy);
-        see_button->setStyleSheet(QString::fromUtf8("image: url(:/new/prefix1/cheshm1.jpg);"));
+        see_button->setStyleSheet(QString::fromUtf8("image: url(:/new/prefix1/images/see.jpg);"));
         groupBox_4 = new QGroupBox(centralwidget);
         groupBox_4->setObjectName(QString::fromUtf8("groupBox_4"));
         groupBox_4->setGeometry(QRect(420, 490, 371, 271));

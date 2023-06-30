@@ -56,13 +56,13 @@ int r;
 void MainWindow::on_pushButton_4_clicked() {
     r = rand() % 4;
     if (r == 0) {
-        ui->label_11->setStyleSheet("image: url(:/new/prefix1/capcha1.jpg);");
+        ui->label_11->setStyleSheet("image: url(:/new/prefix1/images/capcha1.jpg);");
     } else if (r == 1) {
-        ui->label_11->setStyleSheet("image: url(:/new/prefix1/capcha2.png);");
+        ui->label_11->setStyleSheet("image: url(:/new/prefix1/images/capcha2.png);");
     } else if (r == 2) {
-        ui->label_11->setStyleSheet("image: url(:/new/prefix1/capcha3.png);");
+        ui->label_11->setStyleSheet("image: url(:/new/prefix1/images/capcha3.png);");
     } else if (r == 3) {
-        ui->label_11->setStyleSheet("image: url(:/new/prefix1/capcha4.jpg);");
+        ui->label_11->setStyleSheet("image: url(:/new/prefix1/images/capcha4.jpg);");
     }
     ui->groupBox_4->show();
 }

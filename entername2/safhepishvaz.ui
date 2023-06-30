@@ -47,7 +47,7 @@
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-image: url(:/new/prefix10/logo.png);
+     <string notr="true">background-image: url(:/new/prefix1/images/logo.png);
 background-color: rgb(170, 255, 127);
 </string>
     </property>

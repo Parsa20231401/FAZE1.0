@@ -23,7 +23,7 @@ void displayMessagec::messageDisplay(const QString& str){
     QDateTime currentDateTime = QDateTime::fromSecsSinceEpoch(secondsSinceEpoch);
     QString time = currentDateTime.toString("hh:mm");
 
-    QIcon icon(":/new/prefix1/bot_user.png");
+    QIcon icon(":/new/prefix1/images/bot_user.png");
     QPixmap pixmap = icon.pixmap(QSize(100, 100));
     QListWidgetItem* item = new QListWidgetItem();
 
@@ -63,12 +63,12 @@ void displayMessagec::attachmentDisplay()
     if (SorC == true){
        ui->listWidget->addItem(item);
        ui->listWidget->setItemWidget(item, label);
-       ui->listWidget->setSpacing(20);
+       ui->listWidget->setSpacing(10);
     }
     else {
         uic->listWidget->addItem(item);
         uic->listWidget->setItemWidget(item, label);
-        uic->listWidget->setSpacing(20);
+        uic->listWidget->setSpacing(10);
     }
 
 }

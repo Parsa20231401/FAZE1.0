@@ -63,11 +63,15 @@
       <height>201</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">
+border-image: url(:/new/prefix1/images/mode-portrait.png);</string>
+    </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="userProfile.qrc">:/new/prefix1/mode-portrait.png</pixmap>
+     <pixmap>:/new/prefix1/mode-portrait.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -76,14 +80,14 @@
    <widget class="QPushButton" name="addProfile">
     <property name="geometry">
      <rect>
-      <x>230</x>
-      <y>290</y>
+      <x>160</x>
+      <y>340</y>
       <width>51</width>
       <height>51</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">image: url(:/new/prefix1/square-plus.png);</string>
+     <string notr="true">border-image: url(:/new/prefix1/images/square-plus.png);</string>
     </property>
     <property name="text">
      <string/>
@@ -102,8 +106,6 @@
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <resources>
-  <include location="userProfile.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

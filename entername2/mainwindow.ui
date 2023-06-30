@@ -14,8 +14,7 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">
-</string>
+   <string notr="true"/>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QGroupBox" name="loginBox">
@@ -348,7 +347,7 @@ background-color: rgb(255, 255, 255);</string>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">image: url(:/new/prefix1/cheshm2.jpg);</string>
+      <string notr="true">image: url(:/new/prefix1/images/hide.jpg);</string>
      </property>
      <property name="text">
       <string/>
@@ -543,7 +542,7 @@ background-color: rgb(255, 255, 255);</string>
       </sizepolicy>
      </property>
      <property name="styleSheet">
-      <string notr="true">image: url(:/new/prefix1/cheshm1.jpg);</string>
+      <string notr="true">image: url(:/new/prefix1/images/see.jpg);</string>
      </property>
      <property name="text">
       <string/>

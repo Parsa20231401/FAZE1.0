@@ -45,7 +45,7 @@
        <item>
         <widget class="QPushButton" name="pushButton_sendAttachment">
          <property name="styleSheet">
-          <string notr="true">image: url(:/new/prefix1/attachment.png);
+          <string notr="true">image: url(:/new/prefix1/images/attachment.png);
 background-color: rgb(85, 255, 255);</string>
          </property>
          <property name="text">

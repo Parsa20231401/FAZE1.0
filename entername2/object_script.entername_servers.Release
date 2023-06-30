@@ -6,12 +6,12 @@ release/mainwindow.o
 release/pick_username.o
 release/safhepishvaz.o
 release/server.o
-release/qrc_attachment.o
 release/qrc_bot_user.o
-release/qrc_capchaha.o
 release/qrc_chat_icons.o
-release/qrc_cheshmha.o
-release/qrc_logo.o
+release/qrc_Logo.o
+release/qrc_capcha.o
+release/qrc_chatIcons.o
+release/qrc_eyes.o
 release/qrc_userProfile.o
 release/moc_client.o
 release/moc_displaymessagec.o

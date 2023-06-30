@@ -45,7 +45,7 @@ public:
         QFont font;
         font.setPointSize(16);
         welcomeButton->setFont(font);
-        welcomeButton->setStyleSheet(QString::fromUtf8("background-image: url(:/new/prefix10/logo.png);\n"
+        welcomeButton->setStyleSheet(QString::fromUtf8("background-image: url(:/new/prefix1/images/logo.png);\n"
 "background-color: rgb(170, 255, 127);\n"
 ""));
         label = new QLabel(centralwidget);

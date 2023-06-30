@@ -1,9 +1,0 @@
-<RCC>
-    <qresource prefix="/new/prefix1">
-        <file>capcha1.jpg</file>
-        <file>capcha2.png</file>
-        <file>capcha3.png</file>
-        <file>capcha4.jpg</file>
-    </qresource>
-    <qresource prefix="/new/prefix2"/>
-</RCC>

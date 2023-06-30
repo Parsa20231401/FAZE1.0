@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/new/prefix1">
+        <file>images/attachment.png</file>
+        <file>images/bot_user.png</file>
+        <file>images/writing icon.png</file>
+    </qresource>
+</RCC>

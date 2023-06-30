@@ -68,12 +68,14 @@ public:
         profile = new QLabel(centralwidget);
         profile->setObjectName(QString::fromUtf8("profile"));
         profile->setGeometry(QRect(90, 140, 191, 201));
+        profile->setStyleSheet(QString::fromUtf8("\n"
+"border-image: url(:/new/prefix1/images/mode-portrait.png);"));
         profile->setPixmap(QPixmap(QString::fromUtf8(":/new/prefix1/mode-portrait.png")));
         profile->setScaledContents(true);
         addProfile = new QPushButton(centralwidget);
         addProfile->setObjectName(QString::fromUtf8("addProfile"));
-        addProfile->setGeometry(QRect(230, 290, 51, 51));
-        addProfile->setStyleSheet(QString::fromUtf8("image: url(:/new/prefix1/square-plus.png);"));
+        addProfile->setGeometry(QRect(160, 340, 51, 51));
+        addProfile->setStyleSheet(QString::fromUtf8("border-image: url(:/new/prefix1/images/square-plus.png);"));
         pick_username->setCentralWidget(centralwidget);
         menubar = new QMenuBar(pick_username);
         menubar->setObjectName(QString::fromUtf8("menubar"));

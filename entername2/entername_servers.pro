@@ -20,7 +20,6 @@ SOURCES += \
 
 HEADERS += \
     client.h \
-    displayMessage.h \
     displaymessagec.h \
     entrycode.h \
     mainwindow.h \
@@ -42,12 +41,13 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 RESOURCES += \
-    attachment.qrc \
     bot_user.qrc \
-    capchaha.qrc \
     chat_icons.qrc \
-    cheshmha.qrc \
-    logo.qrc \
+    resources/Logo.qrc \
+    resources/capcha.qrc \
+    resources/chatIcons.qrc \
+    resources/eyes.qrc \
+    resources/userProfile.qrc \
     userProfile.qrc
 
 SUBDIRS += \
