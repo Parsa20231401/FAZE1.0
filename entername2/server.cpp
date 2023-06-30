@@ -48,9 +48,9 @@ void server::on_pushButton_clicked()
     }
 
     QListWidgetItem* item = new QListWidgetItem();
-    item->setText(str);
-    item->setTextAlignment(Qt::AlignRight);
-    item->setFlags(item->flags() | Qt::ItemIsSelectable | Qt::ItemIsEnabled);
+//    item->setText(str);
+//    item->setTextAlignment(Qt::AlignRight);
+//    item->setFlags(item->flags() | Qt::ItemIsSelectable | Qt::ItemIsEnabled);
 
     QFrame* frame = new QFrame;
     frame->setFrameStyle(QFrame::Box);
@@ -60,7 +60,7 @@ void server::on_pushButton_clicked()
     QVBoxLayout* layout = new QVBoxLayout(frame);
     QLabel* label = new QLabel;
     label->setText(str);
-    label->setAlignment(Qt::AlignRight);
+    label->setAlignment(Qt::AlignLeft);
     layout->addWidget(label);
 
     ui->listWidget->addItem(item);
@@ -281,10 +281,22 @@ void server::displayMessage(const QString& str1)
     QString str = str1;
     str.remove(0,8);
 
+
+    QIcon icon(":/new/prefix1/bot_user.png");
+    QPixmap pixmap = icon.pixmap(QSize(100, 100));
+    QListWidgetItem* bot = new QListWidgetItem();
+    bot->setText("bot");
+    bot->setIcon(pixmap);
+    ui->listWidget->addItem(bot);
+
+
+
+
     QListWidgetItem* item = new QListWidgetItem();
-    item->setText(str);
-    item->setTextAlignment(Qt::AlignLeft);
-    item->setFlags(item->flags() | Qt::ItemIsSelectable | Qt::ItemIsEnabled);
+
+//    item->setText(str);
+//    item->setTextAlignment(Qt::AlignLeft);
+//    item->setFlags(item->flags() | Qt::ItemIsSelectable | Qt::ItemIsEnabled);
 
     QFrame* frame = new QFrame;
     frame->setFrameStyle(QFrame::Box);

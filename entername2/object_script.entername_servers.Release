@@ -6,6 +6,7 @@ release/pick_username.o
 release/safhepishvaz.o
 release/server.o
 release/qrc_attachment.o
+release/qrc_bot_user.o
 release/qrc_capchaha.o
 release/qrc_chat_icons.o
 release/qrc_cheshmha.o

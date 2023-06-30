@@ -3,6 +3,8 @@
 #include <QFrame>
 #include <QLabel>
 #include <QVBoxLayout>
+#include <QIcon>
+#include <QPixmap>
 
 client::client(QWidget *parent) :
     QMainWindow(parent),
@@ -129,10 +131,23 @@ void client::on_pushButton_clicked()
     if (str.length() < 1){
         return;
     }
-    QListWidgetItem* item = new QListWidgetItem();
-    item->setText(str);
-    item->setTextAlignment(Qt::AlignRight);
-    item->setFlags(item->flags() | Qt::ItemIsSelectable | Qt::ItemIsEnabled);
+
+    QIcon icon(":/new/prefix1/bot_user.png");
+    QPixmap pixmap = icon.pixmap(QSize(100, 100));
+    QListWidgetItem* bot = new QListWidgetItem();
+
+    bot->setIcon(pixmap);
+    bot->setText("bot");
+//    bot->setTextAlignment(Qt::AlignLeft);
+    ui->listWidget->addItem(bot);
+
+
+
+    QListWidgetItem* message = new QListWidgetItem();
+
+//    message->setText(str);
+//    message->setTextAlignment(Qt::AlignLeft);
+//    message->setFlags(message->flags() | Qt::ItemIsSelectable | Qt::ItemIsEnabled);
 
     QFrame* frame = new QFrame;
     frame->setFrameStyle(QFrame::Box);
@@ -142,13 +157,13 @@ void client::on_pushButton_clicked()
     QVBoxLayout* layout = new QVBoxLayout(frame);
     QLabel* label = new QLabel;
     label->setText(str);
-    label->setAlignment(Qt::AlignRight);
+    label->setAlignment(Qt::AlignLeft);
     layout->addWidget(label);
 
-    ui->listWidget->addItem(item);
-    ui->listWidget->setItemWidget(item, frame);
+    ui->listWidget->addItem(message);
+    ui->listWidget->setItemWidget(message, frame);
     ui->listWidget->setLayout(new QVBoxLayout());
-    ui->listWidget->setSpacing(10);
+    ui->listWidget->setSpacing(5);
 
 
 
@@ -240,9 +255,9 @@ void client::displayMessage(const QString& str1)
     str.remove(0,8);
 
     QListWidgetItem* item = new QListWidgetItem();
-    item->setText(str);
-    item->setTextAlignment(Qt::AlignLeft);
-    item->setFlags(item->flags() | Qt::ItemIsSelectable | Qt::ItemIsEnabled);
+//    item->setText(str);
+//    item->setTextAlignment(Qt::AlignLeft);
+//    item->setFlags(item->flags() | Qt::ItemIsSelectable | Qt::ItemIsEnabled);
 
     QFrame* frame = new QFrame;
     frame->setFrameStyle(QFrame::Box);

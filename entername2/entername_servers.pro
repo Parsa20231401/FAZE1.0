@@ -40,6 +40,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
     attachment.qrc \
+    bot_user.qrc \
     capchaha.qrc \
     chat_icons.qrc \
     cheshmha.qrc \
