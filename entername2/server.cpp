@@ -4,6 +4,7 @@
 #include <QLabel>
 #include <QVBoxLayout>
 #include <QString>
+#include <QDateTime>
 
 server::server(QWidget *parent) :
     QMainWindow(parent),
@@ -47,10 +48,13 @@ void server::on_pushButton_clicked()
         return;
     }
 
+    qint64 secondsSinceEpoch = QDateTime::currentSecsSinceEpoch();
+    QDateTime currentDateTime = QDateTime::fromSecsSinceEpoch(secondsSinceEpoch);
+    QString time = currentDateTime.toString("hh:mm");
+
+    QIcon icon(":/new/prefix1/bot_user.png");
+    QPixmap pixmap = icon.pixmap(QSize(100, 100));
     QListWidgetItem* item = new QListWidgetItem();
-//    item->setText(str);
-//    item->setTextAlignment(Qt::AlignRight);
-//    item->setFlags(item->flags() | Qt::ItemIsSelectable | Qt::ItemIsEnabled);
 
     QFrame* frame = new QFrame;
     frame->setFrameStyle(QFrame::Box);
@@ -60,15 +64,14 @@ void server::on_pushButton_clicked()
     QVBoxLayout* layout = new QVBoxLayout(frame);
     QLabel* label = new QLabel;
     label->setText(str);
-    label->setAlignment(Qt::AlignLeft);
     layout->addWidget(label);
 
+    QString username = "username"; ///////////////// add the username from database
+    item->setIcon(pixmap);
+    item->setText(username+' '+time);
+    item->setSizeHint(QSize(110, 110));
     ui->listWidget->addItem(item);
     ui->listWidget->setItemWidget(item, frame);
-    ui->listWidget->setLayout(new QVBoxLayout());
-    ui->listWidget->setSpacing(10);
-
-
 
 
 
@@ -270,9 +273,6 @@ void server::displayAttachment(QString filePath){
     item->setSizeHint(pixmap.size()); // Set the size hint of the item to match the size of the pixmap
     ui->listWidget->addItem(item);
     ui->listWidget->setItemWidget(item, label);
-
-
-
 }
 
 
@@ -281,22 +281,14 @@ void server::displayMessage(const QString& str1)
     QString str = str1;
     str.remove(0,8);
 
+    qint64 secondsSinceEpoch = QDateTime::currentSecsSinceEpoch();
+    QDateTime currentDateTime = QDateTime::fromSecsSinceEpoch(secondsSinceEpoch);
+    QString time = currentDateTime.toString("hh:mm");
+
 
     QIcon icon(":/new/prefix1/bot_user.png");
     QPixmap pixmap = icon.pixmap(QSize(100, 100));
-    QListWidgetItem* bot = new QListWidgetItem();
-    bot->setText("bot");
-    bot->setIcon(pixmap);
-    ui->listWidget->addItem(bot);
-
-
-
-
     QListWidgetItem* item = new QListWidgetItem();
-
-//    item->setText(str);
-//    item->setTextAlignment(Qt::AlignLeft);
-//    item->setFlags(item->flags() | Qt::ItemIsSelectable | Qt::ItemIsEnabled);
 
     QFrame* frame = new QFrame;
     frame->setFrameStyle(QFrame::Box);
@@ -306,13 +298,15 @@ void server::displayMessage(const QString& str1)
     QVBoxLayout* layout = new QVBoxLayout(frame);
     QLabel* label = new QLabel;
     label->setText(str);
-    label->setAlignment(Qt::AlignLeft);
     layout->addWidget(label);
 
+
+    item->setIcon(pixmap);
+    item->setText("bot "+time);
+    item->setSizeHint(QSize(110, 110));
     ui->listWidget->addItem(item);
     ui->listWidget->setItemWidget(item, frame);
-    ui->listWidget->setLayout(new QVBoxLayout());
-    ui->listWidget->setSpacing(10);
+
 }
 
 
