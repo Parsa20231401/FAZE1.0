@@ -133,35 +133,9 @@ void client::on_pushButton_clicked()
         return;
     }
 
-//    QIcon icon(":/new/prefix1/bot_user.png");
-//    QPixmap pixmap = icon.pixmap(QSize(100, 100));
-//    QListWidgetItem* bot = new QListWidgetItem();
-
-//    bot->setIcon(pixmap);
-//    bot->setText("bot");
-//    ui->listWidget->addItem(bot);
-
-//    QListWidgetItem* message = new QListWidgetItem();
-//    QFrame* frame = new QFrame;
-//    frame->setFrameStyle(QFrame::Box);
-//    frame->setLineWidth(1);
-//    frame->setFixedHeight(40);
-
-//    QVBoxLayout* layout = new QVBoxLayout(frame);
-//    QLabel* label = new QLabel;
-//    label->setText(str);
-//    label->setAlignment(Qt::AlignLeft);
-//    layout->addWidget(label);
-
-//    ui->listWidget->addItem(message);
-//    ui->listWidget->setItemWidget(message, frame);
-//    ui->listWidget->setLayout(new QVBoxLayout());
-//    ui->listWidget->setSpacing(10);
-
     qint64 secondsSinceEpoch = QDateTime::currentSecsSinceEpoch();
     QDateTime currentDateTime = QDateTime::fromSecsSinceEpoch(secondsSinceEpoch);
     QString time = currentDateTime.toString("hh:mm");
-
 
     QIcon icon(":/new/prefix1/bot_user.png");
     QPixmap pixmap = icon.pixmap(QSize(100, 100));
@@ -176,7 +150,6 @@ void client::on_pushButton_clicked()
     QLabel* label = new QLabel;
     label->setText(str);
     layout->addWidget(label);
-
 
     item->setIcon(pixmap);
     item->setText("bot "+time);

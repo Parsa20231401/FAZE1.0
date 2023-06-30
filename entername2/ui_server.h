@@ -49,17 +49,18 @@ public:
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         verticalLayoutWidget = new QWidget(centralwidget);
         verticalLayoutWidget->setObjectName(QString::fromUtf8("verticalLayoutWidget"));
-        verticalLayoutWidget->setGeometry(QRect(270, 90, 491, 371));
+        verticalLayoutWidget->setGeometry(QRect(30, 70, 491, 371));
         verticalLayout = new QVBoxLayout(verticalLayoutWidget);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
         listWidget = new QListWidget(verticalLayoutWidget);
         listWidget->setObjectName(QString::fromUtf8("listWidget"));
-        listWidget->setStyleSheet(QString::fromUtf8("background-color: rgb(85, 170, 127);"));
+        listWidget->setStyleSheet(QString::fromUtf8(""));
 
         verticalLayout->addWidget(listWidget);
 
         horizontalLayout = new QHBoxLayout();
+        horizontalLayout->setSpacing(0);
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
         lineEdit = new QLineEdit(verticalLayoutWidget);
         lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
@@ -68,7 +69,8 @@ public:
 
         pushButton_sendAttachment = new QPushButton(verticalLayoutWidget);
         pushButton_sendAttachment->setObjectName(QString::fromUtf8("pushButton_sendAttachment"));
-        pushButton_sendAttachment->setStyleSheet(QString::fromUtf8("image: url(:/new/prefix1/attachment.png);"));
+        pushButton_sendAttachment->setStyleSheet(QString::fromUtf8("image: url(:/new/prefix1/attachment.png);\n"
+"background-color: rgb(85, 255, 255);"));
 
         horizontalLayout->addWidget(pushButton_sendAttachment);
 
@@ -83,7 +85,7 @@ public:
 
         comboBox_receiver = new QComboBox(centralwidget);
         comboBox_receiver->setObjectName(QString::fromUtf8("comboBox_receiver"));
-        comboBox_receiver->setGeometry(QRect(550, 490, 91, 24));
+        comboBox_receiver->setGeometry(QRect(70, 270, 91, 24));
         server->setCentralWidget(centralwidget);
         menubar = new QMenuBar(server);
         menubar->setObjectName(QString::fromUtf8("menubar"));

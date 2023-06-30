@@ -1,4 +1,5 @@
 release/client.o
+release/displaymessagec.o
 release/entrycode.o
 release/main.o
 release/mainwindow.o
@@ -13,6 +14,7 @@ release/qrc_cheshmha.o
 release/qrc_logo.o
 release/qrc_userProfile.o
 release/moc_client.o
+release/moc_displaymessagec.o
 release/moc_entrycode.o
 release/moc_mainwindow.o
 release/moc_pick_username.o

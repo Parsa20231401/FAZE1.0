@@ -10,6 +10,7 @@ CONFIG += c++11
 
 SOURCES += \
     client.cpp \
+    displaymessagec.cpp \
     entrycode.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -19,6 +20,8 @@ SOURCES += \
 
 HEADERS += \
     client.h \
+    displayMessage.h \
+    displaymessagec.h \
     entrycode.h \
     mainwindow.h \
     pick_username.h \

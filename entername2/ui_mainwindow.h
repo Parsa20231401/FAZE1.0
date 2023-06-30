@@ -97,9 +97,7 @@ public:
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
         MainWindow->resize(1583, 936);
-        MainWindow->setStyleSheet(QString::fromUtf8("background-color: rgb(170, 255, 127);\n"
-"\n"
-""));
+        MainWindow->setStyleSheet(QString::fromUtf8(""));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         loginBox = new QGroupBox(centralwidget);

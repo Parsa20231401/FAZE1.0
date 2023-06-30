@@ -1,0 +1,4 @@
+#ifndef DISPLAYMESSAGE_H
+#define DISPLAYMESSAGE_H
+
+#endif // DISPLAYMESSAGE_H
