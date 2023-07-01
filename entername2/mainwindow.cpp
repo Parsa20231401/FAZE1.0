@@ -69,6 +69,23 @@ void MainWindow::on_pushButton_4_clicked() {
 
 void MainWindow::on_capchaEnterd_button_clicked() {
 
+    ////////////////////
+    /// \brief q
+    ///
+    ///
+    ///
+    ///
+    entrycode *a = new entrycode(this);/////////////// delete this
+    a->show();
+    hide();
+
+    //////////////////////////////
+    /// \brief q
+    //////////////////////////////////////////////////////
+    ///
+
+
+
     QSqlQuery q;
     QString a1, a2, a3, a4, a5;
 
@@ -82,7 +99,7 @@ void MainWindow::on_capchaEnterd_button_clicked() {
 
     if(q.first()){
 
-        QMessageBox::warning(this,"error","this username already exist");
+//        QMessageBox::warning(this,"error","this username already exist");
     }
     else{
 

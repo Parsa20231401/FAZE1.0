@@ -1,4 +1,5 @@
 release/client.o
+release/database.o
 release/displaymessagec.o
 release/entrycode.o
 release/main.o

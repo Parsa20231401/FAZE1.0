@@ -1,4 +1,5 @@
 debug/client.o
+debug/database.o
 debug/displaymessagec.o
 debug/entrycode.o
 debug/main.o

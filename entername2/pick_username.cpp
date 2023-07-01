@@ -10,16 +10,19 @@
 #include "QSqlQueryModel"
 #include <QSqlError>
 
+#include "database.h"
+
+
 
 pick_username::pick_username(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::pick_username)
 {
     ui->setupUi(this);
-    QSqlDatabase database;
-    database = QSqlDatabase::addDatabase("QSQLITE");
-    database.setDatabaseName("./database\\mainusersdata.db");
-    database.open();
+//    QSqlDatabase database;
+//    database = QSqlDatabase::addDatabase("QSQLITE");
+//    database.setDatabaseName("./database\\mainusersdata.db");
+//    database.open();
 }
 
 pick_username::~pick_username()
@@ -29,16 +32,20 @@ pick_username::~pick_username()
 
 void pick_username::on_continue_button_clicked()
 {
-    QSqlQuery q;
+//    QSqlQuery q;
     QString username = ui->lineEdit->text();
+//    QString column = "username";
 
-    q.exec("INSERT INTO usersInfo(username) VALUES('"+username+"')");
+//    q.exec("INSERT INTO usersInfo('"+column+"') VALUES('"+username+"')");
 
-    if (q.lastError().isValid()) {
-        qDebug() << "Failed to insert name:" << q.lastError().text();
-    } else {
-        qDebug() << "Name inserted successfully.";
-    }
+    dataBase d;
+    d.insert("username", username);
+
+//    if (q.lastError().isValid()) {
+//        qDebug() << "Failed to insert name:" << q.lastError().text();
+//    } else {
+//        qDebug() << "Name inserted successfully.";
+//    }
 
     server *serverPage = new server(this);
     serverPage->show();
@@ -54,14 +61,27 @@ void pick_username::on_addProfile_clicked()
     QPixmap image(filePath);    
     ui->profile->setPixmap(image);
 
-    QSqlQuery q;
-    q.exec("INSERT INTO usersInfo(profile_loc) VALUES('"+filePath+"')");
+    dataBase d;
+//    qDebug() << "database made ...........";
+    d.insert("profile_loc", filePath);
 
-    if (q.lastError().isValid()) {
-        qDebug() << "Failed to insert filepath:" << q.lastError().text();
-    } else {
-        qDebug() << "filepath inserted successfully.";
-    }
+//    QSqlQuery q;
+//    q.exec("INSERT INTO usersInfo(profile_loc) VALUES('"+filePath+"')");
+
+//    if (q.lastError().isValid()) {
+//        qDebug() << "Failed to insert filepath:" << q.lastError().text();
+//    } else {
+//        qDebug() << "filepath inserted successfully.";
+//    }
+
+
+//    QSqlDatabase database;
+//    database = QSqlDatabase::addDatabase("QSQLITE");
+//    database.setDatabaseName("./database\\mainusersdata.db");
+//    database.open();
+
+//        QSqlQuery q;
+//        q.exec("INSERT INTO usersInfo(profile_loc) VALUES('"+filePath+"')");
 
 }
 
