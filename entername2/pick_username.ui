@@ -41,7 +41,7 @@
      </item>
     </layout>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="continue_button">
     <property name="geometry">
      <rect>
       <x>310</x>
@@ -51,7 +51,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>continue</string>
     </property>
    </widget>
    <widget class="QLabel" name="profile">

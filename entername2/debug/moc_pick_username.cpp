@@ -22,7 +22,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_pick_username_t {
     QByteArrayData data[4];
-    char stringdata0[59];
+    char stringdata0[64];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -32,12 +32,12 @@ struct qt_meta_stringdata_pick_username_t {
 static const qt_meta_stringdata_pick_username_t qt_meta_stringdata_pick_username = {
     {
 QT_MOC_LITERAL(0, 0, 13), // "pick_username"
-QT_MOC_LITERAL(1, 14, 21), // "on_pushButton_clicked"
-QT_MOC_LITERAL(2, 36, 0), // ""
-QT_MOC_LITERAL(3, 37, 21) // "on_addProfile_clicked"
+QT_MOC_LITERAL(1, 14, 26), // "on_continue_button_clicked"
+QT_MOC_LITERAL(2, 41, 0), // ""
+QT_MOC_LITERAL(3, 42, 21) // "on_addProfile_clicked"
 
     },
-    "pick_username\0on_pushButton_clicked\0"
+    "pick_username\0on_continue_button_clicked\0"
     "\0on_addProfile_clicked"
 };
 #undef QT_MOC_LITERAL
@@ -72,7 +72,7 @@ void pick_username::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _i
         auto *_t = static_cast<pick_username *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->on_pushButton_clicked(); break;
+        case 0: _t->on_continue_button_clicked(); break;
         case 1: _t->on_addProfile_clicked(); break;
         default: ;
         }

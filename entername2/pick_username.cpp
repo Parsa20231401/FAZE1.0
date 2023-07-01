@@ -8,6 +8,8 @@
 #include "QSqlQuery"
 #include "QSqlDriver"
 #include "QSqlQueryModel"
+#include <QSqlError>
+
 
 pick_username::pick_username(QWidget *parent) :
     QMainWindow(parent),
@@ -16,7 +18,7 @@ pick_username::pick_username(QWidget *parent) :
     ui->setupUi(this);
     QSqlDatabase database;
     database = QSqlDatabase::addDatabase("QSQLITE");
-    database.setDatabaseName("./database\\usersinfo.db");
+    database.setDatabaseName("./database\\mainusersdata.db");
     database.open();
 }
 
@@ -25,8 +27,19 @@ pick_username::~pick_username()
     delete ui;
 }
 
-void pick_username::on_pushButton_clicked()
+void pick_username::on_continue_button_clicked()
 {
+    QSqlQuery q;
+    QString username = ui->lineEdit->text();
+
+    q.exec("INSERT INTO usersInfo(username) VALUES('"+username+"')");
+
+    if (q.lastError().isValid()) {
+        qDebug() << "Failed to insert name:" << q.lastError().text();
+    } else {
+        qDebug() << "Name inserted successfully.";
+    }
+
     server *serverPage = new server(this);
     serverPage->show();
     client *clientPage = new client(this);
@@ -38,11 +51,17 @@ void pick_username::on_pushButton_clicked()
 void pick_username::on_addProfile_clicked()
 {
     QString filePath = QFileDialog::getOpenFileName(this, ("Select an attachment"), QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation), ("File (*.png *.jpg *.jpeg)"));
-    QPixmap image(filePath);
-
+    QPixmap image(filePath);    
     ui->profile->setPixmap(image);
 
+    QSqlQuery q;
+    q.exec("INSERT INTO usersInfo(profile_loc) VALUES('"+filePath+"')");
 
+    if (q.lastError().isValid()) {
+        qDebug() << "Failed to insert filepath:" << q.lastError().text();
+    } else {
+        qDebug() << "filepath inserted successfully.";
+    }
 
 }
 

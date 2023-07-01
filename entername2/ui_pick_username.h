@@ -30,7 +30,7 @@ public:
     QHBoxLayout *horizontalLayout;
     QLabel *label;
     QLineEdit *lineEdit;
-    QPushButton *pushButton;
+    QPushButton *continue_button;
     QLabel *profile;
     QPushButton *addProfile;
     QMenuBar *menubar;
@@ -62,9 +62,9 @@ public:
 
         horizontalLayout->addWidget(lineEdit);
 
-        pushButton = new QPushButton(centralwidget);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setGeometry(QRect(310, 380, 171, 51));
+        continue_button = new QPushButton(centralwidget);
+        continue_button->setObjectName(QString::fromUtf8("continue_button"));
+        continue_button->setGeometry(QRect(310, 380, 171, 51));
         profile = new QLabel(centralwidget);
         profile->setObjectName(QString::fromUtf8("profile"));
         profile->setGeometry(QRect(90, 140, 191, 201));
@@ -94,7 +94,7 @@ public:
     {
         pick_username->setWindowTitle(QApplication::translate("pick_username", "MainWindow", nullptr));
         label->setText(QApplication::translate("pick_username", "pick a username: ", nullptr));
-        pushButton->setText(QApplication::translate("pick_username", "PushButton", nullptr));
+        continue_button->setText(QApplication::translate("pick_username", "continue", nullptr));
         profile->setText(QString());
         addProfile->setText(QString());
     } // retranslateUi

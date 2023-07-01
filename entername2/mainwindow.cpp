@@ -69,8 +69,6 @@ void MainWindow::on_pushButton_4_clicked() {
 
 void MainWindow::on_capchaEnterd_button_clicked() {
 
-
-
     QSqlQuery q;
     QString a1, a2, a3, a4, a5;
 
