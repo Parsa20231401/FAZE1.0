@@ -577,7 +577,7 @@ background-color: rgb(255, 255, 255);</string>
       <string>write here</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_5">
+    <widget class="QPushButton" name="capchaEnterd_button">
      <property name="enabled">
       <bool>true</bool>
      </property>

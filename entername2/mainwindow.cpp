@@ -37,7 +37,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
     QSqlDatabase database;
     database = QSqlDatabase::addDatabase("QSQLITE");
-    database.setDatabaseName("d:\\usersinfo.db");
+    database.setDatabaseName("./database\\usersinfo.db");
     database.open();
 }
 
@@ -67,7 +67,7 @@ void MainWindow::on_pushButton_4_clicked() {
     ui->groupBox_4->show();
 }
 
-void MainWindow::on_pushButton_5_clicked() {
+void MainWindow::on_capchaEnterd_button_clicked() {
 
 
 
@@ -207,9 +207,9 @@ void MainWindow::on_password_username_textEdited(const QString &arg1)
              ui->label_28->setText("correct");
     }
      if(ui->label_27->text()=="wrong"||ui->label_28->text()=="wrong")
-         ui->pushButton_5->setEnabled(false);
+         ui->capchaEnterd_button->setEnabled(false);
      if(ui->label_27->text()=="correct" && ui->label_28->text()=="correct")
-         ui->pushButton_5->setEnabled(true);
+         ui->capchaEnterd_button->setEnabled(true);
 }
 
 

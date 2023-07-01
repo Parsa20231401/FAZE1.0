@@ -16,7 +16,7 @@ public:
     ~pick_username();
 
 private slots:
-    void on_pushButton_clicked();
+    void on_continue_button_clicked();
 
     void on_addProfile_clicked();
 

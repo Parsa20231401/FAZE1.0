@@ -22,7 +22,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWindow_t {
     QByteArrayData data[14];
-    char stringdata0[307];
+    char stringdata0[314];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -35,21 +35,22 @@ QT_MOC_LITERAL(0, 0, 10), // "MainWindow"
 QT_MOC_LITERAL(1, 11, 24), // "on_signup_button_clicked"
 QT_MOC_LITERAL(2, 36, 0), // ""
 QT_MOC_LITERAL(3, 37, 23), // "on_pushButton_4_clicked"
-QT_MOC_LITERAL(4, 61, 23), // "on_pushButton_5_clicked"
-QT_MOC_LITERAL(5, 85, 21), // "on_see_button_clicked"
-QT_MOC_LITERAL(6, 107, 28), // "on_login_username_textEdited"
-QT_MOC_LITERAL(7, 136, 4), // "arg1"
-QT_MOC_LITERAL(8, 141, 28), // "on_login_password_textEdited"
-QT_MOC_LITERAL(9, 170, 29), // "on_signup_username_textEdited"
-QT_MOC_LITERAL(10, 200, 31), // "on_password_username_textEdited"
-QT_MOC_LITERAL(11, 232, 23), // "on_unsee_button_clicked"
-QT_MOC_LITERAL(12, 256, 23), // "on_login_Button_clicked"
-QT_MOC_LITERAL(13, 280, 26) // "on_shortcutButton1_clicked"
+QT_MOC_LITERAL(4, 61, 30), // "on_capchaEnterd_button_clicked"
+QT_MOC_LITERAL(5, 92, 21), // "on_see_button_clicked"
+QT_MOC_LITERAL(6, 114, 28), // "on_login_username_textEdited"
+QT_MOC_LITERAL(7, 143, 4), // "arg1"
+QT_MOC_LITERAL(8, 148, 28), // "on_login_password_textEdited"
+QT_MOC_LITERAL(9, 177, 29), // "on_signup_username_textEdited"
+QT_MOC_LITERAL(10, 207, 31), // "on_password_username_textEdited"
+QT_MOC_LITERAL(11, 239, 23), // "on_unsee_button_clicked"
+QT_MOC_LITERAL(12, 263, 23), // "on_login_Button_clicked"
+QT_MOC_LITERAL(13, 287, 26) // "on_shortcutButton1_clicked"
 
     },
     "MainWindow\0on_signup_button_clicked\0"
     "\0on_pushButton_4_clicked\0"
-    "on_pushButton_5_clicked\0on_see_button_clicked\0"
+    "on_capchaEnterd_button_clicked\0"
+    "on_see_button_clicked\0"
     "on_login_username_textEdited\0arg1\0"
     "on_login_password_textEdited\0"
     "on_signup_username_textEdited\0"
@@ -109,7 +110,7 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         switch (_id) {
         case 0: _t->on_signup_button_clicked(); break;
         case 1: _t->on_pushButton_4_clicked(); break;
-        case 2: _t->on_pushButton_5_clicked(); break;
+        case 2: _t->on_capchaEnterd_button_clicked(); break;
         case 3: _t->on_see_button_clicked(); break;
         case 4: _t->on_login_username_textEdited((*reinterpret_cast< const QString(*)>(_a[1]))); break;
         case 5: _t->on_login_password_textEdited((*reinterpret_cast< const QString(*)>(_a[1]))); break;

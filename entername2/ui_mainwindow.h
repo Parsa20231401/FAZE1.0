@@ -87,7 +87,7 @@ public:
     QPushButton *see_button;
     QGroupBox *groupBox_4;
     QLineEdit *lineEdit_5;
-    QPushButton *pushButton_5;
+    QPushButton *capchaEnterd_button;
     QPushButton *shortcutButton1;
     QMenuBar *menubar;
     QStatusBar *statusbar;
@@ -358,10 +358,10 @@ public:
         lineEdit_5 = new QLineEdit(groupBox_4);
         lineEdit_5->setObjectName(QString::fromUtf8("lineEdit_5"));
         lineEdit_5->setGeometry(QRect(120, 100, 131, 41));
-        pushButton_5 = new QPushButton(groupBox_4);
-        pushButton_5->setObjectName(QString::fromUtf8("pushButton_5"));
-        pushButton_5->setEnabled(true);
-        pushButton_5->setGeometry(QRect(140, 170, 93, 28));
+        capchaEnterd_button = new QPushButton(groupBox_4);
+        capchaEnterd_button->setObjectName(QString::fromUtf8("capchaEnterd_button"));
+        capchaEnterd_button->setEnabled(true);
+        capchaEnterd_button->setGeometry(QRect(140, 170, 93, 28));
         shortcutButton1 = new QPushButton(centralwidget);
         shortcutButton1->setObjectName(QString::fromUtf8("shortcutButton1"));
         shortcutButton1->setGeometry(QRect(850, 540, 261, 71));
@@ -423,7 +423,7 @@ public:
         see_button->setText(QString());
         groupBox_4->setTitle(QApplication::translate("MainWindow", "enter the capcha", nullptr));
         lineEdit_5->setPlaceholderText(QApplication::translate("MainWindow", "write here", nullptr));
-        pushButton_5->setText(QApplication::translate("MainWindow", "go", nullptr));
+        capchaEnterd_button->setText(QApplication::translate("MainWindow", "go", nullptr));
         shortcutButton1->setText(QApplication::translate("MainWindow", "temporary button", nullptr));
     } // retranslateUi
 

@@ -26,7 +26,7 @@ private slots:
 
     void on_pushButton_4_clicked();
 
-   void on_pushButton_5_clicked();
+   void on_capchaEnterd_button_clicked();
 
    void on_see_button_clicked();
 

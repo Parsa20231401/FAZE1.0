@@ -4,11 +4,20 @@
 #include "client.h"
 #include <QPixmap>
 
+#include "QSqlDatabase"
+#include "QSqlQuery"
+#include "QSqlDriver"
+#include "QSqlQueryModel"
+
 pick_username::pick_username(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::pick_username)
 {
     ui->setupUi(this);
+    QSqlDatabase database;
+    database = QSqlDatabase::addDatabase("QSQLITE");
+    database.setDatabaseName("./database\\usersinfo.db");
+    database.open();
 }
 
 pick_username::~pick_username()
