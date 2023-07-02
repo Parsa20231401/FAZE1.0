@@ -19,10 +19,10 @@ pick_username::pick_username(QWidget *parent) :
     ui(new Ui::pick_username)
 {
     ui->setupUi(this);
-//    QSqlDatabase database;
-//    database = QSqlDatabase::addDatabase("QSQLITE");
-//    database.setDatabaseName("./database\\mainusersdata.db");
-//    database.open();
+    QSqlDatabase database;
+    database = QSqlDatabase::addDatabase("QSQLITE");
+    database.setDatabaseName("./database\\mainusersdata.db");
+    database.open();
 }
 
 pick_username::~pick_username()
@@ -32,20 +32,12 @@ pick_username::~pick_username()
 
 void pick_username::on_continue_button_clicked()
 {
-//    QSqlQuery q;
-    QString username = ui->lineEdit->text();
-//    QString column = "username";
 
-//    q.exec("INSERT INTO usersInfo('"+column+"') VALUES('"+username+"')");
+    QString username = ui->lineEdit->text();
 
     dataBase d;
     d.insert("username", username);
 
-//    if (q.lastError().isValid()) {
-//        qDebug() << "Failed to insert name:" << q.lastError().text();
-//    } else {
-//        qDebug() << "Name inserted successfully.";
-//    }
 
     server *serverPage = new server(this);
     serverPage->show();
@@ -62,7 +54,6 @@ void pick_username::on_addProfile_clicked()
     ui->profile->setPixmap(image);
 
     dataBase d;
-//    qDebug() << "database made ...........";
     d.insert("profile_loc", filePath);
 
 //    QSqlQuery q;
