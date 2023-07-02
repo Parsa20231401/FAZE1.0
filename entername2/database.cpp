@@ -64,22 +64,26 @@ bool dataBase::insertNewuser(Ui::MainWindow* Ui)
     }
 }
 
-QString dataBase::returnInfo(const QString& username)
+QString dataBase::returnInfo(const QString& username, const QString& column)
 {
-    q.exec("SELECT profile_loc FROM usersInfo WHERE username='"+username+"'");
+    q.exec("SELECT "+column+"  FROM usersInfo WHERE username='"+username+"'");
 
     if(q.next()) {
         QString selectedValue = q.value(0).toString();
-        qDebug() << "Username:" << username << selectedValue;
+        qDebug() << "username:" << username << selectedValue;
         return selectedValue;
     }
     else {
         qDebug() << "No rows returned";
-        return ":/new/prefix1/images/bot_user.png";
+        if (column == "name")
+            return "bot";
+        else
+            return ":/new/prefix1/images/bot_user.png";
     }
 }
 
 dataBase::~dataBase()
 {
-//    db.close();
+    db.close();
 }
+

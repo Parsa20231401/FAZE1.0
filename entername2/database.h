@@ -20,7 +20,7 @@ public:
     void insertProfile(const QString& column, const QString& info);
     bool searchData(Ui::MainWindow* ui);
     bool insertNewuser(Ui::MainWindow* ui);
-    QString returnInfo( const QString& username);
+    QString returnInfo( const QString& username, const QString& column);
 
 private:
     Ui::MainWindow* ui;

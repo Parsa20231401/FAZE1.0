@@ -20,7 +20,7 @@ public:
     displayMessagec(Ui::client* uic, const QString& name);
 
     void messageDisplay(const QString& str);
-    void attachmentDisplay();
+    void attachmentDisplay(const QString& loc);
 
 private:
     Ui::server* ui;

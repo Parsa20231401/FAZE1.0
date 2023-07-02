@@ -8,18 +8,20 @@
 #include <QListWidgetItem>
 #include "database.h"
 
-displayMessagec::displayMessagec(Ui::server* ui, const QString& name) : ui(ui), name(name)
+displayMessagec::displayMessagec(Ui::server* ui, const QString& username) : ui(ui)
 {
     SorC = true;
     dataBase d;
-    filepath = d.returnInfo(name);
+    filepath = d.returnInfo(username, "profile_loc");
+    this->name = d.returnInfo(username, "name");
 
 }
-displayMessagec::displayMessagec(Ui::client* ui, const QString& name) : uic(ui), name(name)
+displayMessagec::displayMessagec(Ui::client* ui, const QString& username) : uic(ui)
 {
     SorC = false;
     dataBase d;
-    filepath = d.returnInfo(name);
+    filepath = d.returnInfo(username, "profile_loc");
+    this->name = d.returnInfo(username, "name");
 }
 
 
@@ -57,9 +59,9 @@ void displayMessagec::messageDisplay(const QString& str){
     }
 }
 
-void displayMessagec::attachmentDisplay()
+void displayMessagec::attachmentDisplay(const QString& imageLoc)
 {
-    QImage *image = new QImage(name); // name is the file path in this function
+    QImage *image = new QImage(imageLoc);
     QLabel *label = new QLabel;
     QSize desiredSize(200, 200);
     QPixmap pixmap(QPixmap::fromImage(image->scaled(desiredSize, Qt::KeepAspectRatio, Qt::SmoothTransformation)));

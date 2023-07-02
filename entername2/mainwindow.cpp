@@ -211,7 +211,8 @@ void MainWindow::on_password_username_textEdited(const QString &arg1)
     }
      if(ui->label_27->text()=="wrong"||ui->label_28->text()=="wrong")
          ui->capchaEnterd_button->setEnabled(false);
-     if(ui->label_27->text()=="correct" && ui->label_28->text()=="correct")
+//     if(ui->label_27->text()=="correct" && ui->label_28->text()=="correct")
+     else
          ui->capchaEnterd_button->setEnabled(true);
 }
 

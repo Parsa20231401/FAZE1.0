@@ -54,9 +54,6 @@ void server::on_pushButton_clicked()
     displayMessagec displayer(ui, theusername);
     displayer.messageDisplay(str);
 
-
-
-
     QString receiver = ui->comboBox_receiver->currentText();
 
     if(receiver == "Broadcast")
@@ -94,7 +91,6 @@ void server::appendToSocketList(QTcpSocket* socket)
     connect(socket, &QTcpSocket::disconnected, this, &server::discardSocket);
 
     ui->comboBox_receiver->addItem(QString::number(socket->socketDescriptor()));
-//    displayMessage(QString("INFO :: Client with sockd:%1 has just entered the room").arg(socket->socketDescriptor()));
 }
 
 void server::readSocket()
@@ -111,11 +107,8 @@ void server::readSocket()
 
     if(!socketStream.commitTransaction())
     {
-//        QString message = QString("%1 :: Waiting for more data to come..").arg(socket->socketDescriptor());
-//        emit newMessage(message);
         return;
     }
-
     QString header = buffer.mid(0,128);
     QString fileType = header.split(",")[0].split(":")[1];
 
@@ -125,29 +118,20 @@ void server::readSocket()
     {
         QString fileName = header.split(",")[1].split(":")[1];
         QString ext = fileName.split(".")[1];
-//        QString size = header.split(",")[2].split(":")[1].split(";")[0];
 
-//        if (QMessageBox::Yes == QMessageBox::question(this, "QTCPServer", QString("You are receiving an attachment from sd:%1 of size: %2 bytes, called %3. Do you want to accept it?").arg(socket->socketDescriptor()).arg(size).arg(fileName)))
-//        {
-            QString filePath = QFileDialog::getSaveFileName(this, tr("Save File"), QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)+"/"+fileName, QString("File (*.%1)").arg(ext));
+        QString filePath = QFileDialog::getSaveFileName(this, tr("Save File"), QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)+"/"+fileName, QString("File (*.%1)").arg(ext));
 
-            QFile file(filePath);
-            if(file.open(QIODevice::WriteOnly)){
-                file.write(buffer);
-//                QString message = QString("INFO :: Attachment from sd:%1 successfully stored on disk under the path %2").arg(socket->socketDescriptor()).arg(QString(filePath));
-//                emit newMessage(message);
+        QFile file(filePath);
+        if(file.open(QIODevice::WriteOnly))
+        {
+        file.write(buffer);
 
+        displayMessagec displayer(ui, theusername);
+        displayer.attachmentDisplay(filePath);
+        }
+        else
+            QMessageBox::critical(this,"QTCPServer", "An error occurred while trying to write the attachment.");
 
-                displayMessagec displayer(ui, filePath);
-                displayer.attachmentDisplay();
-
-
-            }else
-                QMessageBox::critical(this,"QTCPServer", "An error occurred while trying to write the attachment.");
-//        }else{
-//            QString message = QString("INFO :: Attachment from sd:%1 discarded").arg(socket->socketDescriptor());
-//            emit newMessage(message);
-//        }
     }else if(fileType=="message"){
         QString message = QString("%1 :: %2").arg(socket->socketDescriptor()).arg(QString::fromStdString(buffer.toStdString()));
         emit newMessage(message);
@@ -238,12 +222,6 @@ void server::displayMessage(const QString& str1)
     displayer.messageDisplay(str);
 }
 
-
-
-
-
-
-
 void server::displayError(QAbstractSocket::SocketError socketError)
 {
     switch (socketError) {
@@ -277,12 +255,11 @@ void server::on_pushButton_sendAttachment_clicked()
         QString filePath = QFileDialog::getOpenFileName(this, ("Select an attachment"), QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation), ("File (*.json *.txt *.png *.jpg *.jpeg)"));
 
 
-        displayMessagec displayer(ui, filePath);
-        displayer.attachmentDisplay();
+        displayMessagec displayer(ui, theusername);
+        displayer.attachmentDisplay(filePath);
 
 
         if(filePath.isEmpty()){
-//            QMessageBox::critical(this,"QTCPClient","You haven't selected any attachment!");
             return;
         }
         if(receiver=="Broadcast")

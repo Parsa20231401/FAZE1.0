@@ -73,8 +73,8 @@ void client::readSocket()
 
 
 
-            displayMessagec displayer(ui, filePath);
-            displayer.attachmentDisplay();
+            displayMessagec displayer(ui, theusername);
+            displayer.attachmentDisplay(filePath);
 
 
             QFile file(filePath);
@@ -170,8 +170,8 @@ void client::on_pushButton_sendAttachment_clicked()
          }
 
 
-            displayMessagec displayer(ui, filePath);
-            displayer.attachmentDisplay();
+            displayMessagec displayer(ui, theusername);
+            displayer.attachmentDisplay(filePath);
 
 
 
