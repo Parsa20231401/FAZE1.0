@@ -14,13 +14,13 @@ extern QString theusername;
 class dataBase
 {
 
-
 public:
     dataBase();
     ~dataBase();
     void insertProfile(const QString& column, const QString& info);
     bool searchData(Ui::MainWindow* ui);
     bool insertNewuser(Ui::MainWindow* ui);
+    QString returnInfo( const QString& username);
 
 private:
     Ui::MainWindow* ui;

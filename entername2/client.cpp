@@ -7,6 +7,7 @@
 #include <QPixmap>
 #include <QDateTime>
 #include "displaymessagec.h"
+#include "database.h"
 
 client::client(QWidget *parent) :
     QMainWindow(parent),
@@ -208,7 +209,7 @@ void client::displayMessage(const QString& str1)
     QString str = str1;
     str.remove(0,8);
 
-    displayMessagec displayer(ui, "username");
+    displayMessagec displayer(ui, theusername);
     displayer.messageDisplay(str);
 }
 

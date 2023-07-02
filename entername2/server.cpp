@@ -7,6 +7,7 @@
 #include <QDateTime>
 
 #include "displaymessagec.h"
+#include "database.h"
 
 server::server(QWidget *parent) :
     QMainWindow(parent),
@@ -50,7 +51,7 @@ void server::on_pushButton_clicked()
         return;
     }
 
-    displayMessagec displayer(ui, "username");
+    displayMessagec displayer(ui, theusername);
     displayer.messageDisplay(str);
 
 

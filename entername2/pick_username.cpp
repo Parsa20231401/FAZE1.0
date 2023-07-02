@@ -3,13 +3,11 @@
 #include "server.h"
 #include "client.h"
 #include <QPixmap>
-
 #include "QSqlDatabase"
 #include "QSqlQuery"
 #include "QSqlDriver"
 #include "QSqlQueryModel"
 #include <QSqlError>
-
 #include "database.h"
 
 
@@ -32,12 +30,10 @@ pick_username::~pick_username()
 
 void pick_username::on_continue_button_clicked()
 {
-
     QString name = ui->lineEdit->text();
 
     dataBase d;
     d.insertProfile("name", name);
-
 
     server *serverPage = new server(this);
     serverPage->show();
@@ -55,24 +51,5 @@ void pick_username::on_addProfile_clicked()
 
     dataBase d;
     d.insertProfile("profile_loc", filePath);
-
-//    QSqlQuery q;
-//    q.exec("INSERT INTO usersInfo(profile_loc) VALUES('"+filePath+"')");
-
-//    if (q.lastError().isValid()) {
-//        qDebug() << "Failed to insert filepath:" << q.lastError().text();
-//    } else {
-//        qDebug() << "filepath inserted successfully.";
-//    }
-
-
-//    QSqlDatabase database;
-//    database = QSqlDatabase::addDatabase("QSQLITE");
-//    database.setDatabaseName("./database\\mainusersdata.db");
-//    database.open();
-
-//        QSqlQuery q;
-//        q.exec("INSERT INTO usersInfo(profile_loc) VALUES('"+filePath+"')");
-
 }
 

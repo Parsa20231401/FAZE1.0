@@ -26,6 +26,7 @@ private:
     Ui::server* ui;
     Ui::client* uic;
     QString name;
+    QString filepath;
     bool SorC;
 
 };

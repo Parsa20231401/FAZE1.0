@@ -3,7 +3,6 @@
 
 dataBase::dataBase()
 {
-
     db = QSqlDatabase::addDatabase("QSQLITE");
     db.setDatabaseName("./database\\mainusersdata.db");
 
@@ -12,15 +11,12 @@ dataBase::dataBase()
     }
     q = QSqlQuery(db);
     q2 = QSqlQuery(db);
-
 }
 
 void dataBase::insertProfile(const QString& column, const QString& info)
 {
 
-//    QString x = "ttt";
     q.exec("UPDATE usersInfo SET '"+column+"' = '"+info+"' WHERE username = '"+theusername+"' ");
-//    q.exec("UPDATE usersInfo SET '"+column+"' = '"+info+"' WHERE username = (SELECT MAX(username) FROM usersInfo) ");
 
    if (q.lastError().isValid()) {
        qDebug() << "Failed to insert info:" << q.lastError().text() << theusername;
@@ -38,7 +34,6 @@ bool dataBase::searchData(Ui::MainWindow* ui)
     password = ui->login_password->text();
 
     q.exec("SELECT username FROM usersInfo WHERE username = '"+username+"'");
-
     if(q.first())
     {
         q2.exec("SELECT password FROM usersInfo WHERE password='"+password+"'");
@@ -68,6 +63,22 @@ bool dataBase::insertNewuser(Ui::MainWindow* Ui)
         return true;
     }
 }
+
+QString dataBase::returnInfo(const QString& username)
+{
+    q.exec("SELECT profile_loc FROM usersInfo WHERE username='"+username+"'");
+
+    if(q.next()) {
+        QString selectedValue = q.value(0).toString();
+        qDebug() << "Username:" << username << selectedValue;
+        return selectedValue;
+    }
+    else {
+        qDebug() << "No rows returned";
+        return ":/new/prefix1/images/bot_user.png";
+    }
+}
+
 dataBase::~dataBase()
 {
 //    db.close();

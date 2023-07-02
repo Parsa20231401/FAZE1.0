@@ -6,14 +6,20 @@
 #include <QPixmap>
 #include <QDateTime>
 #include <QListWidgetItem>
+#include "database.h"
 
 displayMessagec::displayMessagec(Ui::server* ui, const QString& name) : ui(ui), name(name)
 {
     SorC = true;
+    dataBase d;
+    filepath = d.returnInfo(name);
+
 }
 displayMessagec::displayMessagec(Ui::client* ui, const QString& name) : uic(ui), name(name)
 {
     SorC = false;
+    dataBase d;
+    filepath = d.returnInfo(name);
 }
 
 
@@ -23,7 +29,7 @@ void displayMessagec::messageDisplay(const QString& str){
     QDateTime currentDateTime = QDateTime::fromSecsSinceEpoch(secondsSinceEpoch);
     QString time = currentDateTime.toString("hh:mm");
 
-    QIcon icon(":/new/prefix1/images/bot_user.png");
+    QIcon icon(filepath);
     QPixmap pixmap = icon.pixmap(QSize(100, 100));
     QListWidgetItem* item = new QListWidgetItem();
 
