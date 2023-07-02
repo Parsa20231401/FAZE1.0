@@ -4,10 +4,6 @@
 #include "client.h"
 #include "QMessageBox"
 #include "entrycode.h"
-#include "QSqlDatabase"
-#include "QSqlQuery"
-#include "QSqlDriver"
-#include "QSqlQueryModel"
 
 #include "database.h"
 
@@ -37,11 +33,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     ui->comboBox->addItem("turkey +90");
     ui->comboBox->addItem("iraq +964");
     ui->comboBox->addItem("iran +98");
-
-    QSqlDatabase database;
-    database = QSqlDatabase::addDatabase("QSQLITE");
-    database.setDatabaseName("./database\\mainusersdata.db");
-    database.open();
 }
 
 MainWindow::~MainWindow() {
@@ -201,18 +192,17 @@ void MainWindow::on_password_username_textEdited(const QString &arg1)
     len=arg1.length();
     for(i=0;i<len&&sw;i++)
     {
-        if(arg1[i]<48||arg1[i]>57||len<8)
-           {
-            sw=0;
-            ui->label_28->setText("wrong");
-           }
-         if(sw)
-             ui->label_28->setText("correct");
+       if(arg1[i]<48||arg1[i]>57||len<8)
+       {
+        sw=0;
+        ui->label_28->setText("wrong");
+       }
+       if(sw)
+           ui->label_28->setText("correct");
     }
      if(ui->label_27->text()=="wrong"||ui->label_28->text()=="wrong")
          ui->capchaEnterd_button->setEnabled(false);
-//     if(ui->label_27->text()=="correct" && ui->label_28->text()=="correct")
-     else
+     if(ui->label_27->text()=="correct" && ui->label_28->text()=="correct")
          ui->capchaEnterd_button->setEnabled(true);
 }
 
@@ -229,6 +219,8 @@ void MainWindow::on_login_Button_clicked()
 {
     dataBase d;
     bool found = d.searchData(ui);
+
+    theusername = ui->login_username->text();
 
     if (found == true)
     {
