@@ -38,7 +38,6 @@ private slots:
     void displayMessage(const QString& str);
     void sendMessage(QTcpSocket* socket);
     void sendAttachment(QTcpSocket* socket, QString filePath);
-    void refreshComboBox();
 
     void on_pushButton_clicked();
 

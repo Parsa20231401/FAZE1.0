@@ -1,11 +1,5 @@
 #include "client.h"
 #include "ui_client.h"
-#include <QFrame>
-#include <QLabel>
-#include <QVBoxLayout>
-#include <QIcon>
-#include <QPixmap>
-#include <QDateTime>
 #include "displaymessagec.h"
 #include "database.h"
 

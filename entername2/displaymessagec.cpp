@@ -81,5 +81,3 @@ void displayMessagec::attachmentDisplay(const QString& imageLoc)
 
 }
 
-
-

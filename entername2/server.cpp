@@ -1,13 +1,9 @@
 #include "server.h"
 #include "ui_server.h"
-#include <QFrame>
-#include <QLabel>
-#include <QVBoxLayout>
-#include <QString>
-#include <QDateTime>
-
 #include "displaymessagec.h"
 #include "database.h"
+
+QString port;
 
 server::server(QWidget *parent) :
     QMainWindow(parent),
@@ -54,7 +50,7 @@ void server::on_pushButton_clicked()
     displayMessagec displayer(ui, theusername);
     displayer.messageDisplay(str);
 
-    QString receiver = ui->comboBox_receiver->currentText();
+    QString receiver = port;
 
     if(receiver == "Broadcast")
     {
@@ -90,7 +86,9 @@ void server::appendToSocketList(QTcpSocket* socket)
     connect(socket, &QTcpSocket::readyRead, this, &server::readSocket);
     connect(socket, &QTcpSocket::disconnected, this, &server::discardSocket);
 
-    ui->comboBox_receiver->addItem(QString::number(socket->socketDescriptor()));
+//    ui->comboBox_receiver->addItem(QString::number(socket->socketDescriptor()));
+
+    port = QString::number(socket->socketDescriptor());
 }
 
 void server::readSocket()
@@ -146,7 +144,7 @@ void server::discardSocket()
         displayMessage(QString("INFO :: A client has just left the room").arg(socket->socketDescriptor()));
         connection_set.remove(*it);
     }
-    refreshComboBox();
+//    refreshComboBox();
 
     socket->deleteLater();
 }
@@ -240,18 +238,18 @@ void server::displayError(QAbstractSocket::SocketError socketError)
     }
 }
 
-void server::refreshComboBox(){
-    ui->comboBox_receiver->clear();
-    ui->comboBox_receiver->addItem("Broadcast");
-    foreach(QTcpSocket* socket, connection_set)
-        ui->comboBox_receiver->addItem(QString::number(socket->socketDescriptor()));
-}
+//void server::refreshComboBox(){
+//    ui->comboBox_receiver->clear();
+//    ui->comboBox_receiver->addItem("Broadcast");
+//    foreach(QTcpSocket* socket, connection_set)
+//        ui->comboBox_receiver->addItem(QString::number(socket->socketDescriptor()));
+//}
 
 
 void server::on_pushButton_sendAttachment_clicked()
 {
 
-        QString receiver = ui->comboBox_receiver->currentText();
+        QString receiver = port;
         QString filePath = QFileDialog::getOpenFileName(this, ("Select an attachment"), QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation), ("File (*.json *.txt *.png *.jpg *.jpeg)"));
 
 

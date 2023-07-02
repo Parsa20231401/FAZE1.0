@@ -11,7 +11,6 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QComboBox>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QListWidget>
@@ -35,7 +34,6 @@ public:
     QLineEdit *lineEdit;
     QPushButton *pushButton_sendAttachment;
     QPushButton *pushButton;
-    QComboBox *comboBox_receiver;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -49,7 +47,7 @@ public:
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         verticalLayoutWidget = new QWidget(centralwidget);
         verticalLayoutWidget->setObjectName(QString::fromUtf8("verticalLayoutWidget"));
-        verticalLayoutWidget->setGeometry(QRect(30, 70, 491, 371));
+        verticalLayoutWidget->setGeometry(QRect(50, 110, 491, 371));
         verticalLayout = new QVBoxLayout(verticalLayoutWidget);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
@@ -83,9 +81,6 @@ public:
 
         verticalLayout->addLayout(horizontalLayout);
 
-        comboBox_receiver = new QComboBox(centralwidget);
-        comboBox_receiver->setObjectName(QString::fromUtf8("comboBox_receiver"));
-        comboBox_receiver->setGeometry(QRect(70, 270, 91, 24));
         server->setCentralWidget(centralwidget);
         menubar = new QMenuBar(server);
         menubar->setObjectName(QString::fromUtf8("menubar"));
