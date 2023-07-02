@@ -23,13 +23,11 @@ entrycode::~entrycode()
     delete ui;
 }
 
-
 void entrycode::on_ok_pushButton_clicked()
 {
     ui->groupBox->hide();
     ui->codeInput->show();
 }
-
 
 void entrycode::on_codeInput_returnPressed()
 {

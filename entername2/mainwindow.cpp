@@ -4,7 +4,6 @@
 #include "client.h"
 #include "QMessageBox"
 #include "entrycode.h"
-
 #include "database.h"
 
 QString theusername;
@@ -62,22 +61,6 @@ void MainWindow::on_pushButton_4_clicked() {
 }
 
 void MainWindow::on_capchaEnterd_button_clicked() {
-
-    ////////////////////
-    /// \brief q
-    ///
-    ///
-    ///
-    ///
-//    entrycode *a = new entrycode(this);/////////////// delete this
-//    a->show();
-//    hide();
-
-    //////////////////////////////
-    /// \brief q
-    //////////////////////////////////////////////////////
-    ///
-    ///
 
     theusername = ui->signup_username->text();
 
@@ -231,14 +214,5 @@ void MainWindow::on_login_Button_clicked()
        hide();
     }
     else QMessageBox::information(this,"wrong password/uesrname","try again");
-}
-
-void MainWindow::on_shortcutButton1_clicked()
-{
-    server *serverPage = new server(this);
-    serverPage->show();
-    client *clientPage = new client(this);
-    clientPage->show();
-    hide();
 }
 

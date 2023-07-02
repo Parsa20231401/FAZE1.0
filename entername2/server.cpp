@@ -23,6 +23,11 @@ server::server(QWidget *parent) :
         QMessageBox::critical(this,"QTCPServer",QString("Unable to start the server: %1.").arg(m_server->errorString()));
         exit(EXIT_FAILURE);
     }
+    QPixmap pixmap(":/new/prefix1/images/bot_user.png");
+    QSize size = ui->profile->size();
+    QPixmap scaledPixmap = pixmap.scaledToWidth(size.width(), Qt::SmoothTransformation);
+    ui->profile->setPixmap(scaledPixmap);
+    ui->name->setText("Bot");
 }
 
 server::~server()
@@ -86,8 +91,6 @@ void server::appendToSocketList(QTcpSocket* socket)
     connect(socket, &QTcpSocket::readyRead, this, &server::readSocket);
     connect(socket, &QTcpSocket::disconnected, this, &server::discardSocket);
 
-//    ui->comboBox_receiver->addItem(QString::number(socket->socketDescriptor()));
-
     port = QString::number(socket->socketDescriptor());
 }
 
@@ -144,8 +147,6 @@ void server::discardSocket()
         displayMessage(QString("INFO :: A client has just left the room").arg(socket->socketDescriptor()));
         connection_set.remove(*it);
     }
-//    refreshComboBox();
-
     socket->deleteLater();
 }
 
@@ -237,14 +238,6 @@ void server::displayError(QAbstractSocket::SocketError socketError)
         break;
     }
 }
-
-//void server::refreshComboBox(){
-//    ui->comboBox_receiver->clear();
-//    ui->comboBox_receiver->addItem("Broadcast");
-//    foreach(QTcpSocket* socket, connection_set)
-//        ui->comboBox_receiver->addItem(QString::number(socket->socketDescriptor()));
-//}
-
 
 void server::on_pushButton_sendAttachment_clicked()
 {

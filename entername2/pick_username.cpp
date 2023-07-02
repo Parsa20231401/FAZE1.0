@@ -2,25 +2,13 @@
 #include "ui_pick_username.h"
 #include "server.h"
 #include "client.h"
-#include <QPixmap>
-#include "QSqlDatabase"
-#include "QSqlQuery"
-#include "QSqlDriver"
-#include "QSqlQueryModel"
-#include <QSqlError>
 #include "database.h"
-
-
 
 pick_username::pick_username(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::pick_username)
 {
     ui->setupUi(this);
-    QSqlDatabase database;
-    database = QSqlDatabase::addDatabase("QSQLITE");
-    database.setDatabaseName("./database\\mainusersdata.db");
-    database.open();
 }
 
 pick_username::~pick_username()

@@ -88,7 +88,6 @@ public:
     QGroupBox *groupBox_4;
     QLineEdit *lineEdit_5;
     QPushButton *capchaEnterd_button;
-    QPushButton *shortcutButton1;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -362,13 +361,6 @@ public:
         capchaEnterd_button->setObjectName(QString::fromUtf8("capchaEnterd_button"));
         capchaEnterd_button->setEnabled(true);
         capchaEnterd_button->setGeometry(QRect(140, 170, 93, 28));
-        shortcutButton1 = new QPushButton(centralwidget);
-        shortcutButton1->setObjectName(QString::fromUtf8("shortcutButton1"));
-        shortcutButton1->setGeometry(QRect(850, 540, 261, 71));
-        QFont font;
-        font.setPointSize(12);
-        shortcutButton1->setFont(font);
-        shortcutButton1->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 0, 0);"));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -424,7 +416,6 @@ public:
         groupBox_4->setTitle(QApplication::translate("MainWindow", "enter the capcha", nullptr));
         lineEdit_5->setPlaceholderText(QApplication::translate("MainWindow", "write here", nullptr));
         capchaEnterd_button->setText(QApplication::translate("MainWindow", "go", nullptr));
-        shortcutButton1->setText(QApplication::translate("MainWindow", "temporary button", nullptr));
     } // retranslateUi
 
 };

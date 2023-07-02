@@ -16,9 +16,7 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
-#include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QStatusBar>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -34,25 +32,23 @@ public:
     QHBoxLayout *horizontalLayout;
     QLabel *code_label;
     QLabel *textcode_label;
-    QMenuBar *menubar;
-    QStatusBar *statusbar;
 
     void setupUi(QMainWindow *entrycode)
     {
         if (entrycode->objectName().isEmpty())
             entrycode->setObjectName(QString::fromUtf8("entrycode"));
-        entrycode->resize(800, 600);
+        entrycode->resize(414, 405);
         centralwidget = new QWidget(entrycode);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         codeInput = new QLineEdit(centralwidget);
         codeInput->setObjectName(QString::fromUtf8("codeInput"));
-        codeInput->setGeometry(QRect(280, 350, 231, 71));
+        codeInput->setGeometry(QRect(90, 310, 231, 71));
         QFont font;
         font.setPointSize(16);
         codeInput->setFont(font);
         groupBox = new QGroupBox(centralwidget);
         groupBox->setObjectName(QString::fromUtf8("groupBox"));
-        groupBox->setGeometry(QRect(240, 30, 321, 281));
+        groupBox->setGeometry(QRect(40, 10, 321, 281));
         ok_pushButton = new QPushButton(groupBox);
         ok_pushButton->setObjectName(QString::fromUtf8("ok_pushButton"));
         ok_pushButton->setGeometry(QRect(110, 190, 101, 41));
@@ -75,13 +71,6 @@ public:
         horizontalLayout->addWidget(textcode_label);
 
         entrycode->setCentralWidget(centralwidget);
-        menubar = new QMenuBar(entrycode);
-        menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 800, 25));
-        entrycode->setMenuBar(menubar);
-        statusbar = new QStatusBar(entrycode);
-        statusbar->setObjectName(QString::fromUtf8("statusbar"));
-        entrycode->setStatusBar(statusbar);
 
         retranslateUi(entrycode);
 

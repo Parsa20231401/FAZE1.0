@@ -1,6 +1,5 @@
 #include "database.h"
 
-
 dataBase::dataBase()
 {
     db = QSqlDatabase::addDatabase("QSQLITE");
@@ -15,13 +14,10 @@ dataBase::dataBase()
 
 void dataBase::insertProfile(const QString& column, const QString& info)
 {
-
     q.exec("UPDATE usersInfo SET '"+column+"' = '"+info+"' WHERE username = '"+theusername+"' ");
 
    if (q.lastError().isValid()) {
-       qDebug() << "Failed to insert info:" << q.lastError().text() << theusername;
-   } else {
-       qDebug() << "info inserted successfully."<< theusername;
+       qDebug() << "Failed to insert info:" << q.lastError().text();
    }
 }
 
@@ -29,7 +25,6 @@ bool dataBase::searchData(Ui::MainWindow* ui)
 {
 
     QString username, password;
-
     username = ui->login_username->text();
     password = ui->login_password->text();
 
@@ -70,7 +65,6 @@ QString dataBase::returnInfo(const QString& username, const QString& column)
 
     if(q.next()) {
         QString selectedValue = q.value(0).toString();
-        qDebug() << "username:" << username << selectedValue;
         return selectedValue;
     }
     else {

@@ -20,11 +20,9 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_signup_button_clicked();
+   void on_signup_button_clicked();
 
-
-
-    void on_pushButton_4_clicked();
+   void on_pushButton_4_clicked();
 
    void on_capchaEnterd_button_clicked();
 
@@ -41,8 +39,6 @@ private slots:
    void on_unsee_button_clicked();
 
    void on_login_Button_clicked();
-
-   void on_shortcutButton1_clicked();
 
 private:
     Ui::MainWindow *ui;

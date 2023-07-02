@@ -16,18 +16,21 @@ class displayMessagec : public QObject
 {
     Q_OBJECT
 public:
+    displayMessagec(const QString& username);
     displayMessagec(Ui::server* ui, const QString& name);
     displayMessagec(Ui::client* uic, const QString& name);
 
     void messageDisplay(const QString& str);
     void attachmentDisplay(const QString& loc);
+    QString getFilepath();
+    QString getName();
 
 private:
     Ui::server* ui;
     Ui::client* uic;
     QString name;
     QString filepath;
-    bool SorC;
+    bool isServer;
 
 };
 

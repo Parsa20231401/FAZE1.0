@@ -8,29 +8,25 @@ client::client(QWidget *parent) :
     ui(new Ui::client)
 {
     ui->setupUi(this);
-    socket = new QTcpSocket(this); //********* socket sakhte shod
+    socket = new QTcpSocket(this);
 
-        connect(this, &client::newMessage, this, &client::displayMessage);
-        connect(socket, &QTcpSocket::readyRead, this, &client::readSocket);
-        connect(socket, &QTcpSocket::disconnected, this, &client::discardSocket);
+    connect(this, &client::newMessage, this, &client::displayMessage);
+    connect(socket, &QTcpSocket::readyRead, this, &client::readSocket);
+    connect(socket, &QTcpSocket::disconnected, this, &client::discardSocket);
+    socket->connectToHost(QHostAddress::LocalHost,8080);
 
-        socket->connectToHost(QHostAddress::LocalHost,8080); // ersal darkhast vase join b server
-
-//        if(socket->waitForConnected())
-//         QMessageBox::information(this,"Server Status" , "connected !");
-//        else{
-//            QMessageBox::critical(this,"QTCPClient", QString("The following error occurred: %1.").arg(socket->errorString()));
-//            exit(EXIT_FAILURE);
-//        }
-
+    displayMessagec file(theusername);
+    QPixmap pixmap(file.getFilepath());
+    QSize size = ui->profile->size();
+    QPixmap scaledPixmap = pixmap.scaledToWidth(size.width(), Qt::SmoothTransformation);
+    ui->profile->setPixmap(scaledPixmap);
+    ui->name->setText(file.getName());
 }
 
 client::~client()
 {
-
     if(socket->isOpen())
-            socket->close();
-
+        socket->close();
     delete ui;
 }
 
@@ -40,49 +36,35 @@ void client::readSocket()
 
     QDataStream socketStream(socket);
     socketStream.setVersion(QDataStream::Qt_DefaultCompiledVersion);
-
     socketStream.startTransaction();
     socketStream >> buffer;
 
     if(!socketStream.commitTransaction())
     {
-//        QString message = QString("%1 :: Waiting for more data to come..").arg(socket->socketDescriptor());
-//        emit newMessage(message);
         return;
     }
-
     QString header = buffer.mid(0,128);
     QString fileType = header.split(",")[0].split(":")[1];
 
     buffer = buffer.mid(128);
 
-    if(fileType=="attachment"){
+    if(fileType=="attachment")
+    {
         QString fileName = header.split(",")[1].split(":")[1];
         QString ext = fileName.split(".")[1];
-//        QString size = header.split(",")[2].split(":")[1].split(";")[0];
+        QString filePath = QFileDialog::getSaveFileName(this, tr("Save File"), QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)+"/"+fileName, QString("File (*.%1)").arg(ext));
 
-//        if (QMessageBox::Yes == QMessageBox::question(this, "QTCPServer", QString("You are receiving an attachment from sd:%1 of size: %2 bytes, called %3. Do you want to accept it?").arg(socket->socketDescriptor()).arg(size).arg(fileName)))
-//        {
-            QString filePath = QFileDialog::getSaveFileName(this, tr("Save File"), QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)+"/"+fileName, QString("File (*.%1)").arg(ext));
+        displayMessagec displayer(ui, theusername);
+        displayer.attachmentDisplay(filePath);
 
-
-
-            displayMessagec displayer(ui, theusername);
-            displayer.attachmentDisplay(filePath);
-
-
-            QFile file(filePath);
-            if(file.open(QIODevice::WriteOnly)){
-                file.write(buffer);
-//                QString message = QString("INFO :: Attachment from sd:%1 successfully stored on disk under the path %2").arg(socket->socketDescriptor()).arg(QString(filePath));
-//                emit newMessage(message);
-            }else
-                QMessageBox::critical(this,"QTCPServer", "An error occurred while trying to write the attachment.");
-//        }else{
-//            QString message = QString("INFO :: Attachment from sd:%1 discarded").arg(socket->socketDescriptor());
-//            emit newMessage(message);
-//        }
-    }else if(fileType=="message"){
+        QFile file(filePath);
+        if(file.open(QIODevice::WriteOnly)){
+            file.write(buffer);
+        }
+        else
+            QMessageBox::critical(this,"QTCPServer", "An error occurred while trying to write the attachment.");
+    }
+    else if(fileType=="message"){
         QString message = QString("%1 :: %2").arg(socket->socketDescriptor()).arg(QString::fromStdString(buffer.toStdString()));
         emit newMessage(message);
     }
@@ -121,7 +103,6 @@ void client::on_pushButton_clicked()
 
     displayMessagec displayer(ui, "bot");
     displayer.messageDisplay(str);
-
 
     if(socket)
     {

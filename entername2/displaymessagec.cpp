@@ -8,17 +8,24 @@
 #include <QListWidgetItem>
 #include "database.h"
 
-displayMessagec::displayMessagec(Ui::server* ui, const QString& username) : ui(ui)
+displayMessagec::displayMessagec(const QString& username)
 {
-    SorC = true;
     dataBase d;
     filepath = d.returnInfo(username, "profile_loc");
     this->name = d.returnInfo(username, "name");
-
 }
+
+displayMessagec::displayMessagec(Ui::server* ui, const QString& username) : ui(ui)
+{
+    isServer = true;
+    dataBase d;
+    filepath = d.returnInfo(username, "profile_loc");
+    this->name = d.returnInfo(username, "name");
+}
+
 displayMessagec::displayMessagec(Ui::client* ui, const QString& username) : uic(ui)
 {
-    SorC = false;
+    isServer = false;
     dataBase d;
     filepath = d.returnInfo(username, "profile_loc");
     this->name = d.returnInfo(username, "name");
@@ -49,7 +56,7 @@ void displayMessagec::messageDisplay(const QString& str){
     item->setText(name+' '+time);
     item->setSizeHint(QSize(110, 110));
 
-    if (SorC == true){
+    if (isServer == true){
        ui->listWidget->addItem(item);
        ui->listWidget->setItemWidget(item, frame);
     }
@@ -68,7 +75,7 @@ void displayMessagec::attachmentDisplay(const QString& imageLoc)
     label->setPixmap(pixmap);
     QListWidgetItem *item = new QListWidgetItem;
     item->setSizeHint(pixmap.size());
-    if (SorC == true){
+    if (isServer == true){
        ui->listWidget->addItem(item);
        ui->listWidget->setItemWidget(item, label);
        ui->listWidget->setSpacing(10);
@@ -78,6 +85,14 @@ void displayMessagec::attachmentDisplay(const QString& imageLoc)
         uic->listWidget->setItemWidget(item, label);
         uic->listWidget->setSpacing(10);
     }
+}
 
+QString displayMessagec::getFilepath()
+{
+    return filepath;
+}
+QString displayMessagec::getName()
+{
+    return name;
 }
 

@@ -594,27 +594,6 @@ background-color: rgb(255, 255, 255);</string>
      </property>
     </widget>
    </widget>
-   <widget class="QPushButton" name="shortcutButton1">
-    <property name="geometry">
-     <rect>
-      <x>850</x>
-      <y>540</y>
-      <width>261</width>
-      <height>71</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>12</pointsize>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 0, 0);</string>
-    </property>
-    <property name="text">
-     <string>temporary button</string>
-    </property>
-   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

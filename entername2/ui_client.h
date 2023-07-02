@@ -11,7 +11,9 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QGroupBox>
 #include <QtWidgets/QHBoxLayout>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QListWidget>
 #include <QtWidgets/QMainWindow>
@@ -28,6 +30,9 @@ public:
     QWidget *centralwidget;
     QWidget *verticalLayoutWidget;
     QVBoxLayout *verticalLayout;
+    QGroupBox *groupBox;
+    QLabel *profile;
+    QLabel *name;
     QListWidget *listWidget;
     QHBoxLayout *horizontalLayout;
     QLineEdit *lineEdit;
@@ -39,16 +44,37 @@ public:
     {
         if (client->objectName().isEmpty())
             client->setObjectName(QString::fromUtf8("client"));
-        client->resize(457, 432);
+        client->resize(470, 528);
         client->setStyleSheet(QString::fromUtf8(""));
         centralwidget = new QWidget(client);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         verticalLayoutWidget = new QWidget(centralwidget);
         verticalLayoutWidget->setObjectName(QString::fromUtf8("verticalLayoutWidget"));
-        verticalLayoutWidget->setGeometry(QRect(0, 0, 441, 381));
+        verticalLayoutWidget->setGeometry(QRect(10, 10, 441, 461));
         verticalLayout = new QVBoxLayout(verticalLayoutWidget);
+        verticalLayout->setSpacing(0);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
+        groupBox = new QGroupBox(verticalLayoutWidget);
+        groupBox->setObjectName(QString::fromUtf8("groupBox"));
+        groupBox->setMinimumSize(QSize(0, 100));
+        groupBox->setStyleSheet(QString::fromUtf8("border: 2px solid gray;"));
+        profile = new QLabel(groupBox);
+        profile->setObjectName(QString::fromUtf8("profile"));
+        profile->setGeometry(QRect(0, 0, 121, 101));
+        profile->setStyleSheet(QString::fromUtf8("border: 2px white;"));
+        name = new QLabel(groupBox);
+        name->setObjectName(QString::fromUtf8("name"));
+        name->setGeometry(QRect(150, 0, 201, 101));
+        QFont font;
+        font.setPointSize(12);
+        font.setBold(true);
+        font.setWeight(75);
+        name->setFont(font);
+        name->setStyleSheet(QString::fromUtf8("border: 2px white;"));
+
+        verticalLayout->addWidget(groupBox);
+
         listWidget = new QListWidget(verticalLayoutWidget);
         listWidget->setObjectName(QString::fromUtf8("listWidget"));
         listWidget->setStyleSheet(QString::fromUtf8(""));
@@ -82,7 +108,7 @@ public:
         client->setCentralWidget(centralwidget);
         menubar = new QMenuBar(client);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 457, 25));
+        menubar->setGeometry(QRect(0, 0, 470, 25));
         client->setMenuBar(menubar);
 
         retranslateUi(client);
@@ -93,6 +119,9 @@ public:
     void retranslateUi(QMainWindow *client)
     {
         client->setWindowTitle(QApplication::translate("client", "MainWindow", nullptr));
+        groupBox->setTitle(QString());
+        profile->setText(QString());
+        name->setText(QString());
         pushButton_sendAttachment->setText(QString());
         pushButton->setText(QApplication::translate("client", "PushButton", nullptr));
     } // retranslateUi
