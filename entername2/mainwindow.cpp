@@ -13,13 +13,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     ui->sginupBox->hide();
     ui->password_username->setEchoMode(QLineEdit::Password);
     ui->login_password->setEchoMode(QLineEdit::Password);
-    ui->label_5->setText("<b>username:</b>");
-    ui->label_2->setText("<b>enter youe information:</b>");
-    ui->label_4->setText("<b>password:</b>");
-    ui->label_15->setText("<b>username:</b>");
-    ui->label_16->setText("<b>password:</b>");
-    ui->label_21->setText("<b>email:</b>");
-    ui->label_22->setText("<b>telephone number:</b>");
     ui->groupBox_4->hide();
     ui->unsee_button->hide();
     ui->comboBox->addItem("egypt +20");
@@ -189,14 +182,12 @@ void MainWindow::on_password_username_textEdited(const QString &arg1)
          ui->capchaEnterd_button->setEnabled(true);
 }
 
-
 void MainWindow::on_unsee_button_clicked()
 {
     ui->unsee_button->hide();
     ui->see_button->show();
     ui->password_username->setEchoMode(QLineEdit::Password);
 }
-
 
 void MainWindow::on_login_Button_clicked()
 {

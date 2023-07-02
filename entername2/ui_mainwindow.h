@@ -20,7 +20,6 @@
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QStatusBar>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
@@ -56,9 +55,7 @@ public:
     QLabel *label_25;
     QLabel *label_26;
     QGroupBox *sginupBox;
-    QLabel *label_17;
     QPushButton *pushButton_4;
-    QLabel *label_18;
     QLabel *label_11;
     QPushButton *unsee_button;
     QWidget *formLayoutWidget_2;
@@ -89,7 +86,6 @@ public:
     QLineEdit *lineEdit_5;
     QPushButton *capchaEnterd_button;
     QMenuBar *menubar;
-    QStatusBar *statusbar;
 
     void setupUi(QMainWindow *MainWindow)
     {
@@ -102,8 +98,8 @@ public:
         loginBox = new QGroupBox(centralwidget);
         loginBox->setObjectName(QString::fromUtf8("loginBox"));
         loginBox->setGeometry(QRect(170, 80, 581, 401));
-        loginBox->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 0, 0);\n"
-"background-color: rgb(255, 255, 255);"));
+        loginBox->setStyleSheet(QString::fromUtf8("background-color: rgb(85, 255, 0);\n"
+"background-color: rgb(0, 170, 127);"));
         label = new QLabel(loginBox);
         label->setObjectName(QString::fromUtf8("label"));
         label->setGeometry(QRect(10, 0, 151, 21));
@@ -116,6 +112,7 @@ public:
         login_Button = new QPushButton(loginBox);
         login_Button->setObjectName(QString::fromUtf8("login_Button"));
         login_Button->setGeometry(QRect(200, 220, 93, 28));
+        login_Button->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 85, 0);"));
         label_12 = new QLabel(loginBox);
         label_12->setObjectName(QString::fromUtf8("label_12"));
         label_12->setGeometry(QRect(200, 280, 121, 16));
@@ -125,10 +122,12 @@ public:
         groupBox_2->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
         label_13 = new QLabel(groupBox_2);
         label_13->setObjectName(QString::fromUtf8("label_13"));
-        label_13->setGeometry(QRect(30, 30, 111, 16));
+        label_13->setGeometry(QRect(30, 25, 111, 21));
+        label_13->setStyleSheet(QString::fromUtf8("color: rgb(0, 0, 0);"));
         signup_button = new QPushButton(groupBox_2);
         signup_button->setObjectName(QString::fromUtf8("signup_button"));
-        signup_button->setGeometry(QRect(150, 20, 91, 41));
+        signup_button->setGeometry(QRect(160, 20, 91, 41));
+        signup_button->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 85, 0);"));
         formLayoutWidget = new QWidget(loginBox);
         formLayoutWidget->setObjectName(QString::fromUtf8("formLayoutWidget"));
         formLayoutWidget->setGeometry(QRect(10, 50, 221, 111));
@@ -142,12 +141,14 @@ public:
 
         login_username = new QLineEdit(formLayoutWidget);
         login_username->setObjectName(QString::fromUtf8("login_username"));
+        login_username->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
 
         formLayout->setWidget(0, QFormLayout::FieldRole, login_username);
 
         label_19 = new QLabel(formLayoutWidget);
         label_19->setObjectName(QString::fromUtf8("label_19"));
-        label_19->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 127);"));
+        label_19->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 127);\n"
+"color: rgb(0, 0, 0);"));
         label_19->setFrameShape(QFrame::Box);
 
         formLayout->setWidget(1, QFormLayout::FieldRole, label_19);
@@ -159,12 +160,14 @@ public:
 
         login_password = new QLineEdit(formLayoutWidget);
         login_password->setObjectName(QString::fromUtf8("login_password"));
+        login_password->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
 
         formLayout->setWidget(2, QFormLayout::FieldRole, login_password);
 
         label_20 = new QLabel(formLayoutWidget);
         label_20->setObjectName(QString::fromUtf8("label_20"));
-        label_20->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 127);"));
+        label_20->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 127);\n"
+"color: rgb(0, 0, 0);"));
         label_20->setFrameShape(QFrame::Box);
 
         formLayout->setWidget(3, QFormLayout::FieldRole, label_20);
@@ -208,16 +211,11 @@ public:
         sginupBox = new QGroupBox(centralwidget);
         sginupBox->setObjectName(QString::fromUtf8("sginupBox"));
         sginupBox->setGeometry(QRect(780, 80, 721, 401));
-        sginupBox->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
-        label_17 = new QLabel(sginupBox);
-        label_17->setObjectName(QString::fromUtf8("label_17"));
-        label_17->setGeometry(QRect(260, 100, 55, 16));
+        sginupBox->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 170, 127);"));
         pushButton_4 = new QPushButton(sginupBox);
         pushButton_4->setObjectName(QString::fromUtf8("pushButton_4"));
         pushButton_4->setGeometry(QRect(330, 330, 121, 31));
-        label_18 = new QLabel(sginupBox);
-        label_18->setObjectName(QString::fromUtf8("label_18"));
-        label_18->setGeometry(QRect(280, 240, 55, 16));
+        pushButton_4->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 85, 0);"));
         label_11 = new QLabel(sginupBox);
         label_11->setObjectName(QString::fromUtf8("label_11"));
         label_11->setGeometry(QRect(310, 260, 161, 61));
@@ -228,7 +226,7 @@ public:
         unsee_button->setStyleSheet(QString::fromUtf8("image: url(:/new/prefix1/images/hide.jpg);"));
         formLayoutWidget_2 = new QWidget(sginupBox);
         formLayoutWidget_2->setObjectName(QString::fromUtf8("formLayoutWidget_2"));
-        formLayoutWidget_2->setGeometry(QRect(30, 30, 289, 205));
+        formLayoutWidget_2->setGeometry(QRect(18, 30, 301, 181));
         formLayout_3 = new QFormLayout(formLayoutWidget_2);
         formLayout_3->setObjectName(QString::fromUtf8("formLayout_3"));
         formLayout_3->setContentsMargins(0, 0, 0, 0);
@@ -239,12 +237,14 @@ public:
 
         signup_username = new QLineEdit(formLayoutWidget_2);
         signup_username->setObjectName(QString::fromUtf8("signup_username"));
+        signup_username->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
 
         formLayout_3->setWidget(0, QFormLayout::FieldRole, signup_username);
 
         label_27 = new QLabel(formLayoutWidget_2);
         label_27->setObjectName(QString::fromUtf8("label_27"));
-        label_27->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 127);"));
+        label_27->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 127);\n"
+"color: rgb(0, 0, 0);"));
         label_27->setFrameShape(QFrame::Box);
 
         formLayout_3->setWidget(1, QFormLayout::FieldRole, label_27);
@@ -264,6 +264,7 @@ public:
         sizePolicy.setHeightForWidth(password_username->sizePolicy().hasHeightForWidth());
         password_username->setSizePolicy(sizePolicy);
         password_username->setMaximumSize(QSize(200, 24));
+        password_username->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
 
         horizontalLayout_3->addWidget(password_username);
 
@@ -272,7 +273,8 @@ public:
 
         label_28 = new QLabel(formLayoutWidget_2);
         label_28->setObjectName(QString::fromUtf8("label_28"));
-        label_28->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 127);"));
+        label_28->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 127);\n"
+"color: rgb(0, 0, 0);"));
         label_28->setFrameShape(QFrame::Box);
 
         formLayout_3->setWidget(3, QFormLayout::FieldRole, label_28);
@@ -284,6 +286,7 @@ public:
 
         email = new QLineEdit(formLayoutWidget_2);
         email->setObjectName(QString::fromUtf8("email"));
+        email->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
 
         formLayout_3->setWidget(4, QFormLayout::FieldRole, email);
 
@@ -293,15 +296,18 @@ public:
         formLayout_3->setWidget(5, QFormLayout::LabelRole, label_22);
 
         horizontalLayout_5 = new QHBoxLayout();
+        horizontalLayout_5->setSpacing(0);
         horizontalLayout_5->setObjectName(QString::fromUtf8("horizontalLayout_5"));
         comboBox = new QComboBox(formLayoutWidget_2);
         comboBox->setObjectName(QString::fromUtf8("comboBox"));
+        comboBox->setMinimumSize(QSize(80, 0));
         comboBox->setMaximumSize(QSize(60, 16777215));
 
         horizontalLayout_5->addWidget(comboBox);
 
         phone = new QLineEdit(formLayoutWidget_2);
         phone->setObjectName(QString::fromUtf8("phone"));
+        phone->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
 
         horizontalLayout_5->addWidget(phone);
 
@@ -310,7 +316,7 @@ public:
 
         verticalLayoutWidget_3 = new QWidget(sginupBox);
         verticalLayoutWidget_3->setObjectName(QString::fromUtf8("verticalLayoutWidget_3"));
-        verticalLayoutWidget_3->setGeometry(QRect(330, 20, 331, 41));
+        verticalLayoutWidget_3->setGeometry(QRect(320, 30, 331, 41));
         verticalLayout_4 = new QVBoxLayout(verticalLayoutWidget_3);
         verticalLayout_4->setObjectName(QString::fromUtf8("verticalLayout_4"));
         verticalLayout_4->setContentsMargins(0, 0, 0, 0);
@@ -328,7 +334,7 @@ public:
 
         verticalLayoutWidget_4 = new QWidget(sginupBox);
         verticalLayoutWidget_4->setObjectName(QString::fromUtf8("verticalLayoutWidget_4"));
-        verticalLayoutWidget_4->setGeometry(QRect(330, 140, 321, 41));
+        verticalLayoutWidget_4->setGeometry(QRect(320, 120, 321, 41));
         verticalLayout_5 = new QVBoxLayout(verticalLayoutWidget_4);
         verticalLayout_5->setObjectName(QString::fromUtf8("verticalLayout_5"));
         verticalLayout_5->setContentsMargins(0, 0, 0, 0);
@@ -346,29 +352,28 @@ public:
 
         see_button = new QPushButton(sginupBox);
         see_button->setObjectName(QString::fromUtf8("see_button"));
-        see_button->setGeometry(QRect(330, 110, 41, 25));
+        see_button->setGeometry(QRect(320, 90, 41, 25));
         sizePolicy.setHeightForWidth(see_button->sizePolicy().hasHeightForWidth());
         see_button->setSizePolicy(sizePolicy);
         see_button->setStyleSheet(QString::fromUtf8("image: url(:/new/prefix1/images/see.jpg);"));
         groupBox_4 = new QGroupBox(centralwidget);
         groupBox_4->setObjectName(QString::fromUtf8("groupBox_4"));
         groupBox_4->setGeometry(QRect(420, 490, 371, 271));
-        groupBox_4->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
+        groupBox_4->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 170, 127);"));
         lineEdit_5 = new QLineEdit(groupBox_4);
         lineEdit_5->setObjectName(QString::fromUtf8("lineEdit_5"));
         lineEdit_5->setGeometry(QRect(120, 100, 131, 41));
+        lineEdit_5->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
         capchaEnterd_button = new QPushButton(groupBox_4);
         capchaEnterd_button->setObjectName(QString::fromUtf8("capchaEnterd_button"));
         capchaEnterd_button->setEnabled(true);
         capchaEnterd_button->setGeometry(QRect(140, 170, 93, 28));
+        capchaEnterd_button->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 85, 0);"));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
         menubar->setGeometry(QRect(0, 0, 1583, 25));
         MainWindow->setMenuBar(menubar);
-        statusbar = new QStatusBar(MainWindow);
-        statusbar->setObjectName(QString::fromUtf8("statusbar"));
-        MainWindow->setStatusBar(statusbar);
 
         retranslateUi(MainWindow);
 
@@ -397,9 +402,7 @@ public:
         label_25->setText(QApplication::translate("MainWindow", "rule1:you just have to use numbers", nullptr));
         label_26->setText(QApplication::translate("MainWindow", "rule2:your password should have atleast 8 characters", nullptr));
         sginupBox->setTitle(QString());
-        label_17->setText(QString());
         pushButton_4->setText(QApplication::translate("MainWindow", "CREATE CAPCHA", nullptr));
-        label_18->setText(QString());
         label_11->setText(QString());
         unsee_button->setText(QString());
         label_15->setText(QApplication::translate("MainWindow", "username:", nullptr));

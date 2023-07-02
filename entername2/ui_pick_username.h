@@ -17,7 +17,6 @@
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QStatusBar>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -34,7 +33,6 @@ public:
     QLabel *profile;
     QPushButton *addProfile;
     QMenuBar *menubar;
-    QStatusBar *statusbar;
 
     void setupUi(QMainWindow *pick_username)
     {
@@ -59,12 +57,14 @@ public:
 
         lineEdit = new QLineEdit(horizontalLayoutWidget);
         lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
+        lineEdit->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
 
         horizontalLayout->addWidget(lineEdit);
 
         continue_button = new QPushButton(centralwidget);
         continue_button->setObjectName(QString::fromUtf8("continue_button"));
         continue_button->setGeometry(QRect(310, 380, 171, 51));
+        continue_button->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 85, 0);"));
         profile = new QLabel(centralwidget);
         profile->setObjectName(QString::fromUtf8("profile"));
         profile->setGeometry(QRect(90, 140, 191, 201));
@@ -81,9 +81,6 @@ public:
         menubar->setObjectName(QString::fromUtf8("menubar"));
         menubar->setGeometry(QRect(0, 0, 800, 25));
         pick_username->setMenuBar(menubar);
-        statusbar = new QStatusBar(pick_username);
-        statusbar->setObjectName(QString::fromUtf8("statusbar"));
-        pick_username->setStatusBar(statusbar);
 
         retranslateUi(pick_username);
 

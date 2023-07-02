@@ -27,8 +27,8 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 0, 0);
-background-color: rgb(255, 255, 255);</string>
+     <string notr="true">background-color: rgb(85, 255, 0);
+background-color: rgb(0, 170, 127);</string>
     </property>
     <property name="title">
      <string/>
@@ -81,6 +81,9 @@ background-color: rgb(255, 255, 255);</string>
        <height>28</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(0, 85, 0);</string>
+     </property>
      <property name="text">
       <string>log in</string>
      </property>
@@ -117,10 +120,13 @@ background-color: rgb(255, 255, 255);</string>
       <property name="geometry">
        <rect>
         <x>30</x>
-        <y>30</y>
+        <y>25</y>
         <width>111</width>
-        <height>16</height>
+        <height>21</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(0, 0, 0);</string>
       </property>
       <property name="text">
        <string>not a member?</string>
@@ -129,11 +135,14 @@ background-color: rgb(255, 255, 255);</string>
      <widget class="QPushButton" name="signup_button">
       <property name="geometry">
        <rect>
-        <x>150</x>
+        <x>160</x>
         <y>20</y>
         <width>91</width>
         <height>41</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(0, 85, 0);</string>
       </property>
       <property name="text">
        <string>sign up</string>
@@ -159,6 +168,9 @@ background-color: rgb(255, 255, 255);</string>
       </item>
       <item row="0" column="1">
        <widget class="QLineEdit" name="login_username">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);</string>
+        </property>
         <property name="text">
          <string/>
         </property>
@@ -167,7 +179,8 @@ background-color: rgb(255, 255, 255);</string>
       <item row="1" column="1">
        <widget class="QLabel" name="label_19">
         <property name="styleSheet">
-         <string notr="true">background-color: rgb(255, 255, 127);</string>
+         <string notr="true">background-color: rgb(255, 255, 127);
+color: rgb(0, 0, 0);</string>
         </property>
         <property name="frameShape">
          <enum>QFrame::Box</enum>
@@ -185,12 +198,17 @@ background-color: rgb(255, 255, 255);</string>
        </widget>
       </item>
       <item row="2" column="1">
-       <widget class="QLineEdit" name="login_password"/>
+       <widget class="QLineEdit" name="login_password">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);</string>
+        </property>
+       </widget>
       </item>
       <item row="3" column="1">
        <widget class="QLabel" name="label_20">
         <property name="styleSheet">
-         <string notr="true">background-color: rgb(255, 255, 127);</string>
+         <string notr="true">background-color: rgb(255, 255, 127);
+color: rgb(0, 0, 0);</string>
         </property>
         <property name="frameShape">
          <enum>QFrame::Box</enum>
@@ -277,24 +295,11 @@ background-color: rgb(255, 255, 255);</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);</string>
+     <string notr="true">background-color: rgb(0, 170, 127);</string>
     </property>
     <property name="title">
      <string/>
     </property>
-    <widget class="QLabel" name="label_17">
-     <property name="geometry">
-      <rect>
-       <x>260</x>
-       <y>100</y>
-       <width>55</width>
-       <height>16</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
     <widget class="QPushButton" name="pushButton_4">
      <property name="geometry">
       <rect>
@@ -304,21 +309,11 @@ background-color: rgb(255, 255, 255);</string>
        <height>31</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(0, 85, 0);</string>
+     </property>
      <property name="text">
       <string>CREATE CAPCHA</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_18">
-     <property name="geometry">
-      <rect>
-       <x>280</x>
-       <y>240</y>
-       <width>55</width>
-       <height>16</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
      </property>
     </widget>
     <widget class="QLabel" name="label_11">
@@ -356,10 +351,10 @@ background-color: rgb(255, 255, 255);</string>
     <widget class="QWidget" name="formLayoutWidget_2">
      <property name="geometry">
       <rect>
-       <x>30</x>
+       <x>18</x>
        <y>30</y>
-       <width>289</width>
-       <height>205</height>
+       <width>301</width>
+       <height>181</height>
       </rect>
      </property>
      <layout class="QFormLayout" name="formLayout_3">
@@ -371,12 +366,17 @@ background-color: rgb(255, 255, 255);</string>
        </widget>
       </item>
       <item row="0" column="1">
-       <widget class="QLineEdit" name="signup_username"/>
+       <widget class="QLineEdit" name="signup_username">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);</string>
+        </property>
+       </widget>
       </item>
       <item row="1" column="1">
        <widget class="QLabel" name="label_27">
         <property name="styleSheet">
-         <string notr="true">background-color: rgb(255, 255, 127);</string>
+         <string notr="true">background-color: rgb(255, 255, 127);
+color: rgb(0, 0, 0);</string>
         </property>
         <property name="frameShape">
          <enum>QFrame::Box</enum>
@@ -409,6 +409,9 @@ background-color: rgb(255, 255, 255);</string>
             <height>24</height>
            </size>
           </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(255, 255, 255);</string>
+          </property>
          </widget>
         </item>
        </layout>
@@ -416,7 +419,8 @@ background-color: rgb(255, 255, 255);</string>
       <item row="3" column="1">
        <widget class="QLabel" name="label_28">
         <property name="styleSheet">
-         <string notr="true">background-color: rgb(255, 255, 127);</string>
+         <string notr="true">background-color: rgb(255, 255, 127);
+color: rgb(0, 0, 0);</string>
         </property>
         <property name="frameShape">
          <enum>QFrame::Box</enum>
@@ -434,7 +438,11 @@ background-color: rgb(255, 255, 255);</string>
        </widget>
       </item>
       <item row="4" column="1">
-       <widget class="QLineEdit" name="email"/>
+       <widget class="QLineEdit" name="email">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);</string>
+        </property>
+       </widget>
       </item>
       <item row="5" column="0">
        <widget class="QLabel" name="label_22">
@@ -445,8 +453,17 @@ background-color: rgb(255, 255, 255);</string>
       </item>
       <item row="5" column="1">
        <layout class="QHBoxLayout" name="horizontalLayout_5">
+        <property name="spacing">
+         <number>0</number>
+        </property>
         <item>
          <widget class="QComboBox" name="comboBox">
+          <property name="minimumSize">
+           <size>
+            <width>80</width>
+            <height>0</height>
+           </size>
+          </property>
           <property name="maximumSize">
            <size>
             <width>60</width>
@@ -456,7 +473,11 @@ background-color: rgb(255, 255, 255);</string>
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="phone"/>
+         <widget class="QLineEdit" name="phone">
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(255, 255, 255);</string>
+          </property>
+         </widget>
         </item>
        </layout>
       </item>
@@ -465,8 +486,8 @@ background-color: rgb(255, 255, 255);</string>
     <widget class="QWidget" name="verticalLayoutWidget_3">
      <property name="geometry">
       <rect>
-       <x>330</x>
-       <y>20</y>
+       <x>320</x>
+       <y>30</y>
        <width>331</width>
        <height>41</height>
       </rect>
@@ -497,8 +518,8 @@ background-color: rgb(255, 255, 255);</string>
     <widget class="QWidget" name="verticalLayoutWidget_4">
      <property name="geometry">
       <rect>
-       <x>330</x>
-       <y>140</y>
+       <x>320</x>
+       <y>120</y>
        <width>321</width>
        <height>41</height>
       </rect>
@@ -529,8 +550,8 @@ background-color: rgb(255, 255, 255);</string>
     <widget class="QPushButton" name="see_button">
      <property name="geometry">
       <rect>
-       <x>330</x>
-       <y>110</y>
+       <x>320</x>
+       <y>90</y>
        <width>41</width>
        <height>25</height>
       </rect>
@@ -559,7 +580,7 @@ background-color: rgb(255, 255, 255);</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);</string>
+     <string notr="true">background-color: rgb(0, 170, 127);</string>
     </property>
     <property name="title">
      <string>enter the capcha</string>
@@ -572,6 +593,9 @@ background-color: rgb(255, 255, 255);</string>
        <width>131</width>
        <height>41</height>
       </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
      </property>
      <property name="placeholderText">
       <string>write here</string>
@@ -589,6 +613,9 @@ background-color: rgb(255, 255, 255);</string>
        <height>28</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(0, 85, 0);</string>
+     </property>
      <property name="text">
       <string>go</string>
      </property>
@@ -605,7 +632,6 @@ background-color: rgb(255, 255, 255);</string>
     </rect>
    </property>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
  <connections/>

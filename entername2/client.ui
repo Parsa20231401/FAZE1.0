@@ -39,7 +39,8 @@
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">border: 2px solid gray;</string>
+        <string notr="true">border: 2px solid gray;
+</string>
        </property>
        <property name="title">
         <string/>
@@ -47,10 +48,10 @@
        <widget class="QLabel" name="profile">
         <property name="geometry">
          <rect>
-          <x>0</x>
-          <y>0</y>
-          <width>121</width>
-          <height>101</height>
+          <x>10</x>
+          <y>10</y>
+          <width>111</width>
+          <height>81</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -64,9 +65,9 @@
         <property name="geometry">
          <rect>
           <x>150</x>
-          <y>0</y>
+          <y>10</y>
           <width>201</width>
-          <height>101</height>
+          <height>81</height>
          </rect>
         </property>
         <property name="font">
@@ -98,13 +99,17 @@
         <number>0</number>
        </property>
        <item>
-        <widget class="QLineEdit" name="lineEdit"/>
+        <widget class="QLineEdit" name="lineEdit">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255, 255, 255);</string>
+         </property>
+        </widget>
        </item>
        <item>
         <widget class="QPushButton" name="pushButton_sendAttachment">
          <property name="styleSheet">
           <string notr="true">image: url(:/new/prefix1/images/attachment.png);
-background-color: rgb(170, 0, 255);</string>
+</string>
          </property>
          <property name="text">
           <string/>
@@ -114,10 +119,10 @@ background-color: rgb(170, 0, 255);</string>
        <item>
         <widget class="QPushButton" name="pushButton">
          <property name="styleSheet">
-          <string notr="true"/>
+          <string notr="true">background-color: rgb(85, 170, 0);</string>
          </property>
          <property name="text">
-          <string>PushButton</string>
+          <string>message</string>
          </property>
         </widget>
        </item>

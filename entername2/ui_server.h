@@ -19,7 +19,6 @@
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QStatusBar>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
@@ -40,7 +39,6 @@ public:
     QPushButton *pushButton_sendAttachment;
     QPushButton *pushButton;
     QMenuBar *menubar;
-    QStatusBar *statusbar;
 
     void setupUi(QMainWindow *server)
     {
@@ -60,10 +58,11 @@ public:
         groupBox = new QGroupBox(verticalLayoutWidget);
         groupBox->setObjectName(QString::fromUtf8("groupBox"));
         groupBox->setMinimumSize(QSize(0, 100));
-        groupBox->setStyleSheet(QString::fromUtf8("border: 2px solid gray;"));
+        groupBox->setStyleSheet(QString::fromUtf8("border: 2px solid gray;\n"
+""));
         profile = new QLabel(groupBox);
         profile->setObjectName(QString::fromUtf8("profile"));
-        profile->setGeometry(QRect(-6, -5, 121, 111));
+        profile->setGeometry(QRect(4, 5, 111, 91));
         profile->setStyleSheet(QString::fromUtf8("border: 2px white;"));
         name = new QLabel(groupBox);
         name->setObjectName(QString::fromUtf8("name"));
@@ -88,13 +87,14 @@ public:
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
         lineEdit = new QLineEdit(verticalLayoutWidget);
         lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
+        lineEdit->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
 
         horizontalLayout->addWidget(lineEdit);
 
         pushButton_sendAttachment = new QPushButton(verticalLayoutWidget);
         pushButton_sendAttachment->setObjectName(QString::fromUtf8("pushButton_sendAttachment"));
         pushButton_sendAttachment->setStyleSheet(QString::fromUtf8("image: url(:/new/prefix1/images/attachment.png);\n"
-"background-color: rgb(85, 255, 255);"));
+""));
 
         horizontalLayout->addWidget(pushButton_sendAttachment);
 
@@ -112,9 +112,6 @@ public:
         menubar->setObjectName(QString::fromUtf8("menubar"));
         menubar->setGeometry(QRect(0, 0, 524, 25));
         server->setMenuBar(menubar);
-        statusbar = new QStatusBar(server);
-        statusbar->setObjectName(QString::fromUtf8("statusbar"));
-        server->setStatusBar(statusbar);
 
         retranslateUi(server);
 
@@ -128,7 +125,7 @@ public:
         profile->setText(QApplication::translate("server", "TextLabel", nullptr));
         name->setText(QApplication::translate("server", "TextLabel", nullptr));
         pushButton_sendAttachment->setText(QString());
-        pushButton->setText(QApplication::translate("server", "messege", nullptr));
+        pushButton->setText(QApplication::translate("server", "message", nullptr));
     } // retranslateUi
 
 };

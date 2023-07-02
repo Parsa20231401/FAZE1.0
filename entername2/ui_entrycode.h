@@ -37,18 +37,18 @@ public:
     {
         if (entrycode->objectName().isEmpty())
             entrycode->setObjectName(QString::fromUtf8("entrycode"));
-        entrycode->resize(414, 405);
+        entrycode->resize(409, 399);
         centralwidget = new QWidget(entrycode);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         codeInput = new QLineEdit(centralwidget);
         codeInput->setObjectName(QString::fromUtf8("codeInput"));
-        codeInput->setGeometry(QRect(90, 310, 231, 71));
+        codeInput->setGeometry(QRect(80, 270, 231, 71));
         QFont font;
         font.setPointSize(16);
         codeInput->setFont(font);
         groupBox = new QGroupBox(centralwidget);
         groupBox->setObjectName(QString::fromUtf8("groupBox"));
-        groupBox->setGeometry(QRect(40, 10, 321, 281));
+        groupBox->setGeometry(QRect(40, 10, 321, 241));
         ok_pushButton = new QPushButton(groupBox);
         ok_pushButton->setObjectName(QString::fromUtf8("ok_pushButton"));
         ok_pushButton->setGeometry(QRect(110, 190, 101, 41));

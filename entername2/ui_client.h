@@ -58,14 +58,15 @@ public:
         groupBox = new QGroupBox(verticalLayoutWidget);
         groupBox->setObjectName(QString::fromUtf8("groupBox"));
         groupBox->setMinimumSize(QSize(0, 100));
-        groupBox->setStyleSheet(QString::fromUtf8("border: 2px solid gray;"));
+        groupBox->setStyleSheet(QString::fromUtf8("border: 2px solid gray;\n"
+""));
         profile = new QLabel(groupBox);
         profile->setObjectName(QString::fromUtf8("profile"));
-        profile->setGeometry(QRect(0, 0, 121, 101));
+        profile->setGeometry(QRect(10, 10, 111, 81));
         profile->setStyleSheet(QString::fromUtf8("border: 2px white;"));
         name = new QLabel(groupBox);
         name->setObjectName(QString::fromUtf8("name"));
-        name->setGeometry(QRect(150, 0, 201, 101));
+        name->setGeometry(QRect(150, 10, 201, 81));
         QFont font;
         font.setPointSize(12);
         font.setBold(true);
@@ -86,19 +87,20 @@ public:
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
         lineEdit = new QLineEdit(verticalLayoutWidget);
         lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
+        lineEdit->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
 
         horizontalLayout->addWidget(lineEdit);
 
         pushButton_sendAttachment = new QPushButton(verticalLayoutWidget);
         pushButton_sendAttachment->setObjectName(QString::fromUtf8("pushButton_sendAttachment"));
         pushButton_sendAttachment->setStyleSheet(QString::fromUtf8("image: url(:/new/prefix1/images/attachment.png);\n"
-"background-color: rgb(170, 0, 255);"));
+""));
 
         horizontalLayout->addWidget(pushButton_sendAttachment);
 
         pushButton = new QPushButton(verticalLayoutWidget);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setStyleSheet(QString::fromUtf8(""));
+        pushButton->setStyleSheet(QString::fromUtf8("background-color: rgb(85, 170, 0);"));
 
         horizontalLayout->addWidget(pushButton);
 
@@ -123,7 +125,7 @@ public:
         profile->setText(QString());
         name->setText(QString());
         pushButton_sendAttachment->setText(QString());
-        pushButton->setText(QApplication::translate("client", "PushButton", nullptr));
+        pushButton->setText(QApplication::translate("client", "message", nullptr));
     } // retranslateUi
 
 };
