@@ -93,7 +93,7 @@ public:
     void retranslateUi(QMainWindow *pick_username)
     {
         pick_username->setWindowTitle(QApplication::translate("pick_username", "MainWindow", nullptr));
-        label->setText(QApplication::translate("pick_username", "pick a username: ", nullptr));
+        label->setText(QApplication::translate("pick_username", "pick a name: ", nullptr));
         continue_button->setText(QApplication::translate("pick_username", "continue", nullptr));
         profile->setText(QString());
         addProfile->setText(QString());

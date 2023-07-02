@@ -32,7 +32,7 @@
         </font>
        </property>
        <property name="text">
-        <string>pick a username: </string>
+        <string>pick a name: </string>
        </property>
       </widget>
      </item>

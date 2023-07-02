@@ -33,10 +33,10 @@ pick_username::~pick_username()
 void pick_username::on_continue_button_clicked()
 {
 
-    QString username = ui->lineEdit->text();
+    QString name = ui->lineEdit->text();
 
     dataBase d;
-    d.insert("username", username);
+    d.insertProfile("name", name);
 
 
     server *serverPage = new server(this);
@@ -54,7 +54,7 @@ void pick_username::on_addProfile_clicked()
     ui->profile->setPixmap(image);
 
     dataBase d;
-    d.insert("profile_loc", filePath);
+    d.insertProfile("profile_loc", filePath);
 
 //    QSqlQuery q;
 //    q.exec("INSERT INTO usersInfo(profile_loc) VALUES('"+filePath+"')");

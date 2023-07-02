@@ -1,5 +1,6 @@
 #include "database.h"
 
+
 dataBase::dataBase()
 {
 
@@ -10,32 +11,63 @@ dataBase::dataBase()
         qDebug() << "Failed to open database:" << db.lastError().text();
     }
     q = QSqlQuery(db);
+    q2 = QSqlQuery(db);
+
 }
 
-void dataBase::insert(const QString& column, const QString& info)
+void dataBase::insertProfile(const QString& column, const QString& info)
 {
-//    QSqlQuery p;
-//    p.exec("INSERT INTO usersInfo('"+column+"') VALUES('"+info+"')");
 
-//        if (p.lastError().isValid()) {
-//            qDebug() << "Failed to insert name:" << p.lastError().text();
-//        } else {
-//            qDebug() << "Name inserted successfully.";
-//        }
-
-//    QSqlQuery q;
-
-    QString x = "ttt";
-    q.exec("UPDATE usersInfo SET '"+column+"' = '"+info+"' WHERE id = (SELECT MAX(id) FROM usersInfo) ");
-//    q.exec("UPDATE usersInfo SET '"+column+"' = '"+info+"' WHERE id = '"+x+"' ");
+//    QString x = "ttt";
+    q.exec("UPDATE usersInfo SET '"+column+"' = '"+info+"' WHERE username = '"+theusername+"' ");
+//    q.exec("UPDATE usersInfo SET '"+column+"' = '"+info+"' WHERE username = (SELECT MAX(username) FROM usersInfo) ");
 
    if (q.lastError().isValid()) {
-       qDebug() << "Failed to insert info:" << q.lastError().text();
+       qDebug() << "Failed to insert info:" << q.lastError().text() << theusername;
    } else {
-       qDebug() << "info inserted successfully.";
+       qDebug() << "info inserted successfully."<< theusername;
    }
 }
 
+bool dataBase::searchData(Ui::MainWindow* ui)
+{
+
+    QString username, password;
+
+    username = ui->login_username->text();
+    password = ui->login_password->text();
+
+    q.exec("SELECT username FROM usersInfo WHERE username = '"+username+"'");
+
+    if(q.first())
+    {
+        q2.exec("SELECT password FROM usersInfo WHERE password='"+password+"'");
+        return q2.first();
+    }
+    else return false;
+}
+
+bool dataBase::insertNewuser(Ui::MainWindow* Ui)
+{
+    this->ui = Ui;
+    QString username, password, email, phone, code;
+
+    username = ui->signup_username->text();
+    password = ui->password_username->text();
+    email = ui->email->text();
+    phone = ui->phone->text();
+    code = ui->comboBox->currentText();
+
+    q.exec("SELECT username FROM usersInfo WHERE username='"+username+"'");
+
+    if(q.first()){
+        return false;
+    }
+    else{
+        q.exec("INSERT INTO usersInfo(username, password, email, phone, country_code)VALUES('"+username+"','"+password+"','"+email+"','"+phone+"','"+code+"') ");
+        return true;
+    }
+}
 dataBase::~dataBase()
 {
 //    db.close();

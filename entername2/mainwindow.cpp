@@ -9,6 +9,9 @@
 #include "QSqlDriver"
 #include "QSqlQueryModel"
 
+#include "database.h"
+
+QString theusername;
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow) {
     ui->setupUi(this);
@@ -37,7 +40,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
     QSqlDatabase database;
     database = QSqlDatabase::addDatabase("QSQLITE");
-    database.setDatabaseName("./database\\usersinfo.db");
+    database.setDatabaseName("./database\\mainusersdata.db");
     database.open();
 }
 
@@ -75,35 +78,22 @@ void MainWindow::on_capchaEnterd_button_clicked() {
     ///
     ///
     ///
-    entrycode *a = new entrycode(this);/////////////// delete this
-    a->show();
-    hide();
+//    entrycode *a = new entrycode(this);/////////////// delete this
+//    a->show();
+//    hide();
 
     //////////////////////////////
     /// \brief q
     //////////////////////////////////////////////////////
     ///
+    ///
 
+    theusername = ui->signup_username->text();
 
+    dataBase d;
+    bool inserted = d.insertNewuser(ui);
 
-    QSqlQuery q;
-    QString a1, a2, a3, a4, a5;
-
-    a1 = ui->signup_username->text();
-    a2 = ui->password_username->text();
-    a3 = ui->lineEdit_6->text();
-    a4 = ui->lineEdit_7->text();
-    a5 = ui->comboBox->currentText();
-
-    q.exec("SELECT username FROM usersdata WHERE username='"+a1+"'");
-
-    if(q.first()){
-
-//        QMessageBox::warning(this,"error","this username already exist");
-    }
-    else{
-
-        q.exec("INSERT INTO usersdata(username, password, email, phone, countrycode)VALUES('"+a1+"','"+a2+"','"+a3+"','"+a4+"','"+a5+"') ");
+    if (inserted == true){
 
     entrycode *p = new entrycode(this);
 
@@ -142,19 +132,18 @@ void MainWindow::on_capchaEnterd_button_clicked() {
                 break;
         }
     }
+    else QMessageBox::warning(this,"error","this username already exist");
 }
 
 
 void MainWindow::on_see_button_clicked()
 {
     ui->password_username->setEchoMode(QLineEdit::Normal);
-
     QRect Geometry = ui->see_button->geometry();
     int x = Geometry.x();
     int y = Geometry.y();
     ui->unsee_button->move(x, y);
     ui->unsee_button->show();
-
     ui->see_button->hide();
 }
 
@@ -171,7 +160,6 @@ void MainWindow::on_login_username_textEdited(const QString &arg1)
        if(sw)
        ui->label_19->setText("correct");
    }
-
 }
 
 
@@ -238,35 +226,19 @@ void MainWindow::on_unsee_button_clicked()
 
 void MainWindow::on_login_Button_clicked()
 {
-    QSqlQuery q, p;
-    QString a1, a2;
+    dataBase d;
+    bool found = d.searchData(ui);
 
-    a1 = ui->login_username->text();
-    a2 = ui->login_password->text();
-
-    q.exec("SELECT username FROM usersdata WHERE username='"+a1+"'");
-
-    if(q.first()){
-
-        p.exec("SELECT password FROM usersdata WHERE password='"+a2+"'");
-        if(p.first()){
-
-            server *serverPage = new server(this);
-            serverPage->show();
-            client *clientPage = new client(this);
-            clientPage->show();
-            hide();
-        }
-        else {
-            QMessageBox::information(this,"wrong username/password","try again");
-        }
+    if (found == true)
+    {
+       server *serverPage = new server(this);
+       serverPage->show();
+       client *clientPage = new client(this);
+       clientPage->show();
+       hide();
     }
-    else {
-        QMessageBox::information(this,"wrong username/password","try again");
-    }
-
+    else QMessageBox::information(this,"wrong password/uesrname","try again");
 }
-
 
 void MainWindow::on_shortcutButton1_clicked()
 {

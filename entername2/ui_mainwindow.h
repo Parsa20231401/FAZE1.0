@@ -71,11 +71,11 @@ public:
     QLineEdit *password_username;
     QLabel *label_28;
     QLabel *label_21;
-    QLineEdit *lineEdit_6;
+    QLineEdit *email;
     QLabel *label_22;
     QHBoxLayout *horizontalLayout_5;
     QComboBox *comboBox;
-    QLineEdit *lineEdit_7;
+    QLineEdit *phone;
     QWidget *verticalLayoutWidget_3;
     QVBoxLayout *verticalLayout_4;
     QLabel *label_23;
@@ -283,10 +283,10 @@ public:
 
         formLayout_3->setWidget(4, QFormLayout::LabelRole, label_21);
 
-        lineEdit_6 = new QLineEdit(formLayoutWidget_2);
-        lineEdit_6->setObjectName(QString::fromUtf8("lineEdit_6"));
+        email = new QLineEdit(formLayoutWidget_2);
+        email->setObjectName(QString::fromUtf8("email"));
 
-        formLayout_3->setWidget(4, QFormLayout::FieldRole, lineEdit_6);
+        formLayout_3->setWidget(4, QFormLayout::FieldRole, email);
 
         label_22 = new QLabel(formLayoutWidget_2);
         label_22->setObjectName(QString::fromUtf8("label_22"));
@@ -301,10 +301,10 @@ public:
 
         horizontalLayout_5->addWidget(comboBox);
 
-        lineEdit_7 = new QLineEdit(formLayoutWidget_2);
-        lineEdit_7->setObjectName(QString::fromUtf8("lineEdit_7"));
+        phone = new QLineEdit(formLayoutWidget_2);
+        phone->setObjectName(QString::fromUtf8("phone"));
 
-        horizontalLayout_5->addWidget(lineEdit_7);
+        horizontalLayout_5->addWidget(phone);
 
 
         formLayout_3->setLayout(5, QFormLayout::FieldRole, horizontalLayout_5);
